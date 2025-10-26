@@ -16,6 +16,17 @@ const presentation: IAward.Payload = {
       ],
     },
     {
+      title: 'Kakao Tech Campus 2nd Stage Outstanding Cookies Selection',
+      subTitle: 'Top Performance Award(FE)',
+      at: '2025-08',
+      descriptions: [
+        {
+          content: 'Completed the 2nd stage with the highest score in the Frontend track.',
+        },
+      ],
+    },
+
+    {
       title: 'Chungnam National University Algorithm Competition – DevDay',
       subTitle: '2× Bronze Prize / 1× Encouragement Prize',
       at: '2025-06',

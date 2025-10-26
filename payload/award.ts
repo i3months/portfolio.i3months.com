@@ -15,6 +15,16 @@ const presentation: IAward.Payload = {
       ],
     },
     {
+      title: '카카오테크캠퍼스 2단계 우수 쿠키즈 선정',
+      subTitle: 'Top Performance Award(FE) 수상',
+      at: '2025-08',
+      descriptions: [
+        {
+          content: 'Frontend 트랙에서 최우수 성적으로 2단계 수료',
+        },
+      ],
+    },
+    {
       title: '충남대학교 알고리즘 경진대회 - DevDay',
       subTitle: '동상 2회 / 장려상 1회',
       at: '2025-06',
