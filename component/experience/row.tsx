@@ -92,11 +92,25 @@ export default function ExperienceRow({
           </Col>
           <Col sm={12} md={9}>
             <i style={Style.gray}>{position.title}</i>
+            {/* Skill Keywords를 직책명 바로 아래에 표시 */}
+            {position.skillKeywords && position.skillKeywords.length > 0 && (
+              <div className="mt-1 mb-2">
+                {position.skillKeywords.map((keyword, keywordIndex) => (
+                  <Badge
+                    style={Style.skillKeywordBadge}
+                    key={keywordIndex.toString()}
+                    color="secondary"
+                    className="mr-1"
+                  >
+                    {keyword}
+                  </Badge>
+                ))}
+              </div>
+            )}
             <ul className="pt-2">
               {position.descriptions.map((description, descIndex) => (
                 <li key={descIndex.toString()}>{description}</li>
               ))}
-              {createSkillKeywords(position.skillKeywords)}
             </ul>
           </Col>
         </Row>
@@ -128,29 +142,6 @@ function createOverallWorkingPeriod(positions: PositionWithDates[]) {
   }
 
   return `${startedAt.toFormat(DATE_FORMAT)} ~ ${endedAt.toFormat(DATE_FORMAT)}`;
-}
-
-function createSkillKeywords(skillKeywords?: string[]) {
-  if (!skillKeywords) {
-    return null;
-  }
-  return (
-    <li>
-      <strong>Skill Keywords</strong>
-      <div>
-        {skillKeywords.map((keyword, index) => (
-          <Badge
-            style={Style.skillKeywordBadge}
-            key={index.toString()}
-            color="secondary"
-            className="mr-1"
-          >
-            {keyword}
-          </Badge>
-        ))}
-      </div>
-    </li>
-  );
 }
 
 function createWorkingPeriod(startedAt: DateTime, endedAt?: DateTime | null) {
