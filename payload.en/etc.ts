@@ -32,6 +32,17 @@ const etc: IEtc.Payload = {
       startedAt: '2024-09',
     },
   ],
+
+  extraLinks: [
+    {
+      title: 'Baekjoon Online Judge (BOJ)',
+      url: 'https://www.acmicpc.net/user/13months',
+    },
+    {
+      title: 'Codeforces',
+      url: 'https://codeforces.com/profile/shtnom31',
+    },
+  ],
 };
 
 export default etc;

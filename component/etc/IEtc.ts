@@ -11,6 +11,10 @@ export declare namespace IEtc {
   export interface Payload extends ICommon.Payload {
     /** ### 기타 항목 리스트 */
     list: Item[];
+
+    /** ### 추가 링크 리스트 (선택사항) */
+
+    extraLinks?: ExtraLink[];
   }
 
   export interface Item {
@@ -35,5 +39,13 @@ export declare namespace IEtc {
      * @example '2015-03'
      */
     endedAt?: string;
+  }
+
+  export interface ExtraLink {
+    /** ### 링크 제목 */
+    title: string;
+
+    /** ### 링크 URL */
+    url: string;
   }
 }

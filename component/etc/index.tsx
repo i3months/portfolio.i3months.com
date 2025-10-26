@@ -29,13 +29,36 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
 }
 
 function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
+  const totalItems = payload.list.length + (payload.extraLinks ? 1 : 0);
+
   return (
     <EmptyRowCol>
       {payload.list.map((item, index) => {
         return <CommonRows key={index.toString()} payload={serialize(item)} index={index} />;
       })}
+      {payload.extraLinks && payload.extraLinks.length > 0 && (
+        <CommonRows
+          key="extra-links"
+          payload={serializeExtraLinks(payload.extraLinks)}
+          index={payload.list.length}
+        />
+      )}
     </EmptyRowCol>
   );
+}
+
+function serializeExtraLinks(extraLinks: IEtc.ExtraLink[]): IRow.Payload {
+  return {
+    left: {
+      title: 'Extra Links',
+    },
+    right: {
+      descriptions: extraLinks.map((link) => ({
+        content: link.title,
+        href: link.url,
+      })),
+    },
+  };
 }
 
 function serialize(item: Item): IRow.Payload {
