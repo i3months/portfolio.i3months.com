@@ -37,6 +37,7 @@ const project: IProject.Payload = {
             'Visualized statistical data using ApexChart and implemented favorites and table search features.',
         },
       ],
+      skillKeywords: ['Java', 'Spring Boot', 'MariaDB', 'Tibero', 'jQuery', 'ApexChart'],
     },
     {
       title: 'Enhanced functionalities of the DBpia service',
@@ -61,12 +62,32 @@ const project: IProject.Payload = {
             'Maintained DBpia service operations – Fixed Excel download bugs, managed the PDF download server, and handled long-term inactive users.',
         },
       ],
+      skillKeywords: [
+        'Java',
+        'Spring Boot',
+        'Redis',
+        'Elasticsearch',
+        'SQL Server',
+        'JavaScript',
+        'AWS',
+      ],
     },
     {
       title: 'Developed DBpia Content Maker (DCM)',
       startedAt: '2024-02',
       endedAt: '2024-12',
       where: 'IWAZ (South Korea)',
+      skillKeywords: [
+        'Java',
+        'Spring Boot',
+        'Spring Security',
+        'Spring Batch',
+        'SQL Server',
+        'NGINX',
+        'Elasticsearch',
+        'jQuery',
+        'Tomcat',
+      ],
       descriptions: [
         {
           content:
@@ -173,6 +194,7 @@ const project: IProject.Payload = {
           content: 'Built and developed the frontend using Vue.',
         },
       ],
+      skillKeywords: ['Vue', 'FastAPI', 'Docker', 'JavaScript', 'ApexChart', 'd3.js'],
     },
     {
       title: 'Enhanced functionalities of the ETRI School website',
@@ -195,6 +217,7 @@ const project: IProject.Payload = {
           content: "Deployed and managed the system on ETRI's internal servers using Docker.",
         },
       ],
+      skillKeywords: ['Vue', 'Quasar', 'Spring Boot', 'JPA', 'Docker', 'MariaDB'],
     },
     {
       title: 'Developed the Drone Mission Data Management System',
@@ -221,6 +244,7 @@ const project: IProject.Payload = {
             'Deployed Frontend, Backend, and Database as a unified system using docker-compose.',
         },
       ],
+      skillKeywords: ['React', 'MUI', 'Spring Boot', 'Docker', 'Docker Compose', 'MySQL'],
     },
     {
       title: 'Enhanced functionalities of the National Supercomputing Center website',
@@ -243,6 +267,7 @@ const project: IProject.Payload = {
           content: 'Implemented a WebSocket-based broadcast feature for connected users.',
         },
       ],
+      skillKeywords: ['Spring Boot', 'd3.js', 'WebSocket', 'jQuery', 'MySQL'],
     },
   ],
 };
