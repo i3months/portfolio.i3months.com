@@ -1,5 +1,5 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faBloggerB, faEtsy } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faBloggerB, faEtsy, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { IProfile } from '../component/profile/IProfile';
 import profileImage from '../asset/profile.jpg';
@@ -29,9 +29,9 @@ const profile: IProfile.Payload = {
       icon: faBloggerB,
     },
     {
-      title: '(영문 이력서) https://13months.netlify.app/en',
-      link: 'https://13months.netlify.app/en',
-      icon: faEtsy,
+      title: 'https://www.linkedin.com/in/joonmo-jeong/',
+      link: 'https://www.linkedin.com/in/joonmo-jeong/',
+      icon: faLinkedin,
     },
   ],
   // notice: {

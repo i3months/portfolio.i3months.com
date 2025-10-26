@@ -1,11 +1,10 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faBloggerB, faKorvue } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faBloggerB, faKorvue, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { IProfile } from '../component/profile/IProfile';
 import profileImage from '../asset/profile.jpg';
 
 const profile: IProfile.Payload = {
-
   image: profileImage,
   name: {
     title: 'Joonmo Jeong',
@@ -19,7 +18,7 @@ const profile: IProfile.Payload = {
     },
     {
       title: '+82) -',
-      icon: faPhone      
+      icon: faPhone,
     },
     {
       link: 'https://github.com/i3months',
@@ -31,9 +30,9 @@ const profile: IProfile.Payload = {
       icon: faBloggerB,
     },
     {
-      title: '(Korean Resume) https://13months.netlify.app',
-      link: 'https://13months.netlify.app',
-      icon: faKorvue,
+      title: 'https://www.linkedin.com/in/joonmo-jeong/',
+      link: 'https://www.linkedin.com/in/joonmo-jeong/',
+      icon: faLinkedin,
     },
   ],
   // notice: {
