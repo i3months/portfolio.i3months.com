@@ -85,7 +85,7 @@ const project: IProject.Payload = {
               content:
                 'Windows Server기반 Tomcat 구축 및 서비스 운영 - 네트워크 드라이브 관련 권한 문제 해결 (심볼릭 링크)',
             },
-            { content: 'Tomcat JVM 메모리 설정 및 운영서버, 개발서버 이중화' },
+            { content: 'Tomcat JVM 메모리 풀 크기 조정 및 운영서버, 개발서버 이중화' },
             { content: '모의 해킹 처리 - XSS, CSRF, 민감한 정보 마스킹 등 보안 관련 처리' },
             { content: 'SQL SERVER의 LINKED SERVER 활용 서로 다른 위치에 있는 프로시저 원격 호출' },
           ],
@@ -96,13 +96,13 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'pdfbox 활용 PDF 분할 알고리즘 개발 - 분할 시 입력한 PDF의 논리 페이지와 물리 페이지가 구분되도록',
+                'pdfbox 활용 PDF 분할 알고리즘 개발 - 분할 시 입력한 PDF의 논리 페이지와 물리 페이지가 구분되도록 설정',
             },
             {
               content:
-                'Spring Batch 활용 ERP, DCM 서비스 연동 - Job, Step 기반 배치 비즈니스 로직 작성',
+                'C++ 기반의 Batch 시스템을 Spring Batch로 고도화 - ERP, DCM 서비스 연동 / 안정성과 처리 속도 개선',
             },
-            { content: '논문 임시 저장 시스템 개발 - 일정 주기로 입력 내용 저장' },
+            { content: '에디터 임시 저장 기능 개발 - 5분 주기 자동저장' },
             { content: 'Elasticsearch 활용 이메일 기반 논문 저자 검색 기능 개발' },
           ],
         },

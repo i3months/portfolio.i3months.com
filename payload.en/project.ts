@@ -99,7 +99,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Configured Tomcat JVM memory and implemented redundancy for production and development servers.',
+                'Configured Tomcat JVM memory pool and implemented redundancy for production and development servers.',
             },
             {
               content:
@@ -121,7 +121,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Integrated ERP and DCM services using Spring Batch, implemented business logic based on Job / Step.',
+                'Refactored a legacy C++ batch system into Spring Batch, integrating ERP and DCM services to enhance stability and processing speed.',
             },
             {
               content:
