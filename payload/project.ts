@@ -26,6 +26,7 @@ const project: IProject.Payload = {
           content: 'ApexChart 활용 통계 데이터 시각화 및 즐겨찾기, 통계표 검색 기능 구현',
         },
       ],
+      skillKeywords: ['Java', 'Spring', 'MariaDB', 'Tibero', 'jQuery', 'ApexChart'],
     },
     {
       title: 'DBpia 서비스 기능 개선 ',
@@ -47,12 +48,32 @@ const project: IProject.Payload = {
             'DBpia 서비스 운영 지원 - 엑셀 다운로드 버그 수정, PDF 다운로드 서버 관리, 장기 미접속자 처리',
         },
       ],
+      skillKeywords: [
+        'Java',
+        'Spring',
+        'Redis',
+        'Elasticsearch',
+        'SQL Server',
+        'JavaScript',
+        'AWS',
+      ],
     },
     {
       title: 'DBpia Content Maker (DCM) 논문 메타 제작 플랫폼 개발',
       startedAt: '2024-02',
       endedAt: '2024-12',
       where: '아이와즈 (IWAZ)',
+      skillKeywords: [
+        'Java',
+        'Spring Boot',
+        'Spring Security',
+        'Spring Batch',
+        'SQL Server',
+        'NGINX',
+        'Elasticsearch',
+        'jQuery',
+        'Tomcat',
+      ],
       descriptions: [
         {
           content: 'C#, C++로 작성된 레거시 소스코드 분석 및 웹 기반 신규 개편 시스템 설계',
@@ -146,6 +167,7 @@ const project: IProject.Payload = {
           content: 'Vue 기반 프론트엔드 구축 및 화면 개발',
         },
       ],
+      skillKeywords: ['Vue', 'FastAPI', 'Docker', 'JavaScript', 'ApexChart', 'd3.js'],
     },
     {
       title: 'ETRI 스쿨 홈페이지 기능 개선',
@@ -166,6 +188,7 @@ const project: IProject.Payload = {
           content: 'ETRI 내 서버 컴퓨터에 Docker 기반 시스템 배포 및 운영',
         },
       ],
+      skillKeywords: ['Vue', 'Quasar', 'Spring Boot', 'JPA', 'Docker', 'MariaDB'],
     },
     {
       title: '드론 임무 데이터 관리 시스템 기능 개발',
@@ -188,9 +211,10 @@ const project: IProject.Payload = {
           content: 'React 활용 이미지 데이터 지도 위 시각화',
         },
         {
-          content: 'docker-compose 활용 Frontend, Backend, Database를 하나로 묶어서 배포',
+          content: 'docker-compose로 Frontend, Backend, Database를 하나로 묶어서 배포',
         },
       ],
+      skillKeywords: ['React', 'MUI', 'Spring Boot', 'Docker', 'Docker Compose', 'MySQL'],
     },
     {
       title: '국가슈퍼컴퓨팅센터 홈페이지 기능 개선',
@@ -211,6 +235,7 @@ const project: IProject.Payload = {
           content: 'websocket 활용 접속한 사용자 대상 브로드캐스트 기능 구현',
         },
       ],
+      skillKeywords: ['Spring Boot', 'd3.js', 'JavaScript', 'jQuery', 'MySQL'],
     },
   ],
 };
