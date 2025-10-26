@@ -29,8 +29,6 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
 }
 
 function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
-  const totalItems = payload.list.length + (payload.extraLinks ? 1 : 0);
-
   return (
     <EmptyRowCol>
       {payload.list.map((item, index) => {

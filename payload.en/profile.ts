@@ -1,5 +1,5 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faBloggerB, faKorvue, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faBloggerB, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { IProfile } from '../component/profile/IProfile';
 import profileImage from '../asset/profile.jpg';
