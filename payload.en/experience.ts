@@ -14,7 +14,7 @@ const experience: IExperience.Payload = {
           descriptions: [
             'Developed features for the Chemical Information Platform Service at the Korea Research Institute of Chemical Technology (KRICT) – Query tuning, data migration, and visualization.',
             'Enhanced functionalities of the DBpia service – Maintenance, back-office management.',
-            'Developed DBpia Content Maker (DCM), a research paper metadata creation platform.',
+            'Developed and maintained DBpia Content Maker (DCM), a research paper metadata creation platform.',
           ],
           skillKeywords: [
             'Java',

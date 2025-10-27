@@ -14,7 +14,7 @@ const experience: IExperience.Payload = {
           descriptions: [
             '한국화학연구원 화학정보플랫폼 서비스 기능 개발 - 쿼리 튜닝, 데이터 이관 및 시각화',
             'DBpia 서비스 기능 개선 - 백오피스 및 DBpia 시스템 유지보수 및 추가 개발',
-            'DBpia Content Maker (DCM) 논문 메타 제작 플랫폼 개발 - 신규 서비스 개발',
+            'DBpia Content Maker (DCM) 논문 메타 제작 플랫폼 개발 - 신규 서비스 개발 및 서비스 운영',
           ],
           skillKeywords: [
             'Java',
