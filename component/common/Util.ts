@@ -21,18 +21,21 @@ function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) 
 
   log(diff.milliseconds, diff.get('years'), diff.get('months'));
 
-  // 기간 포맷 결정
-  let format;
-  if (diff.years > 0 && diff.months === 0) {
-    format = LUXON_DATE_FORMAT.DURATION_KINDNESS_ONLY_YEAR;
-  } else if (diff.years === 0 && diff.months > 0) {
-    // 1년 미만이면 개월만 표시
-    format = LUXON_DATE_FORMAT.DURATION_KINDNESS_ONLY_MONTH;
-  } else {
-    format = LUXON_DATE_FORMAT.DURATION_KINDNESS;
-  }
+  const years = Math.floor(diff.years);
+  const months = Math.floor(diff.months);
 
-  return diff.toFormat(format);
+  // 복수형 처리
+  const yearText = years === 1 ? 'Year' : 'Years';
+  const monthText = months === 1 ? 'Month' : 'Months';
+
+  // 기간 포맷 결정
+  if (years > 0 && months === 0) {
+    return `${years} ${yearText}`;
+  } else if (years === 0 && months > 0) {
+    return `${months} ${monthText}`;
+  } else {
+    return `${years} ${yearText} ${months} ${monthText}`;
+  }
 }
 
 function debug(channel: string) {

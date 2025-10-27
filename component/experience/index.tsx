@@ -65,5 +65,19 @@ function getFormattingExperienceTotalDuration(payload: IExperience.Payload) {
     Duration.fromMillis(0),
   );
 
-  return totalExperience.toFormat(`${Util.LUXON_DATE_FORMAT.DURATION_KINDNESS}`);
+  const years = Math.floor(totalExperience.as('years'));
+  const months = Math.floor(totalExperience.as('months') % 12);
+
+  // 복수형 처리
+  const yearText = years === 1 ? 'Year' : 'Years';
+  const monthText = months === 1 ? 'Month' : 'Months';
+
+  // 기간 포맷 결정
+  if (years > 0 && months === 0) {
+    return `${years} ${yearText}`;
+  } else if (years === 0 && months > 0) {
+    return `${months} ${monthText}`;
+  } else {
+    return `${years} ${yearText} ${months} ${monthText}`;
+  }
 }
