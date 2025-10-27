@@ -31,11 +31,11 @@ function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) 
   // 기간 포맷 결정
   if (years > 0 && months === 0) {
     return `${years} ${yearText}`;
-  } else if (years === 0 && months > 0) {
-    return `${months} ${monthText}`;
-  } else {
-    return `${years} ${yearText} ${months} ${monthText}`;
   }
+  if (years === 0 && months > 0) {
+    return `${months} ${monthText}`;
+  }
+  return `${years} ${yearText} ${months} ${monthText}`;
 }
 
 function debug(channel: string) {
