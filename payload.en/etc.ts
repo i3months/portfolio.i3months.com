@@ -39,6 +39,10 @@ const etc: IEtc.Payload = {
       url: 'https://www.acmicpc.net/user/13months',
     },
     {
+      title: 'solved.ac',
+      url: 'https://solved.ac/profile/13months',
+    },
+    {
       title: 'Codeforces',
       url: 'https://codeforces.com/profile/shtnom31',
     },
