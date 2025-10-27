@@ -12,6 +12,7 @@ const experience: IExperience.Payload = {
           startedAt: '2024-02',
           endedAt: '2025-03',
           descriptions: [
+            'Collaborated with a 10-member team of designers, developers, and planners to develop and operate DBpia and its related services.',
             'Developed features for the Chemical Information Platform Service at the Korea Research Institute of Chemical Technology (KRICT) – Query tuning, data migration, and visualization.',
             'Enhanced functionalities of the DBpia service – Maintenance, back-office management.',
             'Developed and maintained DBpia Content Maker (DCM), a research paper metadata creation platform.',
@@ -44,6 +45,7 @@ const experience: IExperience.Payload = {
           startedAt: '2023-03',
           endedAt: '2024-02',
           descriptions: [
+            'Collaborated with a 5-member team of designers and developers to develop research institute and public service projects.',
             'Developed the ASD Screening AI Integrated Platform System',
             'Enhanced functionalities of the ETRI School website – Maintenance, back-office management.',
             'Developed the Drone Mission Data Management System – Built a scheduler for drone data storage.',
