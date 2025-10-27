@@ -1,9 +1,11 @@
 import { DateTime } from 'luxon';
 import { PropsWithChildren } from 'react';
+import { Row, Col } from 'reactstrap';
 import { CommonSection } from '../common/CommonSection';
-import { EmptyRowCol } from '../common';
+import { EmptyRowCol, HrefTargetBlank } from '../common';
 import { CommonRows } from '../common/CommonRow';
 import { IRow } from '../common/IRow';
+import { Style } from '../common/Style';
 import Util from '../common/Util';
 import { IEtc } from './IEtc';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
@@ -35,28 +37,35 @@ function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
         return <CommonRows key={index.toString()} payload={serialize(item)} index={index} />;
       })}
       {payload.extraLinks && payload.extraLinks.length > 0 && (
-        <CommonRows
-          key="extra-links"
-          payload={serializeExtraLinks(payload.extraLinks)}
-          index={payload.list.length}
-        />
+        <ExtraLinksRow extraLinks={payload.extraLinks} index={payload.list.length} />
       )}
     </EmptyRowCol>
   );
 }
 
-function serializeExtraLinks(extraLinks: IEtc.ExtraLink[]): IRow.Payload {
-  return {
-    left: {
-      title: 'Extra Links',
-    },
-    right: {
-      descriptions: extraLinks.map((link) => ({
-        content: link.title,
-        href: link.url,
-      })),
-    },
-  };
+function ExtraLinksRow({
+  extraLinks,
+  index,
+}: PropsWithChildren<{ extraLinks: IEtc.ExtraLink[]; index: number }>) {
+  return (
+    <div>
+      {index > 0 ? <hr /> : ''}
+      <Row>
+        <Col sm={12} md={3} className="text-md-right">
+          <h4 style={Style.gray}>Extra Links</h4>
+        </Col>
+        <Col sm={12} md={9}>
+          <ul style={{ paddingLeft: '1.5rem', marginTop: 0 }}>
+            {extraLinks.map((link, linkIndex) => (
+              <li key={linkIndex.toString()} style={{ marginBottom: '0.5rem' }}>
+                <HrefTargetBlank url={link.url} text={link.title} />
+              </li>
+            ))}
+          </ul>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
 function serialize(item: Item): IRow.Payload {
