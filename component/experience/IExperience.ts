@@ -9,6 +9,14 @@ export declare namespace IExperience {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "EXPERIENCE", "경력")
+     * @default "EXPERIENCE"
+     */
+    title?: string;
+
     /** ### Experience 데이터 목록 */
     list: Item[];
     /** ### 총 경력 기간 표시 유/무 */

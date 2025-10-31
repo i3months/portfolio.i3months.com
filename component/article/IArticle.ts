@@ -11,6 +11,14 @@ export declare namespace IArticle {
    *
    */
   interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "ARTICLE", "아티클")
+     * @default "ARTICLE"
+     */
+    title?: string;
+
     /** 아티클 리스트 */
     list: IRow.Description[];
   }

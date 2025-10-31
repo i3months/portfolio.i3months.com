@@ -3,6 +3,7 @@ import { lastestUpdatedAt } from '../package.json';
 
 const introduce: IIntroduce.Payload = {
   disable: false,
+  title: '짧은 소개.',
 
   contents: [
     'Java, SpringBoot를 주력으로 사용합니다. 클라우드 환경에서 Redis, Elasticsearch, Spring Batch 기술을 사용해 프로덕션 서비스를 개발하고 운영한 경험이 있으며, 그 과정에서 성능 최적화와 장애 대응 역량을 키웠습니다. 최근에는 React와 AI 기술에 관심을 가지고 학습하고 있습니다.',

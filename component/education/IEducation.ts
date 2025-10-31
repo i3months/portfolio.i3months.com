@@ -9,6 +9,14 @@ export declare namespace IEducation {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/education.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "EDUCATION", "학력")
+     * @default "EDUCATION"
+     */
+    title?: string;
+
     /** ### 교육 수료 리스트 */
     list: Item[];
   }

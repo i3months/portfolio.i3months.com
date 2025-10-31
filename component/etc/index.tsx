@@ -24,7 +24,7 @@ export const Etc = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <CommonSection title="EXTRAS">
+    <CommonSection title={payload.title || 'EXTRAS'}>
       <EducationRow payload={payload} />
     </CommonSection>
   );

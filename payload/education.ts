@@ -2,6 +2,7 @@ import { IEducation } from '../component/education/IEducation';
 
 const education: IEducation.Payload = {
   disable: false,
+  title: '학력 사항.',
 
   list: [
     {

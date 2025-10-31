@@ -2,6 +2,7 @@ import { IExperience } from '../component/experience/IExperience';
 
 const experience: IExperience.Payload = {
   disable: false,
+  title: '경력 사항.',
   disableTotalPeriod: false,
   list: [
     {

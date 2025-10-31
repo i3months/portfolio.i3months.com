@@ -10,6 +10,14 @@ export declare namespace IIntroduce {
    */
   export interface Payload extends ICommon.Payload {
     /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "INTRODUCE", "짧은 소개")
+     * @default "INTRODUCE"
+     */
+    title?: string;
+
+    /**
      * ### 자기소개 내용
      *
      * @description `string` 배열이다. 요소 하나가 하나의 `<p>` 태그가 된다.

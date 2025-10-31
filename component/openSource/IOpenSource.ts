@@ -10,6 +10,14 @@ export declare namespace IOpenSource {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/openSource.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "OPEN SOURCE", "오픈소스")
+     * @default "OPEN SOURCE"
+     */
+    title?: string;
+
     /** ### 오픈소스 활동 리스트 */
     list: Item[];
   }

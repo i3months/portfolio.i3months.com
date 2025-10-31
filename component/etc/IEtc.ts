@@ -9,6 +9,14 @@ export declare namespace IEtc {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/etc.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "EXTRAS", "기타")
+     * @default "EXTRAS"
+     */
+    title?: string;
+
     /** ### 기타 항목 리스트 */
     list: Item[];
 

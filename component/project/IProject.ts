@@ -10,6 +10,14 @@ export declare namespace IProject {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/project.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "PROJECT", "프로젝트")
+     * @default "PROJECT"
+     */
+    title?: string;
+
     /** ### 프로젝트 리스트 */
     list: Item[];
   }

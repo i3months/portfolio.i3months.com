@@ -37,7 +37,9 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
       <EmptyRowCol>
         <Row className="pb-3">
           <Col>
-            <h2 style={Style.blue}>EXPERIENCE {totalPeriod()}</h2>
+            <h2 style={Style.blue}>
+              {payload.title || 'EXPERIENCE'} {totalPeriod()}
+            </h2>
           </Col>
         </Row>
         {payload.list.map((item, index) => (

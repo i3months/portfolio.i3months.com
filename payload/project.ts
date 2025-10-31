@@ -2,6 +2,7 @@ import { IProject } from '../component/project/IProject';
 
 const project: IProject.Payload = {
   disable: false,
+  title: '프로젝트 내역.',
   list: [
     {
       title: '한국화학연구원 화학정보플랫폼 서비스 기능 개발',

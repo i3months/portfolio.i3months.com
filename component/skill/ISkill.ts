@@ -10,6 +10,14 @@ export declare namespace ISkill {
    */
   export interface Payload extends ICommon.Payload {
     /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "SKILL", "기술")
+     * @default "SKILL"
+     */
+    title?: string;
+
+    /**
      * ### 보유 기술 목록
      */
     skills: Skill[];

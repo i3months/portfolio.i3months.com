@@ -10,6 +10,14 @@ export declare namespace IPresentation {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "PRESENTATION", "발표")
+     * @default "PRESENTATION"
+     */
+    title?: string;
+
     /** ### 발표 목록 */
     list: Item[];
   }

@@ -10,6 +10,14 @@ export declare namespace IAward {
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts
    */
   export interface Payload extends ICommon.Payload {
+    /**
+     * ### 섹션 제목
+     *
+     * @description 섹션 상단에 표시될 제목 (예: "AWARD", "수상")
+     * @default "AWARD"
+     */
+    title?: string;
+
     /** ### 수상 목록 */
     list: Item[];
   }

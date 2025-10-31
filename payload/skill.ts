@@ -61,6 +61,7 @@ const intrastructureDatabase: ISkill.Skill = {
 };
 const skill: ISkill.Payload = {
   disable: false,
+  title: '기술 스택.',
   skills: [languages, frameworkLibrary, intrastructureDatabase],
 };
 

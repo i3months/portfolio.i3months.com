@@ -22,7 +22,7 @@ export const Article = {
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
     <Col style={Style.articleCover}>
-      <CommonSection title="ARTICLE">
+      <CommonSection title={payload.title || 'ARTICLE'}>
         <ArticleRow payload={payload} />
       </CommonSection>
     </Col>

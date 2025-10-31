@@ -2,6 +2,7 @@ import { IAward } from '../component/award/IAward';
 
 const presentation: IAward.Payload = {
   disable: false,
+  title: '수상 내역.',
 
   list: [
     {

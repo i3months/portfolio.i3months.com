@@ -2,6 +2,7 @@ import { IEtc } from '../component/etc/IEtc';
 
 const etc: IEtc.Payload = {
   disable: false,
+  title: '기타 경험.',
 
   list: [
     {

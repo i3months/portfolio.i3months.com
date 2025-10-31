@@ -17,7 +17,7 @@ export const Award = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <CommonSection title="AWARD">
+    <CommonSection title={payload.title || 'AWARD'}>
       <AwardRow payload={payload} />
     </CommonSection>
   );
