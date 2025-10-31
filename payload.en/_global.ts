@@ -2,8 +2,8 @@ import favicon from '../asset/favicon.ico';
 import previewImage from '../asset/preview.jpg';
 import { IGlobal } from '../component/common/IGlobal';
 
-const title = 'Resume:13months';
-const description = "13months's Resume";
+const title = 'About 13months (정준모)';
+const description = 'Software Engineer 13months Resume';
 
 export const _global: IGlobal.Payload = {
   favicon,
