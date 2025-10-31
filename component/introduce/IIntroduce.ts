@@ -38,5 +38,13 @@ export declare namespace IIntroduce {
      * @default `package.json` 의 latestUpdatedAt 을 가져온다.
      */
     latestUpdated: string;
+
+    /**
+     * ### Latest Updated 텍스트 언어 설정
+     *
+     * @description "Latest Updated" 텍스트를 표시할 언어 ("en": "Latest Updated", "ko": "최근 업데이트")
+     * @default "en"
+     */
+    latestUpdatedLocale?: 'en' | 'ko';
   }
 }

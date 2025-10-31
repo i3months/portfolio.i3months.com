@@ -37,7 +37,9 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
             <p key={index.toString()}>{content}</p>
           ))}
           <p className="text-right">
-            <small>Latest Updated</small>{' '}
+            <small>
+              {payload.latestUpdatedLocale === 'ko' ? '최근 업데이트' : 'Latest Updated'}
+            </small>{' '}
             <Badge color="secondary">
               {`${latestUpdated.toFormat(
                 Util.LUXON_DATE_FORMAT.YYYY_DOT_LL_DOT_DD,
