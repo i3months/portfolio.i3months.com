@@ -43,7 +43,12 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
           </Col>
         </Row>
         {payload.list.map((item, index) => (
-          <ExperienceRow key={index.toString()} item={item} index={index} />
+          <ExperienceRow
+            key={index.toString()}
+            item={item}
+            index={index}
+            durationLocale={payload.durationLocale}
+          />
         ))}
       </EmptyRowCol>
     </div>
@@ -70,11 +75,23 @@ function getFormattingExperienceTotalDuration(payload: IExperience.Payload) {
   const years = Math.floor(totalExperience.as('years'));
   const months = Math.floor(totalExperience.as('months') % 12);
 
-  // 복수형 처리
+  const locale = payload.durationLocale || 'en';
+
+  if (locale === 'ko') {
+    // 한국어 포맷
+    if (years > 0 && months === 0) {
+      return `${years} 년`;
+    }
+    if (years === 0 && months > 0) {
+      return `${months} 개월`;
+    }
+    return `${years} 년 ${months} 개월`;
+  }
+
+  // 영어 포맷 (복수형 처리)
   const yearText = years === 1 ? 'Year' : 'Years';
   const monthText = months === 1 ? 'Month' : 'Months';
 
-  // 기간 포맷 결정
   if (years > 0 && months === 0) {
     return `${years} ${yearText}`;
   }

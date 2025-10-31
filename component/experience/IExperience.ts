@@ -21,6 +21,14 @@ export declare namespace IExperience {
     list: Item[];
     /** ### 총 경력 기간 표시 유/무 */
     disableTotalPeriod?: boolean;
+
+    /**
+     * ### 기간 표시 언어 설정
+     *
+     * @description 경력 기간을 표시할 언어 ("en": "2 Years 3 Months", "ko": "2 년 3 개월")
+     * @default "en"
+     */
+    durationLocale?: 'en' | 'ko';
   }
 
   export interface Item {

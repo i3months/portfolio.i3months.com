@@ -4,6 +4,7 @@ const experience: IExperience.Payload = {
   disable: false,
   title: '경력 사항.',
   disableTotalPeriod: false,
+  durationLocale: 'ko',
   list: [
     {
       title: '아이와즈 (IWAZ)',

@@ -13,7 +13,11 @@ enum LUXON_DATE_FORMAT {
   DURATION_KINDNESS_ONLY_YEAR = "y'Y'",
 }
 
-function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) {
+function getFormattingDuration(
+  from: DateTime,
+  to: DateTime = DateTime.local(),
+  locale: 'en' | 'ko' = 'en',
+) {
   const log = debug('Util:getFormattingDuration');
 
   // 햇수 계산을 위해 month에 1개월 추가
@@ -24,7 +28,18 @@ function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) 
   const years = Math.floor(diff.years);
   const months = Math.floor(diff.months);
 
-  // 복수형 처리
+  if (locale === 'ko') {
+    // 한국어 포맷
+    if (years > 0 && months === 0) {
+      return `${years} 년`;
+    }
+    if (years === 0 && months > 0) {
+      return `${months} 개월`;
+    }
+    return `${years} 년 ${months} 개월`;
+  }
+
+  // 영어 포맷 (복수형 처리)
   const yearText = years === 1 ? 'Year' : 'Years';
   const monthText = months === 1 ? 'Month' : 'Months';
 

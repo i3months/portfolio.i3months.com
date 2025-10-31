@@ -15,7 +15,12 @@ type PositionWithDates = IExperience.Position & {
 export default function ExperienceRow({
   item,
   index,
-}: PropsWithChildren<{ item: IExperience.Item; index: number }>) {
+  durationLocale,
+}: PropsWithChildren<{
+  item: IExperience.Item;
+  index: number;
+  durationLocale?: 'en' | 'ko';
+}>) {
   const positionsWithDates: PositionWithDates[] = item.positions.map((position) => ({
     ...position,
     startedAtDate: DateTime.fromFormat(position.startedAt, Util.LUXON_DATE_FORMAT.YYYY_LL),
@@ -68,11 +73,11 @@ export default function ExperienceRow({
             <span style={{ fontSize: '65%', display: 'inline-flex', alignItems: 'center' }}>
               {isCurrentlyEmployed && (
                 <Badge color="primary" className="ml-1">
-                  재직 중
+                  {durationLocale === 'ko' ? '재직 중' : 'Current'}
                 </Badge>
               )}
               <Badge color="info" className="ml-1">
-                {Util.getFormattingDuration(minStartedAt, maxEndedAt)}
+                {Util.getFormattingDuration(minStartedAt, maxEndedAt, durationLocale || 'en')}
               </Badge>
             </span>
           </h4>
