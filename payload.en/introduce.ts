@@ -5,11 +5,11 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'I have been involved in a variety of projects, including research assignments, government agency system development, and backend development for web and mobile applications. I am dedicated to writing clean, maintainable code that anyone can easily understand. At the same time, I strive to build a robust, well-structured architecture that ensures system stability and minimizes potential bugs.',
-    'Programming is more than just a job for me. It’s my true calling. I find great fulfillment in solving complex problems and helping others through technology. This passion led me to start a development blog, where I document my learning experiences and share insights on a wide range of IT topics.',
-    'I firmly believe that effective communication is the key to successful collaboration. By engaging in proactive and open communication, I strive to become a better developer and a better person every day.',
+    'I primarily work with Java and Spring Boot. I have experience developing and operating production services in cloud environments using technologies such as Redis, Elasticsearch, and Spring Batch. Through these experiences, I have strengthened my skills in performance optimization and incident response. Recently, I have also been studying React and AI technologies with great interest.',
+    'I genuinely believe that programming is my true calling—a tool to solve diverse problems. I find immense satisfaction in helping others and delivering value through technology.',
+    'I believe that clear documentation is the foundation of successful collaboration. I record meeting notes, project specifications, schedules, and the rationale behind technical decisions in detail to minimize misunderstandings and communication overhead during the development process.',
   ],
-  sign: '13months',
+  sign: '',
   latestUpdated: lastestUpdatedAt,
 };
 
