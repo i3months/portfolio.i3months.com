@@ -37,7 +37,11 @@ function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
         return <CommonRows key={index.toString()} payload={serialize(item)} index={index} />;
       })}
       {payload.extraLinks && payload.extraLinks.length > 0 && (
-        <ExtraLinksRow extraLinks={payload.extraLinks} index={payload.list.length} />
+        <ExtraLinksRow
+          extraLinks={payload.extraLinks}
+          extraLinksTitle={payload.extraLinksTitle}
+          index={payload.list.length}
+        />
       )}
     </EmptyRowCol>
   );
@@ -45,14 +49,19 @@ function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
 
 function ExtraLinksRow({
   extraLinks,
+  extraLinksTitle,
   index,
-}: PropsWithChildren<{ extraLinks: IEtc.ExtraLink[]; index: number }>) {
+}: PropsWithChildren<{
+  extraLinks: IEtc.ExtraLink[];
+  extraLinksTitle?: string;
+  index: number;
+}>) {
   return (
     <div>
       {index > 0 ? <hr /> : ''}
       <Row>
         <Col sm={12} md={3} className="text-md-right">
-          <h4 style={Style.gray}>Extra Links</h4>
+          <h4 style={Style.gray}>{extraLinksTitle || 'Extra Links'}</h4>
         </Col>
         <Col sm={12} md={9}>
           <ul style={{ paddingLeft: '1.5rem', marginTop: 0 }}>

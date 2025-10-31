@@ -51,6 +51,8 @@ const etc: IEtc.Payload = {
       url: 'https://13months-web-shell.vercel.app',
     },
   ],
+
+  extraLinksTitle: '추가 링크',
 };
 
 export default etc;
