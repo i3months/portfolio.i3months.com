@@ -18,7 +18,7 @@
     "lint": "eslint \"component/**/*\" \"pages/**/*\" \"payload/**/*\" \"*.ts\" --fix",
     "typedoc": "typedoc --excludeExternals"
   },
-  "homepage": "https://13months.netlify.app/",
+  "homepage": "https://portfolio.i3months.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/i3months/resume-nextjs.git"
@@ -36,7 +36,7 @@
     {
       "name": "Joonmo Jeong",
       "email": "waysoleward01@naver.com",
-      "url": "https://13months.tistory.com"
+      "url": "https://blog.i3months.com"
     }
   ],
   "license": "MIT",

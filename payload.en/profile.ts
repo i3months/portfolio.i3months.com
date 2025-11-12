@@ -8,7 +8,7 @@ const profile: IProfile.Payload = {
   image: profileImage,
   name: {
     title: 'Joonmo Jeong',
-    small: '(13months)',
+    small: '(i3months)',
   },
   contact: [
     {
@@ -25,8 +25,8 @@ const profile: IProfile.Payload = {
       icon: faGithub,
     },
     {
-      title: '(Korean Blog) https://13months.tistory.com',
-      link: 'https://13months.tistory.com',
+      title: '(Korean Blog) https://blog.i3months.com',
+      link: 'https://blog.i3months.com',
       icon: faBloggerB,
     },
     {

@@ -47,8 +47,8 @@ const etc: IEtc.Payload = {
       url: 'https://codeforces.com/profile/shtnom31',
     },
     {
-      title: '13months-web-shell',
-      url: 'https://13months-web-shell.vercel.app',
+      title: 'i3months-web-shell',
+      url: 'https://shell.i3months.com',
     },
   ],
 
