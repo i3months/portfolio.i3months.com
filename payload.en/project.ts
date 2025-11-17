@@ -261,7 +261,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Visualized supercomputer usage statistics using D3.js and optimized queries (6.376s → 0.430s).',
+            'Visualized supercomputer usage statistics using D3.js and optimized queries (6376.21ms → 430.71ms).',
         },
         {
           content: 'Implemented a WebSocket-based broadcast feature for connected users.',

@@ -230,7 +230,7 @@ const project: IProject.Payload = {
           content: '회원 가입 시 이메일 인증 단계 추가 - 인증 코드 유효기간 설정 및 보안 처리',
         },
         {
-          content: 'd3.js 활용 슈퍼컴퓨터 사용량 통계 시각화 및 쿼리 튜닝 (6.376s -> 0.430s)',
+          content: 'd3.js 활용 슈퍼컴퓨터 사용량 통계 시각화 및 쿼리 튜닝 (6376.21ms → 430.71ms)',
         },
         {
           content: 'websocket 활용 접속한 사용자 대상 브로드캐스트 기능 구현',
