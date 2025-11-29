@@ -4,6 +4,44 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
+      title: 'Developed UniScope - A Platform for Nationwide University Information',
+      startedAt: '2025-08',
+      endedAt: '2025-11',
+      where: 'KakaoTechCampus (South Korea)',
+      descriptions: [
+        {
+          content: 'GitHub Repository',
+          href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
+          weight: 'SEMI_BOLD',
+        },
+        {
+          content:
+            'Documented UI components across the project using Storybook to enhance reusability and improve development speed and design consistency.',
+        },
+        {
+          content:
+            'Built an E2E testing environment using Playwright and automated actual browser-based UI flows and key business logic.',
+        },
+        {
+          content:
+            'Improved page structure and performance to achieve high scores across 4 Lighthouse metrics, and enhanced initial accessibility through meta tag-based SEO optimization.',
+        },
+        {
+          content:
+            'Applied Husky at the pre-commit stage to enforce linting rules and built a CI/CD pipeline based on GitHub Actions.',
+        },
+        {
+          content:
+            'Introduced Feature Sliced Design (FSD) architecture and established related team guidelines to ensure maintainability and scalability.',
+        },
+        {
+          content:
+            'Designed a deployment architecture integrating AWS and Vercel, and built a Blue/Green zero-downtime deployment environment using Nginx reverse proxy.',
+        },
+      ],
+      skillKeywords: ['TypeScript', 'React', 'Playwright', 'FSD', 'Storybook'],
+    },
+    {
       title: 'Developed features for the Chemical Information Platform Service',
       startedAt: '2025-01',
       endedAt: '2025-03',
