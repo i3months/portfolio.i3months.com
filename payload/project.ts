@@ -11,6 +11,11 @@ const project: IProject.Payload = {
       where: '카카오테크캠퍼스 (KakaoTechCampus)',
       descriptions: [
         {
+          content: 'GitHub Repository',
+          href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
+          weight: 'SEMI_BOLD',
+        },
+        {
           content:
             '프로젝트 전반의 UI 컴포넌트를 Storybook으로 문서화해 재사용성을 높이고 개발 속도와 디자인 일관성을 개선',
         },
