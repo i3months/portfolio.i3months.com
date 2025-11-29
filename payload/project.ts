@@ -5,6 +5,39 @@ const project: IProject.Payload = {
   title: '프로젝트 내역.',
   list: [
     {
+      title: '전국 대학 정보를 한 눈에 볼 수 있는 플랫폼 - UniScope 개발',
+      startedAt: '2025-08',
+      endedAt: '2025-11',
+      where: '카카오테크캠퍼스 (KakaoTechCampus)',
+      descriptions: [
+        {
+          content:
+            '프로젝트 전반의 UI 컴포넌트를 Storybook으로 문서화해 재사용성을 높이고 개발 속도와 디자인 일관성을 개선',
+        },
+        {
+          content:
+            'Playwright를 활용해 E2E 테스트 환경을 구축하고, 실제 브라우저 기반 UI 흐름 및 주요 비즈니스 로직을 자동화',
+        },
+        {
+          content:
+            'Lighthouse 4개 지표 고득점을 위해 페이지 구조와 성능을 개선하고, 메타 태그 기반 SEO 최적화로 초기 접근성 개선',
+        },
+        {
+          content:
+            'Pre-commit 단계에 Husky를 적용해 린트 규칙을 강제하고, GitHub Actions 기반의 CI/CD 파이프라인 구축',
+        },
+        {
+          content:
+            'Feature Sliced Design (FSD) 아키텍처를 도입하고 관련 팀 가이드라인을 수립하여 유지보수성과 확장성 확보',
+        },
+        {
+          content:
+            'AWS와 Vercel을 연동한 배포 아키텍처를 설계하고, Nginx 리버스 프록시를 활용한 Blue/Green 무중단 배포 환경 구축',
+        },
+      ],
+      skillKeywords: ['TypeScript', 'React', 'Playwright', 'FSD', 'Storybook'],
+    },
+    {
       title: '한국화학연구원 화학정보플랫폼 서비스 기능 개발',
       startedAt: '2025-01',
       endedAt: '2025-03',
