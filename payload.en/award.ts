@@ -5,6 +5,20 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'Chungnam National University Algorithm Competition – DevDay',
+      subTitle: '3× Bronze Prize / 1× Encouragement Prize',
+      at: '2025-11',
+      descriptions: [
+        {
+          content: 'University-wide algorithm competition held every spring and fall.',
+        },
+        {
+          content:
+            'Bronze Prize in November 2025, June 2025, and June 2022 / Encouragement Prize in November 2021.',
+        },
+      ],
+    },
+    {
       title: 'Chungnam National University Generative AI Challenge',
       subTitle: 'Encouragement Prize',
       at: '2025-09',
@@ -22,20 +36,6 @@ const presentation: IAward.Payload = {
       descriptions: [
         {
           content: 'Completed the 2nd stage with the highest score in the Frontend track.',
-        },
-      ],
-    },
-
-    {
-      title: 'Chungnam National University Algorithm Competition – DevDay',
-      subTitle: '2× Bronze Prize / 1× Encouragement Prize',
-      at: '2025-06',
-      descriptions: [
-        {
-          content: 'University-wide algorithm competition held every spring and fall.',
-        },
-        {
-          content: 'Bronze Prize in June 2025 and June 2022, Encouragement Prize in November 2021.',
         },
       ],
     },

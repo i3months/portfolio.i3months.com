@@ -6,6 +6,19 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: '충남대학교 알고리즘 경진대회 - DevDay',
+      subTitle: '동상 3회 / 장려상 1회',
+      at: '2025-11',
+      descriptions: [
+        {
+          content: '전교생 대상 매년 상반기와 하반기에 시행되는 교내 알고리즘 대회',
+        },
+        {
+          content: '2025.11 동상 / 2025.06 동상 / 2022.06 동상 / 2021.11 장려상',
+        },
+      ],
+    },
+    {
       title: '충남대학교 생성형 인공지능 챌린지',
       subTitle: '장려상 수상',
       at: '2025-09',
@@ -22,19 +35,6 @@ const presentation: IAward.Payload = {
       descriptions: [
         {
           content: 'Frontend 트랙에서 최우수 성적으로 2단계 수료',
-        },
-      ],
-    },
-    {
-      title: '충남대학교 알고리즘 경진대회 - DevDay',
-      subTitle: '동상 2회 / 장려상 1회',
-      at: '2025-06',
-      descriptions: [
-        {
-          content: '전교생 대상 매년 상반기와 하반기에 시행되는 교내 알고리즘 대회',
-        },
-        {
-          content: '2025.06 동상 / 2022.06 동상 / 2021.11 장려상',
         },
       ],
     },
