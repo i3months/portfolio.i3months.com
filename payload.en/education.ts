@@ -6,7 +6,7 @@ const education: IEducation.Payload = {
   list: [
     {
       title: 'Chungnam National University',
-      subTitle: 'Junior, Department of Computer Science and Engineering (GPA: 3.92 / 4.5)',
+      subTitle: 'Junior, Department of Computer Science and Engineering (GPA: 3.9 / 4.5)',
       startedAt: '2021-03',
       // endedAt: '2010-02',
     },
