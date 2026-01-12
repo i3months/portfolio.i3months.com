@@ -15,6 +15,10 @@ const project: IProject.Payload = {
           weight: 'SEMI_BOLD',
         },
         {
+          content: 'Kakao Tech Campus Final Presentation - UniScope Platform',
+          href: 'https://13months.tistory.com/768',
+        },
+        {
           content:
             'Documented UI components across the project using Storybook to enhance reusability and improve development speed and design consistency.',
         },

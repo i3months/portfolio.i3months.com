@@ -16,6 +16,10 @@ const project: IProject.Payload = {
           weight: 'SEMI_BOLD',
         },
         {
+          content: '카카오테크캠퍼스 최종 발표 - 전국 대학 정보 통합 플랫폼 UniScope',
+          href: 'https://13months.tistory.com/768',
+        },
+        {
           content:
             '프로젝트 전반의 UI 컴포넌트를 Storybook으로 문서화해 재사용성을 높이고 개발 속도와 디자인 일관성을 개선',
         },
