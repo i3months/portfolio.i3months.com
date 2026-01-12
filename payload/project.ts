@@ -179,8 +179,8 @@ const project: IProject.Payload = {
           weight: 'MEDIUM',
           descriptions: [
             {
-              content:
-                'pdfbox 활용 PDF 분할 알고리즘 개발 - 분할 시 입력한 PDF의 논리 페이지와 물리 페이지가 구분되도록 설정',
+              content: 'PDF 분할 시스템 개발 (PDFBox, PDF.js) - 논리/물리 페이지 구분 처리',
+              href: 'https://13months.tistory.com/680',
             },
             {
               content:

@@ -195,7 +195,8 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Developed a PDF splitting algorithm using PDFBox, ensuring differentiation between logical and physical pages in pdf.',
+                'Developed PDF splitting system (PDFBox, PDF.js) - Handled logical/physical page differentiation',
+              href: 'https://13months.tistory.com/680',
             },
             {
               content:
