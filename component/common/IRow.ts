@@ -39,6 +39,14 @@ export declare namespace IRow {
     weight?: FontWeightType;
 
     /**
+     * ### content 앞에 붙일 FontAwesome 아이콘
+     *
+     * @description FontAwesome 아이콘 이름 (예: 'github', 'link', 'star')
+     * @example preIcon: 'github'
+     */
+    preIcon?: string;
+
+    /**
      * ### 하이퍼링크 (overload)
      *
      * @description `undefiend` 가 아닐 경우 `content` 필드는 `<a href>` 가 된다.
