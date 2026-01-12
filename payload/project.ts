@@ -269,7 +269,10 @@ const project: IProject.Payload = {
           content: '드론 데이터 저장 배치 비즈니스 로직 개발',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'dfs 방식으로 디렉토리 탐색 및 이미지 메타데이터 저장' },
+            {
+              content: 'dfs 방식으로 디렉토리 탐색 및 이미지 메타데이터 저장',
+              href: 'https://13months.tistory.com/639',
+            },
             { content: '프로젝트 단위로 변화 감지, 변화가 있는 경우만 업데이트' },
             { content: 'AtomicBoolean 활용 한 번에 하나의 스케쥴러만 실행될 수 있도록 제한' },
             { content: 'CompletableFuture 활용 스케쥴러 작업 비동기 처리' },

@@ -296,7 +296,10 @@ const project: IProject.Payload = {
           content: 'Developed batch business logic for drone data storage.',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'Traversed directories using DFS and stored image metadata.' },
+            {
+              content: 'Traversed directories using DFS and stored image metadata.',
+              href: 'https://13months.tistory.com/639',
+            },
             { content: 'Detected changes at the project level and updated only modified data.' },
             { content: 'Used AtomicBoolean api to ensure only one scheduler runs at a time.' },
             { content: 'Handled scheduler tasks asynchronously with CompletableFuture api.' },
