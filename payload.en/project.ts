@@ -156,7 +156,10 @@ const project: IProject.Payload = {
                 'Customized Spring Security authentication exception handling - Implemented account lockout policy.',
               href: 'https://13months.tistory.com/671',
             },
-            { content: 'Resolved DataSource TLS compatibility issue with SQL Server 2005.' },
+            {
+              content: 'Resolved DataSource TLS compatibility issue with SQL Server 2005.',
+              href: 'https://13months.tistory.com/667',
+            },
             {
               content:
                 'Fixed incompatibility between the latest Spring Batch version and SQL Server 2005 sequences.',

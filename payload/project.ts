@@ -145,6 +145,7 @@ const project: IProject.Payload = {
             {
               content:
                 'DataSource 설정 - 특정 TLS 버전이 SQL SERVER 2005와 호환되지 않는 문제 해결',
+              href: 'https://13months.tistory.com/667',
             },
             {
               content:
