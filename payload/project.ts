@@ -78,6 +78,7 @@ const project: IProject.Payload = {
         },
         {
           content: '통합검색 부분 Elasticsearch 쿼리 및 기존 매핑 수정, 논문 정보 인덱스 재구성',
+          href: 'https://13months.tistory.com/769',
         },
         {
           content: '실행 계획 분석 및 재인덱싱, 고비용 쿼리 튜닝 (4481.926ms -> 1111.281ms)',
