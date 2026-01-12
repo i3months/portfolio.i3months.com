@@ -7,7 +7,7 @@ const etc: IEtc.Payload = {
   list: [
     {
       title: '서울대학교 차세대반도체 혁신융합대학 - 학부생 연구 인턴',
-      subTitle: 'Edge Computing 환경에서의 LLM 경량화 기법 연구 및 발표',
+      subTitle: 'Edge Computing 환경에서의 LLM 경량화 기법 연구',
       startedAt: '2025-11',
       endedAt: '2026-01',
       subTitleLinksPrefix: '스터디 및 세미나',
