@@ -60,11 +60,26 @@ export declare namespace IRow {
     postHref?: string;
 
     /**
+     * ### content 내 일부 텍스트에만 링크를 걸고 싶을 때
+     *
+     * @description content를 여러 부분으로 나누어 일부만 링크 처리
+     */
+    contentLinks?: ContentLink[];
+
+    /**
      * ### Depth 가 하나 더 들어가는 Description
      *
      * @description 여러 계층을 가지는 `<ul>` 태그 구현을 위해 Recursion 형태로 구현됨
      */
     descriptions?: Description[];
+  }
+
+  export interface ContentLink {
+    /** ### 링크 텍스트 */
+    text: string;
+
+    /** ### 링크 URL (선택사항) */
+    href?: string;
   }
 
   export type FontWeightType =

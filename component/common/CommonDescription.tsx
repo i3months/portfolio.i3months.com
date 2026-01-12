@@ -61,9 +61,22 @@ function DescriptionRecursion({
 }
 
 function Description({ description }: PropsWithChildren<{ description: IRow.Description }>) {
-  const { content, href, postImage, postHref, weight } = description;
+  const { content, href, postImage, postHref, weight, contentLinks } = description;
 
   const component = (() => {
+    // contentLinks가 있으면 content와 contentLinks를 조합해서 렌더링
+    if (contentLinks && contentLinks.length > 0) {
+      return (
+        <li style={getFontWeight(weight)}>
+          {content}
+          {contentLinks.map((link) => (
+            <span key={link.text}>
+              {link.href ? <HrefTargetBlank url={link.href} text={link.text} /> : link.text}
+            </span>
+          ))}
+        </li>
+      );
+    }
     if (href && postImage) {
       return (
         <li style={getFontWeight(weight)}>
