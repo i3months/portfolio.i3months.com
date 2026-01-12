@@ -6,6 +6,27 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: '서울대학교 차세대반도체 혁신융합대학 - 학부생 연구 인턴',
+      subTitle: 'Edge Computing 환경에서의 LLM 경량화 기법 연구 및 발표',
+      startedAt: '2025-11',
+      endedAt: '2026-01',
+      subTitleLinksPrefix: '스터디 및 세미나',
+      subTitleLinks: [
+        {
+          text: 'HOBBIT',
+          href: 'https://13months.tistory.com/795',
+        },
+        {
+          text: 'Fault Injection',
+          href: 'https://13months.tistory.com/802',
+        },
+        {
+          text: 'LoRA / RAG',
+          href: 'https://13months.tistory.com/802',
+        },
+      ],
+    },
+    {
       title: '카카오테크캠퍼스 3기 - Frontend',
       subTitle: '2단계 우수 쿠키즈 선정 (Top Performance Award)',
       startedAt: '2025-04',

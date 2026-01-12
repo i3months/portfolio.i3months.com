@@ -5,6 +5,29 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title:
+        'Seoul National University Next-Generation Semiconductor Innovation Convergence College Undergraduate Research Intern',
+      subTitle:
+        'Research and presentation on LLM compression techniques in edge computing environments',
+      startedAt: '2025-11',
+      endedAt: '2026-01',
+      subTitleLinksPrefix: 'Study and Seminar',
+      subTitleLinks: [
+        {
+          text: 'HOBBIT',
+          href: '',
+        },
+        {
+          text: 'Fault Injection',
+          href: '',
+        },
+        {
+          text: 'LoRA / RAG',
+          href: '',
+        },
+      ],
+    },
+    {
       title: 'KakaoTechCampus 3rd Cohort - Frontend',
       subTitle: 'Outstanding Kookies of Stage 2 (Top Performance Award)',
       startedAt: '2025-04',
