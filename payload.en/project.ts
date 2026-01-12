@@ -36,9 +36,18 @@ const project: IProject.Payload = {
             'Applied Husky at the pre-commit stage to enforce linting rules and built a CI/CD pipeline based on GitHub Actions.',
         },
         {
-          content:
-            'Introduced Feature Sliced Design (FSD) architecture and established related team guidelines to ensure maintainability and scalability.',
-          href: 'https://13months.tistory.com/781',
+          content: '',
+          contentLinks: [
+            {
+              text: 'Introduced Feature Sliced Design (FSD) architecture',
+              href: 'https://13months.tistory.com/739',
+            },
+            {
+              text:
+                ' and established related team guidelines to ensure maintainability and scalability',
+              href: 'https://13months.tistory.com/781',
+            },
+          ],
         },
         {
           content:

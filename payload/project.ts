@@ -37,9 +37,20 @@ const project: IProject.Payload = {
             'Pre-commit 단계에 Husky를 적용해 린트 규칙을 강제하고, GitHub Actions 기반의 CI/CD 파이프라인 구축',
         },
         {
-          content:
-            'Feature Sliced Design (FSD) 아키텍처를 도입하고 관련 팀 가이드라인을 수립하여 유지보수성과 확장성 확보',
-          href: 'https://13months.tistory.com/781',
+          content: '',
+          contentLinks: [
+            {
+              text: 'Feature Sliced Design (FSD) 아키텍처를 도입',
+              href: 'https://13months.tistory.com/739',
+            },
+            {
+              text: '하고 ',
+            },
+            {
+              text: '관련 팀 가이드라인을 수립하여 유지보수성과 확장성 확보',
+              href: 'https://13months.tistory.com/781',
+            },
+          ],
         },
         {
           content:
