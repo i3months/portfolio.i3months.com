@@ -57,7 +57,10 @@ const project: IProject.Payload = {
           content: 'TIBERO -> MariaDB 쿼리 튜닝 진행',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'WITH RECURSIVE, SORT_PATH 사용 계층 쿼리 구현 및 정렬' },
+            {
+              content: 'WITH RECURSIVE, SORT_PATH 사용 계층 쿼리 구현 및 정렬',
+              href: 'https://13months.tistory.com/688',
+            },
             { content: '고비용 통계 쿼리 리팩토링 및 성능 최적화 (873.231ms -> 214.245ms)' },
           ],
         },

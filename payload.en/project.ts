@@ -63,6 +63,7 @@ const project: IProject.Payload = {
             {
               content:
                 'Implemented hierarchical queries and sorting using WITH RECURSIVE and SORT_PATH.',
+              href: 'https://13months.tistory.com/688',
             },
             {
               content:
