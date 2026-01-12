@@ -34,6 +34,10 @@ const openSource: IOpenSource.Payload = {
           content: 'Github Stars: ',
           postImage: 'https://img.shields.io/github/stars/i3months/eziwiki.svg?style=popout',
         },
+        {
+          content: 'Code Quality: ',
+          postImage: 'https://app.codacy.com/project/badge/Grade/52948e0fb28648bba1c3ab8f4a3919f9',
+        },
       ],
     },
   ],
