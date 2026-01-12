@@ -28,6 +28,7 @@ const project: IProject.Payload = {
         {
           content:
             'Built an E2E testing environment using Playwright and automated actual browser-based UI flows and key business logic.',
+          href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE/wiki/e2e-Test',
         },
         {
           content:
