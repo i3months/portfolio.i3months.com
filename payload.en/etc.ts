@@ -6,7 +6,7 @@ const etc: IEtc.Payload = {
   list: [
     {
       title:
-        'Seoul National University Next-Generation Semiconductor Innovation Convergence College Undergraduate Research Intern',
+        'Seoul National University Next-Generation Semiconductor Innovation Convergence College - Undergraduate Research Intern',
       subTitle:
         'Research and presentation on LLM compression techniques in edge computing environments',
       startedAt: '2025-11',
@@ -15,15 +15,15 @@ const etc: IEtc.Payload = {
       subTitleLinks: [
         {
           text: 'HOBBIT',
-          href: '',
+          href: 'https://13months.tistory.com/795',
         },
         {
           text: 'Fault Injection',
-          href: '',
+          href: 'https://13months.tistory.com/802',
         },
         {
           text: 'LoRA / RAG',
-          href: '',
+          href: 'https://13months.tistory.com/802',
         },
       ],
     },
