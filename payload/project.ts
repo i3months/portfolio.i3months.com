@@ -14,6 +14,7 @@ const project: IProject.Payload = {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
           weight: 'SEMI_BOLD',
+          preIcon: 'github',
         },
         {
           content: '카카오테크캠퍼스 최종 발표 - 전국 대학 정보 통합 플랫폼 UniScope',

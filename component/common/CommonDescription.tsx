@@ -1,7 +1,29 @@
 import { CSSProperties, PropsWithChildren } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLink,
+  faStar,
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 import { HrefTargetBlank } from '.';
 import { IRow } from './IRow';
+
+// 아이콘 매핑
+const iconMap: Record<string, IconDefinition> = {
+  github: faGithub,
+  linkedin: faLinkedin,
+  twitter: faTwitter,
+  link: faLink,
+  star: faStar,
+  envelope: faEnvelope,
+  phone: faPhone,
+  'map-marker': faMapMarkerAlt,
+};
 
 /** Description Recusion Generator */
 export function CommonDescription({
@@ -61,13 +83,24 @@ function DescriptionRecursion({
 }
 
 function Description({ description }: PropsWithChildren<{ description: IRow.Description }>) {
-  const { content, href, postImage, postHref, weight, contentLinks } = description;
+  const { content, href, postImage, postHref, weight, contentLinks, preIcon } = description;
+
+  // preIcon 렌더링 헬퍼
+  const renderIcon = () => {
+    if (!preIcon || !iconMap[preIcon]) return null;
+    return (
+      <>
+        <FontAwesomeIcon icon={iconMap[preIcon]} style={{ marginRight: '8px' }} />
+      </>
+    );
+  };
 
   const component = (() => {
     // contentLinks가 있으면 content와 contentLinks를 조합해서 렌더링
     if (contentLinks && contentLinks.length > 0) {
       return (
         <li style={getFontWeight(weight)}>
+          {renderIcon()}
           {content}
           {contentLinks.map((link) => (
             <span key={link.text}>
@@ -80,6 +113,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (href && postImage) {
       return (
         <li style={getFontWeight(weight)}>
+          {renderIcon()}
           <HrefTargetBlank url={href} text={content} /> <img src={postImage} alt={postImage} />
         </li>
       );
@@ -87,6 +121,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (href) {
       return (
         <li style={getFontWeight(weight)}>
+          {renderIcon()}
           <HrefTargetBlank url={href} text={content} />
         </li>
       );
@@ -94,6 +129,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (postHref && postImage) {
       return (
         <li style={getFontWeight(weight)}>
+          {renderIcon()}
           {content} <HrefTargetBlank url={postHref} text={postHref} />{' '}
           <img src={postImage} alt={postImage} />
         </li>
@@ -102,6 +138,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (postHref) {
       return (
         <li style={getFontWeight(weight)}>
+          {renderIcon()}
           {content} <HrefTargetBlank url={postHref} text={postHref} />
         </li>
       );
@@ -109,6 +146,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (postImage) {
       return (
         <li style={getFontWeight(weight)}>
+          {renderIcon()}
           {content} <img src={postImage} alt={postImage} />
         </li>
       );
@@ -116,7 +154,10 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     return (
       <>
         <meta name="format-detection" content="telephone=no" />
-        <li style={getFontWeight(weight)}>{content}</li>
+        <li style={getFontWeight(weight)}>
+          {renderIcon()}
+          {content}
+        </li>
       </>
     );
   })();

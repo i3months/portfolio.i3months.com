@@ -13,6 +13,7 @@ const project: IProject.Payload = {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
           weight: 'SEMI_BOLD',
+          preIcon: 'github',
         },
         {
           content: 'Kakao Tech Campus Final Presentation - UniScope Platform',
