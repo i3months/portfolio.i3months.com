@@ -81,6 +81,7 @@ const project: IProject.Payload = {
         },
         {
           content: '실행 계획 분석 및 재인덱싱, 고비용 쿼리 튜닝 (4481.926ms -> 1111.281ms)',
+          href: 'https://13months.tistory.com/779',
         },
         {
           content:

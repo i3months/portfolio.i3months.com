@@ -94,6 +94,7 @@ const project: IProject.Payload = {
         {
           content:
             'Analyzed execution plans, reindexed data, and optimized high-cost queries (4481.926ms → 1111.281ms).',
+          href: 'https://13months.tistory.com/779',
         },
         {
           content:
