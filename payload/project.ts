@@ -156,8 +156,13 @@ const project: IProject.Payload = {
               ],
             },
             {
-              content:
-                'Windows Server기반 Tomcat 구축 및 서비스 운영 - 네트워크 드라이브 관련 권한 문제 해결 (심볼릭 링크)',
+              content: 'Windows Server기반 Tomcat 구축 및 서비스 운영 - ',
+              contentLinks: [
+                {
+                  text: '네트워크 드라이브 관련 권한 문제 해결 (심볼릭 링크)',
+                  href: 'https://13months.tistory.com/682',
+                },
+              ],
             },
             { content: 'Tomcat JVM 메모리 풀 크기 조정 및 운영서버, 개발서버 이중화' },
             { content: '모의 해킹 처리 - XSS, CSRF, 민감한 정보 마스킹 등 보안 관련 처리' },

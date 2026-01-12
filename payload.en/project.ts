@@ -166,8 +166,13 @@ const project: IProject.Payload = {
               ],
             },
             {
-              content:
-                'Deployed and managed Tomcat on Windows Server, resolved symbolic link-related network drive permission issues.',
+              content: 'Deployed and managed Tomcat on Windows Server, ',
+              contentLinks: [
+                {
+                  text: 'resolved symbolic link-related network drive permission issues',
+                  href: 'https://13months.tistory.com/682',
+                },
+              ],
             },
             {
               content:
