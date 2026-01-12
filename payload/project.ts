@@ -145,6 +145,7 @@ const project: IProject.Payload = {
             {
               content:
                 'Spring Batch 최신 버전이 SQL SERVER 2005의 시퀀스와 호환되지 않는 문제 해결',
+              href: 'https://13months.tistory.com/679',
             },
             {
               content: '인증서 및 도메인 구축, ',

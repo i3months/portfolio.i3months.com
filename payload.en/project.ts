@@ -155,6 +155,7 @@ const project: IProject.Payload = {
             {
               content:
                 'Fixed incompatibility between the latest Spring Batch version and SQL Server 2005 sequences.',
+              href: 'https://13months.tistory.com/679',
             },
             {
               content: 'Established certificates and domains, ',
