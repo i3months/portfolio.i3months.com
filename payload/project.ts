@@ -149,7 +149,12 @@ const project: IProject.Payload = {
             },
             { content: 'Tomcat JVM 메모리 풀 크기 조정 및 운영서버, 개발서버 이중화' },
             { content: '모의 해킹 처리 - XSS, CSRF, 민감한 정보 마스킹 등 보안 관련 처리' },
-            { content: 'SQL SERVER의 LINKED SERVER 활용 서로 다른 위치에 있는 프로시저 원격 호출' },
+
+            {
+              content:
+                'SQL SERVER의 Linked Server 원격 쿼리 성능 개선 - OPENQUERY 기반 실행 최적화',
+              href: 'https://13months.tistory.com/779',
+            },
           ],
         },
         {

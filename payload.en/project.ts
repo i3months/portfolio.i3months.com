@@ -168,7 +168,8 @@ const project: IProject.Payload = {
             },
             {
               content:
-                "Utilized SQL Server's Linked Server to remotely call stored procedures from different locations.",
+                'Analyzed and optimized SQL Server Linked Server RPC overhead using OPENQUERY.',
+              href: 'https://13months.tistory.com/779',
             },
           ],
         },
