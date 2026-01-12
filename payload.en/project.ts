@@ -99,6 +99,11 @@ const project: IProject.Payload = {
         },
         {
           content:
+            'Managed encrypted view schemas and handled encryption/decryption of sensitive information.',
+          href: 'https://13months.tistory.com/780',
+        },
+        {
+          content:
             'Maintained DBpia service operations – Fixed Excel download bugs, managed the PDF download server, and handled long-term inactive users.',
         },
       ],

@@ -85,6 +85,10 @@ const project: IProject.Payload = {
           href: 'https://13months.tistory.com/779',
         },
         {
+          content: '암호화된 View 스키마 관리 및 민감 정보 암·복호화 처리',
+          href: 'https://13months.tistory.com/689',
+        },
+        {
           content:
             'DBpia 서비스 운영 지원 - 엑셀 다운로드 버그 수정, PDF 다운로드 서버 관리, 장기 미접속자 처리',
         },
