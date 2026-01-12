@@ -57,6 +57,8 @@ const project: IProject.Payload = {
         {
           content:
             'AWS와 Vercel을 연동한 배포 아키텍처를 설계하고, Nginx 리버스 프록시를 활용한 Blue/Green 무중단 배포 환경 구축',
+          href:
+            'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE/wiki/Overall-System-Architecture',
         },
       ],
       skillKeywords: ['TypeScript', 'React', 'Playwright', 'FSD', 'Storybook'],

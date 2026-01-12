@@ -54,6 +54,8 @@ const project: IProject.Payload = {
         {
           content:
             'Designed a deployment architecture integrating AWS and Vercel, and built a Blue/Green zero-downtime deployment environment using Nginx reverse proxy.',
+          href:
+            'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE/wiki/Overall-System-Architecture',
         },
       ],
       skillKeywords: ['TypeScript', 'React', 'Playwright', 'FSD', 'Storybook'],
