@@ -13,6 +13,7 @@ export function EmptyRowCol<T = {}>({ children }: PropsWithChildren<T>) {
 const StyledLink = styled.a`
   color: inherit;
   text-decoration: underline;
+  font-weight: normal;
   transition: all 0.2s ease-in-out;
 
   &:hover {
