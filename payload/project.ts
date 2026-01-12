@@ -23,6 +23,8 @@ const project: IProject.Payload = {
         {
           content:
             '프로젝트 전반의 UI 컴포넌트를 Storybook으로 문서화해 재사용성을 높이고 개발 속도와 디자인 일관성을 개선',
+          href:
+            'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE/wiki/Storybook-%EA%B8%B0%EB%B0%98-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%AC%B8%EC%84%9C%ED%99%94',
         },
         {
           content:

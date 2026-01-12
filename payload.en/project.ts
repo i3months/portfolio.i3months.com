@@ -22,6 +22,8 @@ const project: IProject.Payload = {
         {
           content:
             'Documented UI components across the project using Storybook to enhance reusability and improve development speed and design consistency.',
+          href:
+            'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE/wiki/Storybook-%EA%B8%B0%EB%B0%98-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%AC%B8%EC%84%9C%ED%99%94',
         },
         {
           content:
