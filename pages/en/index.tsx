@@ -11,6 +11,7 @@ import { Award } from '../../component/award';
 import { Profile } from '../../component/profile';
 import { Project } from '../../component/project';
 import { Skill } from '../../component/skill';
+import { OpenSource } from '../../component/openSource';
 import { Style } from '../../component/common/Style';
 import Payload from '../../payload.en';
 import { Article } from '../../component/article';
@@ -28,13 +29,13 @@ function ResumeEN() {
         <Introduce.Component payload={Payload.introduce} />
         <Experience.Component payload={Payload.experience} />
         <Project.Component payload={Payload.project} />
+        <OpenSource.Component payload={Payload.openSource} />
         <Skill.Component payload={Payload.skill} />
         <Award.Component payload={Payload.award} />
         <Education.Component payload={Payload.education} />
         <Etc.Component payload={Payload.etc} />
         <Article.Component payload={Payload.article} />
 
-        {/* <OpenSource.Component payload={Payload.openSource} /> */}
         {/* <Presentation.Component payload={Payload.presentation} /> */}
         {/* <Footer.Component payload={Payload.footer} /> */}
       </Container>

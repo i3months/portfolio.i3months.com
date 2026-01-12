@@ -4,67 +4,35 @@ const openSource: IOpenSource.Payload = {
   disable: false,
   list: [
     {
-      title: 'Linux Kernal',
+      title: 'eziwiki',
       descriptions: [
         {
-          content: 'Regular contributor to kernel patches.',
+          content: 'A modern, lightweight wiki and documentation site generator built with Next.js',
+          href: 'https://13months.tistory.com/778',
         },
         {
-          content: 'Active member of kernel security audit team.',
-        },
-      ],
-    },
-    {
-      title: 'GNOME',
-      descriptions: [
-        {
-          content: 'Contributor to UX improvements for system utilities.',
+          content: 'Markdown-based content creation with customizable navigation',
         },
         {
-          content: 'https://github.com/GNOME',
-          href: 'https://github.com/GNOME',
+          content: 'Hash-based URLs for privacy protection and static site deployment support',
         },
-      ],
-    },
-    {
-      title: 'node',
-      descriptions: [
-        { content: 'Node.js JavaScript runtime' },
-        { content: 'Contributor' },
         {
-          content: 'https://github.com/nodejs/node',
-          href: 'https://github.com/nodejs/node',
+          content: 'Owner & Maintainer',
+        },
+        {
+          content: 'Next.js with TypeScript',
+        },
+        {
+          content: 'https://github.com/i3months/eziwiki',
+          href: 'https://github.com/i3months/eziwiki',
+        },
+        {
+          content: 'https://eziwiki.vercel.app/',
+          href: 'https://eziwiki.vercel.app/',
         },
         {
           content: 'Github Stars: ',
-          postImage: 'https://img.shields.io/github/stars/nodejs/node.svg?style=popout',
-        },
-      ],
-    },
-    {
-      title: 'NestJS',
-      descriptions: [
-        {
-          content: 'A progressive Node.js framework',
-        },
-        {
-          content:
-            'for building efficient, scalable, and enterprise-grade server-side applications',
-        },
-        {
-          content: 'Contributor',
-        },
-        {
-          content: 'https://github.com/nestjs/nest',
-          href: 'https://github.com/nestjs/nest',
-        },
-        {
-          content: 'Monthly Download: ',
-          postImage: 'https://img.shields.io/npm/dm/@nestjs/core.svg',
-        },
-        {
-          content: 'Github Stars: ',
-          postImage: 'https://img.shields.io/github/stars/nestjs/nest.svg?style=popout',
+          postImage: 'https://img.shields.io/github/stars/i3months/eziwiki.svg?style=popout',
         },
       ],
     },
