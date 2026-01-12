@@ -147,8 +147,13 @@ const project: IProject.Payload = {
                 'Spring Batch 최신 버전이 SQL SERVER 2005의 시퀀스와 호환되지 않는 문제 해결',
             },
             {
-              content:
-                '인증서 및 도메인 구축, NGINX 활용 리버스 프록시 기반 개발 서버 및 운영 서버 라우팅',
+              content: '인증서 및 도메인 구축, ',
+              contentLinks: [
+                {
+                  text: 'NGINX 활용 리버스 프록시 기반 개발 서버 및 운영 서버 라우팅',
+                  href: 'https://13months.tistory.com/681',
+                },
+              ],
             },
             {
               content:

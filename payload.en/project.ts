@@ -157,8 +157,13 @@ const project: IProject.Payload = {
                 'Fixed incompatibility between the latest Spring Batch version and SQL Server 2005 sequences.',
             },
             {
-              content:
-                'Established certificates and domains, set up reverse proxy routing for development and production servers using NGINX.',
+              content: 'Established certificates and domains, ',
+              contentLinks: [
+                {
+                  text: 'NGINX-based reverse proxy routing for development and production servers',
+                  href: 'https://13months.tistory.com/681',
+                },
+              ],
             },
             {
               content:
