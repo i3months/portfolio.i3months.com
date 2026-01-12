@@ -1,4 +1,5 @@
 import { ICommon } from '../common/ICommon';
+import { IRow } from '../common/IRow';
 
 export declare namespace IEtc {
   /**
@@ -55,6 +56,35 @@ export declare namespace IEtc {
      * @example '2015-03'
      */
     endedAt?: string;
+
+    /**
+     * ### 기타 항목 설명 (선택사항)
+     *
+     * @description 링크를 포함한 상세 설명을 추가할 수 있습니다.
+     */
+    descriptions?: IRow.Description[];
+
+    /**
+     * ### 서브타이틀 링크 항목들 (선택사항)
+     *
+     * @description subTitle에 표시될 링크 가능한 항목들 (예: 발표 제목들)
+     */
+    subTitleLinks?: SubTitleLink[];
+
+    /**
+     * ### 서브타이틀 링크 앞에 표시될 텍스트 (선택사항)
+     *
+     * @description subTitleLinks 앞에 표시될 텍스트 (예: "스터디 및 세미나")
+     */
+    subTitleLinksPrefix?: string;
+  }
+
+  export interface SubTitleLink {
+    /** ### 링크 텍스트 */
+    text: string;
+
+    /** ### 링크 URL (선택사항) */
+    href?: string;
   }
 
   export interface ExtraLink {
