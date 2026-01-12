@@ -37,6 +37,7 @@ const project: IProject.Payload = {
         {
           content:
             'Introduced Feature Sliced Design (FSD) architecture and established related team guidelines to ensure maintainability and scalability.',
+          href: 'https://13months.tistory.com/781',
         },
         {
           content:
