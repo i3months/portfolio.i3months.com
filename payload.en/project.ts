@@ -151,6 +151,11 @@ const project: IProject.Payload = {
               content:
                 'Configured Spring Security with custom filters and authenticators, implemented LDAP-based login.',
             },
+            {
+              content:
+                'Customized Spring Security authentication exception handling - Implemented account lockout policy.',
+              href: 'https://13months.tistory.com/671',
+            },
             { content: 'Resolved DataSource TLS compatibility issue with SQL Server 2005.' },
             {
               content:

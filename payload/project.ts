@@ -139,6 +139,10 @@ const project: IProject.Payload = {
                 'Custom Filter, Authenticator 등 스프링 시큐리티 설정 및 LDAP 기반 AD 계정 로그인 환경 구축',
             },
             {
+              content: 'Spring Security 인증 예외 처리 커스터마이징 - 계정 잠금 정책 구현',
+              href: 'https://13months.tistory.com/671',
+            },
+            {
               content:
                 'DataSource 설정 - 특정 TLS 버전이 SQL SERVER 2005와 호환되지 않는 문제 해결',
             },
