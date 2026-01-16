@@ -31,9 +31,11 @@ module.exports = {
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-explicit-any': 0,
     'import/prefer-default-export': 0,
     'import/extensions': 0,
     'react/react-in-jsx-scope': 0,
+    'react/no-array-index-key': 0,
     quotes: [
       2,
       'single',

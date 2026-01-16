@@ -122,7 +122,6 @@ function serialize(item: Item): IRow.Payload {
       title: item.title,
       subTitle: subTitleElement ? (subTitleElement as any) : item.subTitle,
       descriptions: item.descriptions,
-      skillKeywords: item.skillKeywords,
     },
   };
 }
