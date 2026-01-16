@@ -34,7 +34,13 @@ function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
     <EmptyRowCol>
       {payload.list.map((item, index) => {
-        return <CommonRows key={index.toString()} payload={serialize(item)} index={index} />;
+        return (
+          <CommonRows
+            key={`etc-item-${item.title}-${item.startedAt}`}
+            payload={serialize(item)}
+            index={index}
+          />
+        );
       })}
       {payload.extraLinks && payload.extraLinks.length > 0 && (
         <ExtraLinksRow
@@ -65,8 +71,8 @@ function ExtraLinksRow({
         </Col>
         <Col sm={12} md={9}>
           <ul style={{ paddingLeft: '1.5rem', marginTop: 0 }}>
-            {extraLinks.map((link, linkIndex) => (
-              <li key={linkIndex.toString()} style={{ marginBottom: '0.5rem' }}>
+            {extraLinks.map((link) => (
+              <li key={`extra-link-${link.url}`} style={{ marginBottom: '0.5rem' }}>
                 <HrefTargetBlank url={link.url} text={link.title} />
               </li>
             ))}
@@ -92,15 +98,15 @@ function serialize(item: Item): IRow.Payload {
     return startedAt;
   })();
 
-  // subTitleLinks가 있으면 subTitle 아래에 링크들을 표시
+  // subTitleLinks가 있으면 subTitle 대신 Left의 subTitle에 JSX.Element로 표시
   const subTitleElement = item.subTitleLinks ? (
     <div>
       {item.subTitle && <div>{item.subTitle}</div>}
       <div>
         {item.subTitleLinksPrefix && <span>{item.subTitleLinksPrefix} · </span>}
-        {item.subTitleLinks.map((link, index) => (
-          <span key={index}>
-            {index > 0 && ' · '}
+        {item.subTitleLinks.map((link) => (
+          <span key={`subtitle-link-${link.text}-${link.href || 'no-href'}`}>
+            {item.subTitleLinks && item.subTitleLinks.indexOf(link) > 0 && ' · '}
             {link.href ? (
               <HrefTargetBlank url={link.href} text={link.text} />
             ) : (
@@ -117,12 +123,12 @@ function serialize(item: Item): IRow.Payload {
   return {
     left: {
       title,
+      subTitle: subTitleElement,
     },
     right: {
       title: item.title,
-      subTitle: subTitleElement ? (subTitleElement as any) : item.subTitle,
+      subTitle: subTitleElement ? undefined : item.subTitle,
       descriptions: item.descriptions,
-      skillKeywords: item.skillKeywords,
     },
   };
 }
