@@ -25,6 +25,7 @@ const openSource: IOpenSource.Payload = {
         {
           content: 'https://github.com/i3months/eziwiki',
           href: 'https://github.com/i3months/eziwiki',
+          preIcon: 'github',
         },
         {
           content: 'https://eziwiki.vercel.app/',
