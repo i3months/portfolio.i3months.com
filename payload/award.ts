@@ -6,6 +6,17 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'ABC 부트캠프: Data-Driven 과정',
+      subTitle: '우수상 (SW중심대학사업단장상) 수상',
+      at: '2026-01',
+      descriptions: [
+        {
+          content:
+            'React와 FastAPI를 사용해 소모임 기반 생존형 커뮤니티 빌딩 플랫폼 "D-Village" 개발',
+        },
+      ],
+    },
+    {
       title: '충남대학교 알고리즘 경진대회 - DevDay',
       subTitle: '동상 3회 / 장려상 1회',
       at: '2025-11',

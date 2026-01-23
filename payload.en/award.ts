@@ -5,6 +5,17 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'ABC Bootcamp: Data-Driven Course',
+      subTitle: "Excellence Prize (SW-Centered University Project Director's Award)",
+      at: '2026-01',
+      descriptions: [
+        {
+          content:
+            'Developed "D-Village" a survival-based community building platform for small groups using React and FastAPI.',
+        },
+      ],
+    },
+    {
       title: 'Chungnam National University Algorithm Competition – DevDay',
       subTitle: '3× Bronze Prize / 1× Encouragement Prize',
       at: '2025-11',
@@ -51,7 +62,7 @@ const presentation: IAward.Payload = {
     },
     {
       title: 'K-Digital Challenge: 2023 MyData Idea Competition',
-      subTitle: 'Excellence Prize (Korea Data Agency President’s Award)',
+      subTitle: "Excellence Prize (Korea Data Agency President's Award)",
       at: '2023-08',
       descriptions: [
         {
