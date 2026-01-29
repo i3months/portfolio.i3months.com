@@ -4,6 +4,27 @@ const openSource: IOpenSource.Payload = {
   disable: false,
   list: [
     {
+      title: 'awesome-static-generators',
+      descriptions: [
+        {
+          content: 'Added eziwiki to the Awesome Static Generators list',
+        },
+        {
+          content: 'Contributor',
+        },
+        {
+          content: 'https://github.com/myles/awesome-static-generators/pull/221',
+          href: 'https://github.com/myles/awesome-static-generators/pull/221',
+          preIcon: 'github',
+        },
+        {
+          content: 'Github Stars: ',
+          postImage:
+            'https://img.shields.io/github/stars/myles/awesome-static-generators.svg?style=popout',
+        },
+      ],
+    },
+    {
       title: 'eziwiki',
       descriptions: [
         {
