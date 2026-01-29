@@ -8,7 +8,7 @@ const openSource: IOpenSource.Payload = {
       title: 'awesome-static-generators',
       descriptions: [
         {
-          content: 'eziwiki를 Awesome Static Generators 목록에 포함',
+          content: 'Awesome Static Generators 목록에 eziwiki 등록',
         },
         {
           content: 'Contributor',
