@@ -39,8 +39,13 @@ const etc: IEtc.Payload = {
     },
     {
       title: '충남대학교 2025 SW-IT Contest 운영진',
-      subTitle: '프로그래밍 대회 알고리즘 문제 출제·검수 및 운영 지원',
+      subTitle: ' 알고리즘 대회 문제 출제·검수 및 운영 지원',
       startedAt: '2025-09',
+      subTitleInlineLink: {
+        text: 'SW-IT Contest',
+        href: 'https://www.acmicpc.net/category/detail/4575',
+        position: 'before',
+      },
     },
     {
       title: '제43회 데이터분석 준전문가 (ADsP)',

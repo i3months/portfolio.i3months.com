@@ -40,8 +40,13 @@ const etc: IEtc.Payload = {
     },
     {
       title: 'Chungnam National University 2025 SW-IT Contest Organizer',
-      subTitle: 'Designed and reviewed algorithmic problems, supported contest operations',
+      subTitle: ' algorithmic contest problem design, review, and operations support',
       startedAt: '2025-09',
+      subTitleInlineLink: {
+        text: 'SW-IT Contest',
+        href: 'https://www.acmicpc.net/category/detail/4575',
+        position: 'before',
+      },
     },
     {
       title: '43rd Advanced Data Analytics Semi-Professional (ADsP)',

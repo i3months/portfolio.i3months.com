@@ -65,6 +65,15 @@ export declare namespace IEtc {
     descriptions?: IRow.Description[];
 
     /**
+     * ### 서브타이틀 인라인 링크 (선택사항)
+     */
+    subTitleInlineLink?: {
+      text: string;
+      href: string;
+      position?: 'before' | 'after';
+    };
+
+    /**
      * ### 서브타이틀 링크 항목들 (선택사항)
      *
      * @description subTitle에 표시될 링크 가능한 항목들 (예: 발표 제목들)

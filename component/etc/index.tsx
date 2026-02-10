@@ -92,27 +92,48 @@ function serialize(item: Item): IRow.Payload {
     return startedAt;
   })();
 
-  // subTitleLinks가 있으면 subTitle 아래에 링크들을 표시
-  const subTitleElement = item.subTitleLinks ? (
-    <div>
-      {item.subTitle && <div>{item.subTitle}</div>}
-      <div>
-        {item.subTitleLinksPrefix && <span>{item.subTitleLinksPrefix} · </span>}
-        {item.subTitleLinks.map((link, index) => (
-          <span key={index}>
-            {index > 0 && ' · '}
-            {link.href ? (
-              <HrefTargetBlank url={link.href} text={link.text} />
-            ) : (
-              <span>{link.text}</span>
-            )}
+  const subTitleElement = (() => {
+    if (item.subTitleInlineLink) {
+      const { text, href, position = 'before' } = item.subTitleInlineLink;
+      const link = <HrefTargetBlank url={href} text={text} />;
+
+      if (position === 'before') {
+        return (
+          <span>
+            {link} {item.subTitle}
           </span>
-        ))}
-      </div>
-    </div>
-  ) : (
-    undefined
-  );
+        );
+      }
+      return (
+        <span>
+          {item.subTitle} {link}
+        </span>
+      );
+    }
+
+    if (item.subTitleLinks) {
+      return (
+        <div>
+          {item.subTitle && <div>{item.subTitle}</div>}
+          <div>
+            {item.subTitleLinksPrefix && <span>{item.subTitleLinksPrefix} · </span>}
+            {item.subTitleLinks.map((link, index) => (
+              <span key={index}>
+                {index > 0 && ' · '}
+                {link.href ? (
+                  <HrefTargetBlank url={link.href} text={link.text} />
+                ) : (
+                  <span>{link.text}</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    return undefined;
+  })();
 
   return {
     left: {
