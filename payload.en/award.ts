@@ -42,7 +42,7 @@ const presentation: IAward.Payload = {
     },
     {
       title: 'Kakao Tech Campus 2nd Stage Outstanding Cookies Selection',
-      subTitle: 'Top Performance Award(FE)',
+      subTitle: 'Top Performance Award(FE) (1st out of 66)',
       at: '2025-08',
       descriptions: [
         {

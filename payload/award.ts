@@ -41,7 +41,7 @@ const presentation: IAward.Payload = {
     },
     {
       title: '카카오테크캠퍼스 2단계 우수 쿠키즈 선정',
-      subTitle: 'Top Performance Award(FE) 수상',
+      subTitle: 'Top Performance Award(FE) 수상 (66명 중 1등)',
       at: '2025-08',
       descriptions: [
         {

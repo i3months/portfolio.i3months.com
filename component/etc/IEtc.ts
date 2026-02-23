@@ -29,7 +29,7 @@ export declare namespace IEtc {
      * ### 추가 링크 섹션 제목
      *
      * @description Extra Links 섹션의 제목 (예: "Extra Links", "추가 링크")
-     * @default "Extra Links"
+     * @default "Extra카테캠 수상내역에서 내가 66 Links"
      */
     extraLinksTitle?: string;
   }
