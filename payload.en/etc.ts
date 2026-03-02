@@ -5,6 +5,18 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: 'University of Nevada, Las Vegas (UNLV) - Visiting Scholar',
+      subTitle: 'Howard R. Hughes College of Engineering - Embedded AI Workshops',
+      startedAt: '2026-02',
+      endedAt: '2026-03',
+      subTitleLinksPrefix: 'Research Paper',
+      subTitleLinks: [
+        {
+          text: 'Hammering-Precursor Monitoring for Embedded Systems under OOD Stress',
+        },
+      ],
+    },
+    {
       title:
         'Seoul National University Next-Generation Semiconductor Innovation Convergence College - Undergraduate Research Intern',
       subTitle: 'Research on LLM compression techniques in edge computing environments',
