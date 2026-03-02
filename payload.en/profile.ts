@@ -12,8 +12,8 @@ const profile: IProfile.Payload = {
   },
   contact: [
     {
-      title: 'jeongjoonmo.dev@gmail.com',
-      link: 'mailto:jeongjoonmo.dev@gmail.com',
+      title: 'j3ong.joonmo@gmail.com',
+      link: 'mailto:j3ong.joonmo@gmail.com',
       icon: faEnvelope,
     },
     {
