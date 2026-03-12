@@ -64,6 +64,7 @@ const etc: IEtc.Payload = {
       title: 'TOEIC Speaking',
       subTitle: 'Intermediate High (Speaking Score 150)',
       startedAt: '2026-03',
+      endedAt: '2028-03',
     },
     {
       title: '43rd Advanced Data Analytics Semi-Professional (ADsP)',
