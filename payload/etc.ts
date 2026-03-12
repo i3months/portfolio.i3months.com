@@ -60,6 +60,11 @@ const etc: IEtc.Payload = {
       },
     },
     {
+      title: 'TOEIC Speaking',
+      subTitle: 'Intermediate High (Speaking Score 150)',
+      startedAt: '2026-03',
+    },
+    {
       title: '제43회 데이터분석 준전문가 (ADsP)',
       subTitle: 'Advanced Data Analytics Semi-Professional',
       startedAt: '2024-11',
