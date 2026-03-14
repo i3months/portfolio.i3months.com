@@ -4,6 +4,7 @@ import { Container } from 'reactstrap';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import { Education } from '../component/education';
+import { License } from '../component/license';
 import { Etc } from '../component/etc';
 import { Experience } from '../component/experience';
 import { Introduce } from '../component/introduce';
@@ -33,6 +34,7 @@ function Resume() {
         <Skill.Component payload={Payload.skill} />
         <Award.Component payload={Payload.award} />
         <Education.Component payload={Payload.education} />
+        <License.Component payload={Payload.license} />
         <Etc.Component payload={Payload.etc} />
         <Article.Component payload={Payload.article} />
 
