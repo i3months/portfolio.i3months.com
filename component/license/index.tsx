@@ -22,7 +22,7 @@ export const License = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <CommonSection title={payload.title || 'LICENSE & CERTIFICATION'}>
+    <CommonSection title={payload.title || 'QUALIFICATION'}>
       <LicenseRow payload={payload} />
     </CommonSection>
   );

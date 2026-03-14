@@ -5,8 +5,8 @@ export declare namespace ILicense {
     /**
      * ### 섹션 제목
      *
-     * @description 섹션 상단에 표시될 제목 (예: "LICENSE & CERTIFICATION", "자격증")
-     * @default "LICENSE & CERTIFICATION"
+     * @description 섹션 상단에 표시될 제목 (예: "QUALIFICATION", "자격 사항")
+     * @default "QUALIFICATION"
      */
     title?: string;
 

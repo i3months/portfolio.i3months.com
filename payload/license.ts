@@ -2,7 +2,7 @@ import { ILicense } from '../component/license/ILicense';
 
 const license: ILicense.Payload = {
   disable: false,
-  title: '자격증.',
+  title: '자격 사항.',
 
   list: [
     {

@@ -34,8 +34,8 @@ function ResumeEN() {
         <Skill.Component payload={Payload.skill} />
         <Award.Component payload={Payload.award} />
         <Education.Component payload={Payload.education} />
-        <License.Component payload={Payload.license} />
         <Etc.Component payload={Payload.etc} />
+        <License.Component payload={Payload.license} />
         <Article.Component payload={Payload.article} />
 
         {/* <Presentation.Component payload={Payload.presentation} /> */}

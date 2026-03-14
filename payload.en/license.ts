@@ -2,6 +2,7 @@ import { ILicense } from '../component/license/ILicense';
 
 const license: ILicense.Payload = {
   disable: false,
+  title: 'Qualification.',
 
   list: [
     {
