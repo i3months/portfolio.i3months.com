@@ -8,6 +8,7 @@ import presentation from './presentation';
 import award from './award';
 import education from './education';
 import article from './article';
+import license from './license';
 import etc from './etc';
 import footer from './footer';
 
@@ -21,6 +22,7 @@ import { IExperience } from '../component/experience/IExperience';
 import { IProject } from '../component/project/IProject';
 import { IPresentation } from '../component/presentation/IPresentation';
 import { IEducation } from '../component/education/IEducation';
+import { ILicense } from '../component/license/ILicense';
 import { IEtc } from '../component/etc/IEtc';
 import { IFooter } from '../component/footer/IFooter';
 import { IGlobal } from '../component/common/IGlobal';
@@ -38,6 +40,7 @@ const Payload: Payload = {
   award,
   article,
   education,
+  license,
   etc,
   footer,
 
@@ -55,6 +58,7 @@ interface Payload {
   award: IAward.Payload;
   education: IEducation.Payload;
   article: IArticle.Payload;
+  license: ILicense.Payload;
   etc: IEtc.Payload;
   footer: IFooter.Payload;
 
