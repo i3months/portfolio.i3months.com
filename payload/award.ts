@@ -55,7 +55,7 @@ const presentation: IAward.Payload = {
       at: '2023-12',
       descriptions: [
         {
-          content: 'Vue와 FastAPI를 사용해 과학기술 문서 작성 에디터 "NTIS STUDIO" 개발',
+          content: 'Vue와 FastAPI를 사용해 과학기술 문서 작성 에디터 - "NTIS STUDIO" 개발',
         },
       ],
     },
@@ -75,7 +75,7 @@ const presentation: IAward.Payload = {
       at: '2023-06',
       descriptions: [
         {
-          content: '"온실가스 배출 데이터를 활용한 기업별 탄소 배출량 분석 플랫폼 - CEAP" 기획',
+          content: '"온실가스 배출 데이터를 활용한 기업별 탄소 배출량 분석 플랫폼 - CEAP" 개발',
         },
       ],
     },
