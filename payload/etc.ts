@@ -6,6 +6,12 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: '충남대학교 실전코딩 (Practical Coding) 교과목 튜터',
+      subTitle: 'MSA, CI/CD (Docker, Kubernetes), Software Testing 학습 지원',
+      startedAt: '2026-03',
+      endedAt: '2026-06',
+    },
+    {
       title: 'University of Nevada, Las Vegas (UNLV) - Visiting Scholar',
       subTitle: 'Howard R. Hughes College of Engineering - Embedded AI Workshops',
       startedAt: '2026-02',
