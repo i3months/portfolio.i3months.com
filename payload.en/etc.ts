@@ -7,7 +7,7 @@ const etc: IEtc.Payload = {
     {
       title: 'Chungnam National University Practical Coding Course Tutor',
       subTitle:
-        'Assisted students in learning MSA, CI/CD (Docker, Kubernetes), and Software Testing',
+        'Assisted students in learning MSA, CI/CD (Docker, Kubernetes), Software Testing, Agentic AI, and AI-powered Development Tools',
       startedAt: '2026-03',
       endedAt: '2026-06',
     },
