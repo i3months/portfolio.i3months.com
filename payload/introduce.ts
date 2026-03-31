@@ -7,9 +7,8 @@ const introduce: IIntroduce.Payload = {
   latestUpdatedLocale: 'ko',
 
   contents: [
-    'Java, SpringBoot를 주력으로 사용합니다. 클라우드 환경에서 Redis, Elasticsearch, Spring Batch 기술을 사용해 프로덕션 서비스를 개발하고 운영한 경험이 있으며, 그 과정에서 성능 최적화와 장애 대응 역량을 키웠습니다. 최근에는 Cloud Native 기술과 Agentic AI로 관심 영역을 넓히고 있습니다.',
-    '다양한 문제를 해결할 수 있는 프로그래밍을 천직으로 생각하고 있고, 프로그래밍을 통해 다른 사람들을 돕는 과정을 진심으로 즐깁니다.',
-    '명확한 문서화가 협업의 질을 결정한다고 생각합니다. 5년째 기술 블로그를 운영하며 학습과 문제 해결 경험을 정리해왔고, 회의록·프로젝트 스펙·기술적 결정의 배경까지 꼼꼼히 기록하는 것을 중요하게 여깁니다.',
+    'Java, Spring Boot를 주력으로 사용합니다. 클라우드 환경에서 Redis, Elasticsearch, Spring Batch를 활용해 프로덕션 서비스를 개발·운영한 경험이 있으며, 그 과정에서 성능 최적화와 장애 대응 역량을 키웠습니다. 최근에는 Cloud Native 기술과 Agentic AI로 관심 영역을 넓히고 있습니다.',
+    '명확한 문서화가 협업의 질을 결정한다고 생각합니다. 5년째 기술 블로그를 운영하며 학습과 문제 해결 경험을 정리해왔고, 회의록·프로젝트 스펙·기술적 결정의 배경까지 꼼꼼히 기록하여 개발 과정의 불필요한 오해와 커뮤니케이션 비용을 최소화합니다.',
   ],
   sign: '',
   latestUpdated: lastestUpdatedAt,
