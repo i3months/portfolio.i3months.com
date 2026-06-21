@@ -6,6 +6,11 @@ const license: ILicense.Payload = {
 
   list: [
     {
+      title: 'TOPCIT Regular Assessment',
+      subTitle: 'Test of Practical Competency in IT (Level 4, Score 685)',
+      startedAt: '2026-05',
+    },
+    {
       title: 'TOEIC Speaking',
       subTitle: 'Intermediate High (Speaking Score 150)',
       startedAt: '2026-03',

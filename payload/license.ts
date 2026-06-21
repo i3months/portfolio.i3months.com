@@ -6,6 +6,11 @@ const license: ILicense.Payload = {
 
   list: [
     {
+      title: 'TOPCIT 정기평가',
+      subTitle: 'Test of Practical Competency in IT (수준 4, 685점)',
+      startedAt: '2026-05',
+    },
+    {
       title: 'TOEIC Speaking',
       subTitle: 'Intermediate High (Speaking Score 150)',
       startedAt: '2026-03',
