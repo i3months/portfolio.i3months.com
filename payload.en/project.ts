@@ -4,7 +4,7 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
-      title: 'Developed StackUp - An AI Interview Platform for IT Roles',
+      title: 'Developed STACK-UP - An AI Interview Platform for IT Roles',
       startedAt: '2026-01',
       endedAt: '2026-06',
       where: 'Team Project (Development Lead / AI Server)',
@@ -58,7 +58,7 @@ const project: IProject.Payload = {
       title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
       startedAt: '2025-02',
       endedAt: '2026-05',
-      where: 'Team Project (Ongoing)',
+      where: 'Team Project (Planning, Development & Deployment)',
       descriptions: [
         {
           content: 'packup.asia',

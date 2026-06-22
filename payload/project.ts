@@ -5,10 +5,10 @@ const project: IProject.Payload = {
   title: '프로젝트 내역.',
   list: [
     {
-      title: 'IT 직군을 위한 AI 면접 플랫폼 - 스택업(StackUp) 개발',
+      title: 'IT 직군을 위한 AI 면접 플랫폼 - STACK-UP 개발',
       startedAt: '2026-01',
       endedAt: '2026-06',
-      where: '팀 프로젝트 (Team Project, 개발 리더 / AI 서버)',
+      where: '팀 프로젝트 (개발 리더 / AI 서버)',
       descriptions: [
         {
           content:
@@ -53,7 +53,7 @@ const project: IProject.Payload = {
       title: 'PACK-UP - 여행 예약 플랫폼 개발 및 운영',
       startedAt: '2025-02',
       endedAt: '2026-05',
-      where: '팀 프로젝트 (Team Project, 진행중)',
+      where: '팀 프로젝트 (기획·개발·배포)',
       descriptions: [
         {
           content: 'packup.asia',
