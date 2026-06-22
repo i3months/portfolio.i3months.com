@@ -4,10 +4,61 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
+      title: 'Developed StackUp - An AI Interview Platform for IT Roles',
+      startedAt: '2026-01',
+      endedAt: '2026-06',
+      where: 'Team Project (Development Lead / AI Server)',
+      descriptions: [
+        {
+          content:
+            'Served as development lead and AI server developer - built AI modules (RAG, LangChain, VectorDB, Embedding) and designed the software architecture.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Boosted development productivity by actively leveraging LLMs such as Claude Code.',
+        },
+        {
+          content: 'Designed multi-interviewer panel feedback (multi-agent)',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Calls a panel of evaluators in parallel via prompt multi-calls on the same LLM differing only in persona and evaluation axis - technical (technical_accuracy), logic (logic_score), and communication (using voice metrics, communication_score) evaluators (swapped for personality/collaboration evaluators in PERSONALITY mode).',
+            },
+            {
+              content:
+                'Computes the overall score via code-based weighted averaging (0.5·technical + 0.25·logic + 0.25·delivery) and generates narrative strengths/weaknesses and a study_plan with a single synthesis LLM call.',
+            },
+          ],
+        },
+        {
+          content:
+            'Adaptive question generation that follows up topic by topic - questions and follow-ups use a single LLM, while multi-agent is applied only at the feedback stage.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'To mitigate scoring noise, designed the flow as per-answer evaluation (specificity, logic, structure, correctness) → deterministic aggregation → LLM final judgment, attaching rationale that pinpoints where points were deducted.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            "Uses RAG only to verify whether a candidate's answer matches the source material.",
+        },
+        {
+          content:
+            'Report deliverables - provides scores, narrative evaluation, rationale, and user history management, along with a shareable structured report and PDF export.',
+          weight: 'MEDIUM',
+        },
+      ],
+      skillKeywords: ['LangChain', 'RAG', 'VectorDB', 'Embedding', 'LLM', 'Multi-Agent'],
+    },
+    {
       title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
       startedAt: '2025-02',
       endedAt: '2026-05',
-      where: 'Personal Project (Ongoing)',
+      where: 'Team Project (Ongoing)',
       descriptions: [
         {
           content: 'packup.asia',
@@ -17,7 +68,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Single-handedly led the entire process from planning to development, deployment, and operation - published on Google Play and the iOS App Store, currently in service.',
+            'Led the entire process from planning to development, deployment, and operation - published on Google Play and the iOS App Store, currently in service.',
           weight: 'MEDIUM',
         },
         {

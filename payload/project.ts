@@ -5,10 +5,55 @@ const project: IProject.Payload = {
   title: '프로젝트 내역.',
   list: [
     {
+      title: 'IT 직군을 위한 AI 면접 플랫폼 - 스택업(StackUp) 개발',
+      startedAt: '2026-01',
+      endedAt: '2026-06',
+      where: '팀 프로젝트 (Team Project, 개발 리더 / AI 서버)',
+      descriptions: [
+        {
+          content:
+            '개발 리더 및 AI 서버 개발 담당 - RAG, LangChain, VectorDB, Embedding 등 AI 모듈 개발 및 소프트웨어 아키텍처 설계',
+          weight: 'MEDIUM',
+        },
+        { content: 'Claude Code 등 LLM을 적극 활용해 개발 생산성 향상' },
+        {
+          content: '멀티 면접관 패널 기반 피드백 설계 (멀티에이전트)',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '동일 LLM에 페르소나·평가축만 다르게 준 프롬프트 멀티콜로 평가위원 패널을 병렬 호출 - 직군 기술(technical_accuracy)·논리(logic_score)·커뮤니케이션(음성 지표 활용, communication_score) 평가위원 구성 (PERSONALITY 모드에서는 인성·협업 평가위원으로 교체)',
+            },
+            {
+              content:
+                '종합 점수는 코드 기반 가중평균(0.5·기술 + 0.25·논리 + 0.25·전달)으로 산출하고, synthesis LLM 1콜로 서술형 강점·약점·학습 방향(study_plan) 생성',
+            },
+          ],
+        },
+        {
+          content:
+            '주제별로 꼬리질문을 이어가는 적응형 질문 생성 - 질문·꼬리질문은 단일 LLM으로 처리하고 멀티에이전트는 피드백 단계에만 적용',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            '채점 노이즈 완화를 위해 답변별 평가(specificity·logic·structure·correctness) → 결정론적 집계 → LLM 종합 판정 순으로 설계하고, 감점 지점을 명시한 근거를 점수에 부여',
+          weight: 'MEDIUM',
+        },
+        { content: 'RAG는 지원자 답변이 자료와 일치하는지 검증하는 용도로만 활용' },
+        {
+          content:
+            '리포트 산출물 - 점수·서술형 평가·근거·사용자 히스토리 관리 및 공유 가능한 구조화 리포트와 PDF 추출 제공',
+          weight: 'MEDIUM',
+        },
+      ],
+      skillKeywords: ['LangChain', 'RAG', 'VectorDB', 'Embedding', 'LLM', 'Multi-Agent'],
+    },
+    {
       title: 'PACK-UP - 여행 예약 플랫폼 개발 및 운영',
       startedAt: '2025-02',
       endedAt: '2026-05',
-      where: '개인 프로젝트 (Personal Project, 진행중)',
+      where: '팀 프로젝트 (Team Project, 진행중)',
       descriptions: [
         {
           content: 'packup.asia',
@@ -18,7 +63,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            '기획부터 개발·배포·운영까지 전 과정을 단독으로 진행 - Google Play 및 iOS App Store 등록 완료, 현재 운영 중',
+            '기획부터 개발·배포·운영까지 전 과정을 진행 - Google Play 및 iOS App Store 등록 완료, 현재 운영 중',
           weight: 'MEDIUM',
         },
         {
