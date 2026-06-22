@@ -11,6 +11,12 @@ const project: IProject.Payload = {
       where: '팀 프로젝트 (개발 리더 / AI 서버)',
       descriptions: [
         {
+          content: 'GitHub Repository',
+          href: 'https://github.com/Team-StackUp/stackup',
+          weight: 'SEMI_BOLD',
+          preIcon: 'github',
+        },
+        {
           content:
             '개발 리더 및 AI 서버 개발 담당 - RAG, LangChain, VectorDB, Embedding 등 AI 모듈 개발 및 소프트웨어 아키텍처 설계',
           weight: 'MEDIUM',

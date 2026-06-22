@@ -10,6 +10,12 @@ const project: IProject.Payload = {
       where: 'Team Project (Development Lead / AI Server)',
       descriptions: [
         {
+          content: 'GitHub Repository',
+          href: 'https://github.com/Team-StackUp/stackup',
+          weight: 'SEMI_BOLD',
+          preIcon: 'github',
+        },
+        {
           content:
             'Served as development lead and AI server developer - built AI modules (RAG, LangChain, VectorDB, Embedding) and designed the software architecture.',
           weight: 'MEDIUM',
