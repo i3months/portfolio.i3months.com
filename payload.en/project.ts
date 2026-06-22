@@ -61,6 +61,74 @@ const project: IProject.Payload = {
       skillKeywords: ['LangChain', 'RAG', 'VectorDB', 'Embedding', 'LLM', 'Multi-Agent'],
     },
     {
+      title:
+        'Autonomous Maze Navigation Robot Based on Ultrasonic & Infrared Sensors - Embedded Challenge',
+      startedAt: '2026-03',
+      endedAt: '2026-06',
+      where: 'CNU Embedded Challenge (2-person team)',
+      descriptions: [
+        {
+          content: 'GitHub Repository',
+          href: 'https://github.com/i3months/Embedded-Challenge',
+          weight: 'SEMI_BOLD',
+          preIcon: 'github',
+        },
+        {
+          content:
+            'Built a maze-navigating autonomous robot on STM32F429 (Cortex-M4) and FreeRTOS, fusing three ultrasonic and two infrared sensors to converge on the north exit without any precomputed global path.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Rejected a full-stack Occupancy Grid + A* path planner due to hardware constraints (left/right motor output asymmetry, absence of an IMU), reducing the design to a robustness-first approach that hardcodes the map (revealed on the day) and probabilistically models only the dynamic-obstacle segment.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Greedy Cardinal FSM northward navigation - discretely detects corners and intersections via lateral-wall distance change (Δd) and branches on cardinal heading (relative direction), making it robust to accumulated position drift.',
+          weight: 'MEDIUM',
+        },
+        {
+          content: 'EKF sensor fusion design',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Accumulates wheel odometry with RK2 (midpoint) integration, and computes the measurement Jacobian in closed form via analytical ray-segment intersection with the hardcoded wall segments for the ultrasonic sensors.',
+            },
+            {
+              content:
+                'Per-sensor sequential 1D Kalman updates with innovation gating (rejecting |y| > 3√S) and Joseph form covariance updates to prevent divergence and preserve symmetric positive-definiteness.',
+            },
+            {
+              content:
+                'Anchors heading drift caused by the missing IMU to an absolute reference via an arctan heading observation from lateral-wall geometry (θ = θ_wall + arctan(Δd/L)).',
+            },
+          ],
+        },
+        {
+          content:
+            'Dynamic-obstacle probabilistic modeling - time-weighted accumulation and decay of occupancy probability at sensor beam endpoints separates static walls from moving objects, and temporarily boosts cruise speed (V_cruise → V_dash) to pass quickly once a passage window opens.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Extensive calibration - compensated battery dependency and left/right motor asymmetry with separate left/right substeps and closed-loop pivot, and implemented LED priority-encoded debugging to read runtime state without a serial connection.',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Separated the sensing and control layers with a four-task FreeRTOS design (Sensor, IR, Control, Debug) under priority preemptive scheduling and lock-free single-producer/single-consumer shared state.',
+          weight: 'MEDIUM',
+        },
+        {
+          content: 'Practice run (full completion) video',
+          href: 'https://youtube.com/shorts/dIfozfXyMbs',
+        },
+      ],
+      skillKeywords: ['STM32', 'Cortex-M4', 'FreeRTOS', 'C', 'EKF', 'Sensor Fusion'],
+    },
+    {
       title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
       startedAt: '2025-02',
       endedAt: '2026-05',
