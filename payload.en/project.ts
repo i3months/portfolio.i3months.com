@@ -4,6 +4,78 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
+      title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
+      startedAt: '2025-02',
+      endedAt: '2026-05',
+      where: 'Personal Project (Ongoing)',
+      descriptions: [
+        {
+          content: 'packup.asia',
+          href: 'https://packup.asia',
+          weight: 'SEMI_BOLD',
+          preIcon: 'link',
+        },
+        {
+          content:
+            'Single-handedly led the entire process from planning to development, deployment, and operation - published on Google Play and the iOS App Store, currently in service.',
+          weight: 'MEDIUM',
+        },
+        {
+          content: 'System Composition',
+          weight: 'MEDIUM',
+          descriptions: [
+            { content: 'Mobile App: React Native + Spring Boot' },
+            { content: 'Admin: Spring Boot + React' },
+            {
+              content:
+                'Separated into multiple servers - core, payment, chat, batch, and admin.',
+            },
+            { content: 'Deployed on GCP Cloud Run.' },
+          ],
+        },
+        {
+          content: 'Architecture Design & Considerations',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Adopted Feature-Sliced Design (FSD) architecture in the React Native app for a feature-based modular structure, ensuring maintainability and scalability.',
+            },
+            {
+              content:
+                'Placed Cloud Armor (GCP WAF) between the load balancer and application servers to block known attack patterns such as SQLi and XSS, and applied per-IP Rate Limiting (429 on exceeding 300 req/min) and ML-based DDoS detection via Adaptive Protection.',
+            },
+            {
+              content:
+                'Reviewed a CQRS design separating write (Command) and read (Query) logic with JPA + MyBatis, considering store separation across Elasticsearch, Redis, and PostgreSQL.',
+            },
+            {
+              content: 'Examined MSA from an AI-friendly architecture perspective',
+              descriptions: [
+                {
+                  content:
+                    'A large monolith is hard for AI to grasp in full context, whereas MSA lets AI agents take charge of a domain on a per-service basis.',
+                },
+                {
+                  content:
+                    'As model context windows grow, a monolith may become understandable without splitting it - so the criteria for service separation warrant continued consideration.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      skillKeywords: [
+        'React Native',
+        'FSD',
+        'Spring Boot',
+        'React',
+        'GCP',
+        'Cloud Run',
+        'Cloud Armor',
+      ],
+    },
+    {
       title: 'Developed UniScope - A Platform for Nationwide University Information',
       startedAt: '2025-08',
       endedAt: '2025-11',

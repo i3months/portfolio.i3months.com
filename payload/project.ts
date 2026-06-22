@@ -5,6 +5,75 @@ const project: IProject.Payload = {
   title: '프로젝트 내역.',
   list: [
     {
+      title: 'PACK-UP - 여행 예약 플랫폼 개발 및 운영',
+      startedAt: '2025-02',
+      endedAt: '2026-05',
+      where: '개인 프로젝트 (Personal Project, 진행중)',
+      descriptions: [
+        {
+          content: 'packup.asia',
+          href: 'https://packup.asia',
+          weight: 'SEMI_BOLD',
+          preIcon: 'link',
+        },
+        {
+          content:
+            '기획부터 개발·배포·운영까지 전 과정을 단독으로 진행 - Google Play 및 iOS App Store 등록 완료, 현재 운영 중',
+          weight: 'MEDIUM',
+        },
+        {
+          content: '시스템 구성',
+          weight: 'MEDIUM',
+          descriptions: [
+            { content: '모바일 앱: React Native + Spring Boot' },
+            { content: '어드민: Spring Boot + React' },
+            { content: '코어·결제·채팅·배치·어드민 등 여러 서버로 분리 구성' },
+            { content: 'GCP Cloud Run 환경에 배포' },
+          ],
+        },
+        {
+          content: '아키텍처 설계 및 고민',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'React Native 앱에 Feature-Sliced Design(FSD) 아키텍처를 도입해 기능 단위 모듈 구조로 유지보수성·확장성 확보',
+            },
+            {
+              content:
+                'Cloud Armor(GCP WAF)를 로드밸런서와 애플리케이션 서버 사이에 배치해 SQLi·XSS 등 알려진 공격 패턴을 차단하고, per-IP Rate Limit(300 req/min 초과 시 429)과 Adaptive Protection 기반 ML DDoS 탐지를 적용',
+            },
+            {
+              content:
+                'JPA + MyBatis로 쓰기(Command)·읽기(Query) 로직을 분리하고, 저장소(Elasticsearch·Redis·PostgreSQL) 분리까지 고려한 CQRS 설계 검토',
+            },
+            {
+              content: 'AI 친화적 아키텍처(AI-friendly architecture) 관점의 MSA 고찰',
+              descriptions: [
+                {
+                  content:
+                    '대규모 모놀리스는 AI가 전체 맥락을 파악하기 어려운 반면, MSA는 서비스 단위로 AI 에이전트에 도메인을 전담시킬 수 있음',
+                },
+                {
+                  content:
+                    '모델 컨텍스트가 커지는 미래에는 모놀리스를 분리하지 않아도 파악 가능해질 수 있어, 서비스 분리 기준을 지속적으로 고민',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      skillKeywords: [
+        'React Native',
+        'FSD',
+        'Spring Boot',
+        'React',
+        'GCP',
+        'Cloud Run',
+        'Cloud Armor',
+      ],
+    },
+    {
       title: '전국 대학 정보를 한 눈에 볼 수 있는 플랫폼 - UniScope 개발',
       startedAt: '2025-08',
       endedAt: '2025-11',
