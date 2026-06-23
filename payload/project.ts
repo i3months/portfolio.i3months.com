@@ -23,6 +23,10 @@ const project: IProject.Payload = {
         },
         { content: 'Claude Code 등 LLM을 적극 활용해 개발 생산성 향상' },
         {
+          content:
+            '평가위원 페르소나·채점 기준 설계에 최신 프롬프트 엔지니어링 기법을 적극 적용해 출력 일관성과 평가 신뢰도 확보',
+        },
+        {
           content: '멀티 면접관 패널 기반 피드백 설계 (멀티에이전트)',
           weight: 'MEDIUM',
           descriptions: [
@@ -46,7 +50,10 @@ const project: IProject.Payload = {
             '채점 노이즈 완화를 위해 답변별 평가(specificity·logic·structure·correctness) → 결정론적 집계 → LLM 종합 판정 순으로 설계하고, 감점 지점을 명시한 근거를 점수에 부여',
           weight: 'MEDIUM',
         },
-        { content: 'RAG는 지원자 답변이 자료와 일치하는지 검증하는 용도로만 활용' },
+        {
+          content:
+            '직무·기술 문서를 청킹·임베딩해 VectorDB에 적재하고, 검색된 context chunk로 지원자 답변의 사실성을 검증하는 RAG 파이프라인 구축',
+        },
         {
           content:
             '리포트 산출물 - 점수·서술형 평가·근거·사용자 히스토리 관리 및 공유 가능한 구조화 리포트와 PDF 추출 제공',
@@ -136,8 +143,12 @@ const project: IProject.Payload = {
         },
         {
           content:
-            '기획부터 개발·배포·운영까지 전 과정을 진행 - Google Play 및 iOS App Store 등록 완료, 현재 운영 중',
+            '기획부터 개발·배포·운영까지 전 과정을 직접 주도 - 사용자 앱과 운영용 어드민까지 갖춘 production-ready 서비스로 Google Play·iOS App Store 출시 후 운영 중',
           weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Claude Code 공식 문서를 학습해 프로젝트에 맞는 커스텀 스킬을 직접 제작·활용하며 AI 친화적으로 개발 생산성 극대화',
         },
         {
           content: '시스템 구성',

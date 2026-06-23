@@ -25,6 +25,10 @@ const project: IProject.Payload = {
             'Boosted development productivity by actively leveraging LLMs such as Claude Code.',
         },
         {
+          content:
+            'Applied state-of-the-art prompt engineering techniques to the evaluator personas and scoring criteria to secure output consistency and evaluation reliability.',
+        },
+        {
           content: 'Designed multi-interviewer panel feedback (multi-agent)',
           weight: 'MEDIUM',
           descriptions: [
@@ -50,7 +54,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            "Uses RAG only to verify whether a candidate's answer matches the source material.",
+            'Built a RAG pipeline that chunks and embeds job/technical documents into a VectorDB and verifies the factual accuracy of candidate answers using retrieved context chunks.',
         },
         {
           content:
@@ -142,8 +146,12 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Led the entire process from planning to development, deployment, and operation - published on Google Play and the iOS App Store, currently in service.',
+            'Personally drove the entire process from planning to development, deployment, and operation - a production-ready service with both a user app and an operations admin, in service after launching on Google Play and the iOS App Store.',
           weight: 'MEDIUM',
+        },
+        {
+          content:
+            'Studied the official Claude Code documentation and built and used custom skills tailored to the project, maximizing development productivity in an AI-friendly way.',
         },
         {
           content: 'System Composition',
