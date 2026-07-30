@@ -31,7 +31,7 @@ const presentation: IAward.Payload = {
     },
     {
       title: '충남대학교 생성형 인공지능 챌린지',
-      subTitle: '장려상 수상',
+      subTitle: '장려상 (충남대학교 정보화본부장상) 수상',
       at: '2025-09',
       descriptions: [
         {
