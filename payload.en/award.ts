@@ -5,6 +5,20 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: '5th ETRI Human-Understanding AI Paper Competition',
+      subTitle: '5th place on the private leaderboard (awards ceremony in October 2026)',
+      at: '2026-06',
+      descriptions: [
+        {
+          content:
+            'Developed a model predicting sleep and well-being indicators from lifelog data.',
+        },
+        {
+          content: 'Paper to be submitted to ICTC 2026.',
+        },
+      ],
+    },
+    {
       title: 'Chungnam National University Algorithm Competition – DevDay',
       subTitle: '4× Bronze Prize / 1× Encouragement Prize',
       at: '2026-06',
