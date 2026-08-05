@@ -126,7 +126,7 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/Team-StackUp/stackup',
-          weight: 'SEMI_BOLD',
+          weight: 'BOLD',
           preIcon: 'github',
         },
         {
@@ -262,13 +262,13 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/i3months/Embedded-Challenge',
-          weight: 'SEMI_BOLD',
+          weight: 'BOLD',
           preIcon: 'github',
         },
         {
           content: 'Practice run (full completion) video',
           href: 'https://youtube.com/shorts/dIfozfXyMbs',
-          weight: 'SEMI_BOLD',
+          weight: 'BOLD',
           preIcon: 'youtube',
         },
         {
@@ -303,7 +303,7 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
-          weight: 'SEMI_BOLD',
+          weight: 'BOLD',
           preIcon: 'github',
         },
         {

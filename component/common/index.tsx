@@ -15,7 +15,7 @@ const StyledLink = styled.a`
   text-decoration: underline;
   text-decoration-color: rgba(0, 0, 0, 1);
   text-decoration-thickness: 1px;
-  font-weight: normal;
+  font-weight: inherit;
   transition: all 0.2s ease-in-out;
 
   &:hover {
