@@ -18,7 +18,8 @@ const etc: IEtc.Payload = {
     },
     {
       title: 'Google AI Professional Certificate 수료',
-      subTitle: 'Google 제공 · Coursera 전문 과정 (AI 활용 기획·분석·앱 개발 등 7개 강좌)',
+      subTitle:
+        'Google 제공 Coursera 전문 과정 - AI 활용 리서치, 콘텐츠 제작, 데이터 분석, 앱 빌딩 등 7개 교육 이수',
       startedAt: '2026-07',
     },
     {

@@ -19,7 +19,7 @@ const etc: IEtc.Payload = {
     {
       title: 'Google AI Professional Certificate',
       subTitle:
-        'Professional Certificate by Google on Coursera (7 courses on AI-driven planning, analysis, and app building)',
+        'Professional Certificate by Google on Coursera - 7 courses on AI-driven research, content creation, data analysis, and app building',
       startedAt: '2026-07',
     },
     {
