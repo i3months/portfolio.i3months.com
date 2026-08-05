@@ -128,28 +128,6 @@ const project: IProject.Payload = {
           content: '개발 리더 및 AI 서버 개발 담당 - AI 파이프라인 및 소프트웨어 아키텍처 설계',
         },
         {
-          content: '자료 분석 파이프라인',
-          weight: 'MEDIUM',
-          descriptions: [
-            {
-              content:
-                'PDF·웹 이력서와 GitHub 레포지토리를 단일 LLM 체인으로 구조화 마크다운으로 변환 - Vision 모델을 적용해 이미지형 PDF까지 처리',
-            },
-            {
-              content:
-                'GitHub 분석은 설정 파일에 가중치를 둔 우선순위 기반 수집 알고리즘으로 핵심 소스만 선별 추출',
-            },
-            {
-              content:
-                '웹 이력서는 본문 추출 실패 시 헤드리스 렌더링으로 폴백해 JS 기반 포트폴리오까지 대응',
-            },
-            {
-              content:
-                '환각 차단을 위해 사실 구조화 추출 → 요약 생성 2단계로 분리하고 출처를 기록, Pydantic 스키마 검증으로 LLM 출력 형식 강제',
-            },
-          ],
-        },
-        {
           content: 'RAG 검색 시스템',
           weight: 'MEDIUM',
           descriptions: [
