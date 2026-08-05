@@ -45,7 +45,7 @@ const etc: IEtc.Payload = {
       title:
         'Seoul National University Next-Generation Semiconductor Innovation Convergence College - Undergraduate Research Intern',
       subTitle: 'Research on LLM compression techniques in edge computing environments',
-      startedAt: '2025-11',
+      startedAt: '2025-10',
       endedAt: '2026-01',
       subTitleLinksPrefix: 'Study and Seminar',
       subTitleLinks: [
