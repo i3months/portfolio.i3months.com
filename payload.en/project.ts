@@ -161,23 +161,23 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Chunked documents by paragraph, line, and word priority and applied Contextual Retrieval so isolated chunks keep their context.',
+                'Split documents by paragraph, then line, then word, and attached surrounding context to each chunk so meaning is not lost.',
             },
             {
               content:
-                'Applied different task prefixes at indexing and query time to optimize embedding alignment, storing vectors in pgvector.',
+                'Embedded documents and queries in different modes to improve retrieval accuracy, storing the vectors in pgvector.',
             },
             {
               content:
-                'Fused vector and keyword search with RRF to stop technical terms from being missed.',
+                'Ran keyword search alongside vector search to catch technical terms the vectors miss, then merged the two rankings.',
             },
             {
               content:
-                'Added two-stage retrieval - bi-encoder top-20 followed by cross-encoder reranking to top-5.',
+                'Retrieved in two stages - a fast pass narrows to 20 candidates, a precise model picks the final 5.',
             },
             {
               content:
-                'Designed a fallback path that continues generation from base context when embedding or retrieval fails.',
+                'Designed a fallback path so question generation continues from the base documents even when retrieval fails.',
             },
           ],
         },
