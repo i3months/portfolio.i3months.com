@@ -73,6 +73,12 @@ const project: IProject.Payload = {
           preIcon: 'github',
         },
         {
+          content: 'Practice run (full completion) video',
+          href: 'https://youtube.com/shorts/dIfozfXyMbs',
+          weight: 'SEMI_BOLD',
+          preIcon: 'youtube',
+        },
+        {
           content:
             'Built a maze-navigating autonomous robot on STM32F429 and FreeRTOS, combining ultrasonic and infrared sensors.',
         },
@@ -91,10 +97,6 @@ const project: IProject.Payload = {
         {
           content:
             'Encoder-based 90-degree turn calibration and compensation for left/right motor output asymmetry.',
-        },
-        {
-          content: 'Practice run (full completion) video',
-          href: 'https://youtube.com/shorts/dIfozfXyMbs',
         },
       ],
       skillKeywords: ['STM32', 'Cortex-M4', 'FreeRTOS', 'C', 'EKF', 'Sensor Fusion'],

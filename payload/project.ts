@@ -71,6 +71,12 @@ const project: IProject.Payload = {
           preIcon: 'github',
         },
         {
+          content: '연습 주행 완주 영상',
+          href: 'https://youtube.com/shorts/dIfozfXyMbs',
+          weight: 'SEMI_BOLD',
+          preIcon: 'youtube',
+        },
+        {
           content:
             'STM32F429·FreeRTOS 기반 미로 자율주행 로봇 개발 - 초음파 센서와 적외선 센서 결합',
         },
@@ -88,10 +94,6 @@ const project: IProject.Payload = {
         },
         {
           content: 'Encoder 기반 90도 회전 캘리브레이션 및 좌우 모터 출력 비대칭 보정',
-        },
-        {
-          content: '연습 주행 완주 영상',
-          href: 'https://youtube.com/shorts/dIfozfXyMbs',
         },
       ],
       skillKeywords: ['STM32', 'Cortex-M4', 'FreeRTOS', 'C', 'EKF', 'Sensor Fusion'],

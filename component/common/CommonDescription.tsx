@@ -1,6 +1,6 @@
 import { CSSProperties, PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
   faLink,
   faStar,
@@ -18,6 +18,7 @@ const iconMap: Record<string, IconDefinition> = {
   github: faGithub,
   linkedin: faLinkedin,
   twitter: faTwitter,
+  youtube: faYoutube,
   link: faLink,
   star: faStar,
   envelope: faEnvelope,
