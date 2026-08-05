@@ -30,8 +30,9 @@ const project: IProject.Payload = {
               content:
                 'Integrated PayLetter, KakaoPay, and KG Inicis payment gateways, with payment isolated in its own server.',
             },
-            { content: 'Localized in 7 languages, with WebSocket-based real-time chat.' },
-            { content: 'Deployed on GCP Cloud Run with Cloud SQL, GCS, and Cloudflare DNS.' },
+            {
+              content: 'Built on GCP - Cloud Run, Cloud SQL, GCS, and Cloudflare DNS.',
+            },
           ],
         },
         {
@@ -40,15 +41,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Routed four subdomains through an HTTPS load balancer using URL Map host routing.',
-            },
-            {
-              content:
-                'Isolated the database inside a VPC, migrating Cloud SQL to a private IP with no downtime.',
-            },
-            {
-              content:
-                'Applied Cloud Armor - per-IP rate limiting (300 req/min), SQLi/XSS blocking, and Adaptive Protection.',
+                'Protected traffic with Cloud Armor - per-IP rate limiting (300 requests/min), SQL injection and XSS blocking, and ML-based DDoS detection.',
             },
             {
               content:
@@ -57,6 +50,10 @@ const project: IProject.Payload = {
             {
               content:
                 'Set up Sentry error tracking, Cloud Monitoring uptime checks, and budget alerts.',
+            },
+            {
+              content:
+                'Consolidated the infrastructure on GCP - translation, maps, push, and social login all run on Google services, so keys, permissions, and billing are managed in a single project.',
             },
           ],
         },
@@ -87,11 +84,19 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
+                'Built an AI development harness tailored to the project - per-service context documents, a domain glossary, and explicit rules for what is never delegated.',
+            },
+            {
+              content:
                 'Standardized repetitive work with custom Claude Code skills and commands - i18n keys across 7 languages, exception type updates, and a pre-deploy checklist.',
             },
             {
               content:
-                'Used hooks to block hardcoded secrets and production database misconfiguration before deployment.',
+                'Used hooks to hard-block hardcoded secrets and production database misconfiguration at tool-execution time.',
+            },
+            {
+              content:
+                'Established a cycle that delegates code writing while keeping design, review, testing, and deployment in my own hands.',
             },
           ],
         },

@@ -27,8 +27,9 @@ const project: IProject.Payload = {
             { content: '모바일 앱 React Native, 어드민 React, 백엔드 Spring Boot' },
             { content: '역할별 5개 서버 분리 - 코어·결제·채팅·어드민·배치' },
             { content: '페이레터·카카오페이·KG이니시스 PG 연동 (결제 서버 격리)' },
-            { content: '7개 언어 다국어 지원 및 WebSocket 기반 실시간 채팅 제공' },
-            { content: 'GCP Cloud Run 배포 및 Cloud SQL, GCS, Cloudflare DNS 구성' },
+            {
+              content: 'GCP 기반 시스템 구축 - Cloud Run, Cloud SQL, GCS, Cloudflare DNS',
+            },
           ],
         },
         {
@@ -36,14 +37,8 @@ const project: IProject.Payload = {
           weight: 'MEDIUM',
           descriptions: [
             {
-              content: 'HTTPS 로드밸런서 URL Map 호스트 라우팅으로 서브도메인 4개 분리',
-            },
-            {
-              content: 'DB를 VPC 내부에 격리 - Cloud SQL Private IP 전환을 무중단으로 진행',
-            },
-            {
               content:
-                'Cloud Armor 적용 - per-IP Rate Limit(300 req/min), SQLi·XSS 차단, Adaptive Protection',
+                'Cloud Armor로 트래픽 보호 - IP당 요청 제한, SQL Injection·XSS 차단, ML 기반 DDoS 탐지',
             },
             {
               content:
@@ -51,6 +46,10 @@ const project: IProject.Payload = {
             },
             {
               content: 'Sentry 에러 추적, Cloud Monitoring Uptime Check 및 Budget Alert 설정',
+            },
+            {
+              content:
+                'GCP 기반 인프라 통합 - 번역·지도·푸시·인증 키, 권한, 과금을 단일 프로젝트에서 관리',
             },
           ],
         },
@@ -81,10 +80,19 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
+                '프로젝트에 맞춘 AI 개발 하네스 구축 - 서비스별 컨텍스트 문서 분리, 도메인 용어 사전, 위임하지 않을 영역을 규정한 금지 규칙',
+            },
+            {
+              content:
                 'Claude Code 커스텀 스킬·커맨드로 반복 작업 표준화 - 다국어 7개 언어 키 추가, 예외 타입 일괄 갱신, 배포 전 체크리스트',
             },
             {
-              content: 'Hook으로 시크릿 하드코딩과 운영 DB 설정 실수를 배포 전에 차단',
+              content:
+                'Hook으로 시크릿 하드코딩과 운영 DB 설정 실수를 도구 실행 단계에서 강제 차단',
+            },
+            {
+              content:
+                '설계·리뷰·테스트·배포는 직접 수행하고 코드 작성만 위임하는 개발 사이클 정립',
             },
           ],
         },
