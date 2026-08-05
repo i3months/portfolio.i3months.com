@@ -134,47 +134,25 @@ const project: IProject.Payload = {
             'Served as development lead and AI server developer - designed the AI pipeline and the software architecture.',
         },
         {
-          content: 'Document Analysis Pipeline',
-          weight: 'MEDIUM',
-          descriptions: [
-            {
-              content:
-                'Converted PDF and web resumes and GitHub repositories into structured markdown through a single LLM chain, with a vision model handling image-based PDFs.',
-            },
-            {
-              content:
-                'Collected GitHub sources with a priority-based algorithm weighted toward configuration files, extracting only the essential code.',
-            },
-            {
-              content:
-                'Fell back to headless rendering when web resume extraction returned nothing, covering JS-rendered portfolios.',
-            },
-            {
-              content:
-                'Prevented hallucination by splitting structured fact extraction from summary generation and recording provenance, with Pydantic schemas enforcing the LLM output format.',
-            },
-          ],
-        },
-        {
           content: 'RAG Retrieval System',
           weight: 'MEDIUM',
           descriptions: [
             { content: 'Chunked documents recursively by heading, paragraph, line, and word.' },
             {
               content:
-                'Prefixed each chunk with a document summary and its heading path to preserve context (lightweight Contextual Retrieval, no LLM call).',
+                'Prefixed each chunk with a document summary and its heading path to preserve context (lightweight Contextual Retrieval).',
             },
             {
               content:
-                'Separated embedding prefixes - RETRIEVAL_DOCUMENT for indexing, RETRIEVAL_QUERY for search - and stored vectors in pgvector with an HNSW index.',
+                'Separated embedding prefixes for indexing and search, storing the vectors in pgvector.',
             },
             {
               content:
-                'Ran keyword search alongside vector search to match technical terms (gRPC, Kafka) the vectors miss, fusing rankings with RRF.',
+                'Ran keyword search alongside vector search to match technical terms the vectors miss, fusing rankings with RRF.',
             },
             {
               content:
-                'Designed a fallback path so generation continues from the base context when retrieval fails or exceeds a 1.5s timeout.',
+                'Designed a fallback path so generation continues from the base context when retrieval fails or times out.',
             },
           ],
         },
@@ -192,14 +170,14 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Scored answers on four axes - specificity, logic, structure (STAR), and correctness - branching the criteria by question category.',
+                'Scored answers on four axes - specificity, logic, structure, and correctness - branching the criteria by question category.',
             },
             {
               content: 'Verified the correctness axis against evidence retrieved through RAG.',
             },
             {
               content:
-                'Integrated Deepgram STT and extracted speech metrics such as speaking rate and silence for the report.',
+                'Integrated STT and extracted speech metrics such as speaking rate and silence for the report.',
             },
           ],
         },
@@ -209,14 +187,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Staged scoring - per-answer LLM rating -> averaging in code -> LLM summary.',
-            },
-            {
-              content: 'Code owns the totals, so the same session always yields the same score.',
-            },
-            {
-              content:
-                'The LLM summary never changes the score - it only explains strengths, weaknesses, and deductions.',
+                'Staged scoring - per-answer LLM rating, averaging and normalization, then an LLM summary - smoothing score variance.',
             },
             {
               content:
@@ -224,11 +195,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Two temperature tiers bound to the models - 0.2 on the larger model keeps fact extraction and judgment consistent, 0.4 on the lightweight one varies the angle of follow-up questions.',
-            },
-            {
-              content:
-                'Scores, narrative evaluation, and rationale stored as a structured report, shareable via public link.',
+                'Temperature split by model tier - 0.2 for analysis and judgment, 0.4 for follow-up questions.',
             },
             {
               content:
@@ -247,10 +214,6 @@ const project: IProject.Payload = {
             {
               content:
                 'Passed each stage\u2019s artifact to the next agent as input - design is settled before implementation starts, and testing closes the loop.',
-            },
-            {
-              content:
-                'Invested heavily in the design stage, fixing architecture, prompts, and output schemas up front so implementation only follows the spec.',
             },
             {
               content:
