@@ -103,6 +103,7 @@ const project: IProject.Payload = {
       skillKeywords: [
         'React Native',
         'Spring Boot',
+        'MySQL',
         'React',
         'FSD',
         'GCP',
