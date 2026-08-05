@@ -28,7 +28,7 @@ const project: IProject.Payload = {
             { content: 'Five servers split by role - core, payment, chat, admin, and batch.' },
             {
               content:
-                'KG Inicis payment gateway in production, with overseas payment channels (PayLetter, KakaoPay) being added - payment isolated in its own server.',
+                'Integrated PayLetter, KakaoPay, and KG Inicis payment gateways (payment isolated in its own server).',
             },
             {
               content:
@@ -42,19 +42,14 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Protected traffic with Cloud Armor - per-IP rate limiting, SQL injection and XSS blocking - plus an application-level rate limiter that resolves the real client IP through verified proxy hops.',
+                'Protected traffic with Cloud Armor - per-IP rate limiting, SQL injection and XSS blocking.',
             },
             {
               content:
-                'Set up GitHub Actions CI - path-filtered builds and tests, with automatic Spotless formatting on pull requests.',
+                'Isolated batch work in a dedicated server - pinned to a single instance to prevent duplicate runs, with execution history recorded automatically.',
             },
             {
-              content:
-                'Isolated batch work in a dedicated server - pinned to a single instance (min=max=1, CPU always allocated) to prevent duplicate runs, with execution history recorded automatically via AOP.',
-            },
-            {
-              content:
-                'Cloud Scheduler calls internal endpoints with token verification for jobs such as exchange-rate and region refresh, and min-instance settings keep cold starts down.',
+              content: 'Handled cold starts with Cloud Run min-instance settings.',
             },
             {
               content:
@@ -62,20 +57,20 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Concentrated external integrations in one shared infrastructure module - translation (DeepL), maps, push (FCM/APNs), storage, and payment clients are shared across all five servers, while GCP keys, IAM, and billing stay in a single project.',
+                'Consolidated external integrations into one shared infrastructure module - translation, maps, push, and storage/payment clients shared across all five servers.',
             },
           ],
         },
         {
-          content: 'Architecture Design & Considerations',
+          content: 'Software Architecture',
           weight: 'MEDIUM',
           descriptions: [
             {
               content:
-                'Shared database and domain module architecture - booking and payment run in a single transaction for consistency, while notifications are dispatched asynchronously after commit so an external delivery failure never rolls back a booking.',
+                'Shared database and domain module architecture - booking and payment run in a single transaction for consistency, while notifications are dispatched asynchronously after commit.',
             },
             {
-              content: 'Adopted Feature-Sliced Design (FSD) architecture in the React Native app.',
+              content: 'Adopted Feature-Sliced Design (FSD) for the React Native frontend.',
             },
             {
               content:
@@ -83,7 +78,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Split services from an AI-friendly architecture perspective - each server sized for an AI agent to grasp at once, with per-service context documents.',
+                'Split services into units an AI agent can grasp at once, with per-service context documents.',
             },
           ],
         },
@@ -97,11 +92,11 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Standardized repetitive work with custom Claude Code skills and commands - i18n keys across 7 languages, exception type updates, and a pre-deploy checklist.',
+                'Automated repetitive work with Claude Code Skills - i18n keys across 7 languages, exception type updates.',
             },
             {
               content:
-                'Used hooks to hard-block hardcoded secrets and production database misconfiguration at tool-execution time.',
+                'Used Claude Code Hooks to hard-block frequent mistakes such as hardcoded secrets and production database misconfiguration at tool-execution time.',
             },
             {
               content:
@@ -113,6 +108,7 @@ const project: IProject.Payload = {
       skillKeywords: [
         'React Native',
         'Spring Boot',
+        'MySQL',
         'React',
         'FSD',
         'GCP',
