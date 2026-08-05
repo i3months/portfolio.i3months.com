@@ -17,6 +17,12 @@ const etc: IEtc.Payload = {
       ],
     },
     {
+      title: '2026년 꿈돌이 장학생 선정',
+      subTitle:
+        '대전청년내일재단 - 대학·대학원생 5인 최종 선정 (자기주도 역량 및 성취·창의성 평가)',
+      startedAt: '2026-08',
+    },
+    {
       title: 'Google AI Professional Certificate 수료',
       subTitle:
         'Google 제공 Coursera 전문 과정 - AI 활용 리서치, 콘텐츠 제작, 데이터 분석, 앱 빌딩 등 7개 교육 이수',

@@ -6,16 +6,6 @@ const presentation: IAward.Payload = {
 
   list: [
     {
-      title: '2026년 꿈돌이 장학생 선발',
-      subTitle: '대전청년내일재단 (대학·대학원생 5명 선발)',
-      at: '2026-08',
-      descriptions: [
-        {
-          content: '자기주도 역량과 지역발전 기여도를 평가해 선발하는 대전광역시 장학금',
-        },
-      ],
-    },
-    {
       title: '제5회 ETRI 휴먼이해 인공지능 논문경진대회',
       subTitle: 'Private 리더보드 5위 (2026.10 시상 예정)',
       at: '2026-06',

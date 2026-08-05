@@ -17,6 +17,12 @@ const etc: IEtc.Payload = {
       ],
     },
     {
+      title: '2026 Kkumdori Scholarship Recipient',
+      subTitle:
+        'Daejeon Youth Tomorrow Foundation - one of 5 final recipients (evaluated on self-directed capability, achievement, and creativity)',
+      startedAt: '2026-08',
+    },
+    {
       title: 'Google AI Professional Certificate',
       subTitle:
         'Professional Certificate by Google on Coursera - 7 courses on AI-driven research, content creation, data analysis, and app building',
