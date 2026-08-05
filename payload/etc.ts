@@ -17,6 +17,17 @@ const etc: IEtc.Payload = {
       ],
     },
     {
+      title: '충남대학교 Deep Learning SC Lab - 학부연구생',
+      subTitle: '충남대학교 하계방학 학생성공장학생 선정',
+      startedAt: '2026-03',
+      endedAt: '2026-09',
+      subTitleLinks: [
+        {
+          text: '멀티모달 AI 기반 서비스 연구 개발 - RAG 검색 및 LLM 멀티에이전트 파이프라인 설계',
+        },
+      ],
+    },
+    {
       title: '충남대학교 실전코딩 (Practical Coding) 교과목 튜터',
       subTitle:
         'MSA, CI/CD (Docker, Kubernetes), Software Testing, Agentic AI 및 AI 기반 개발 도구 활용 학습 지원',

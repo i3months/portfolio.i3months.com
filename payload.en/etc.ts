@@ -16,6 +16,18 @@ const etc: IEtc.Payload = {
       ],
     },
     {
+      title: 'Chungnam National University Deep Learning SC Lab - Undergraduate Researcher',
+      subTitle: 'Selected as a CNU Summer Session Student Success Scholar',
+      startedAt: '2026-03',
+      endedAt: '2026-09',
+      subTitleLinks: [
+        {
+          text:
+            'Research and development of multimodal AI services - RAG retrieval and LLM multi-agent pipeline design',
+        },
+      ],
+    },
+    {
       title: 'Chungnam National University Practical Coding Course Tutor',
       subTitle:
         'Assisted students in learning MSA, CI/CD (Docker, Kubernetes), Software Testing, Agentic AI, and AI-powered Development Tools',
