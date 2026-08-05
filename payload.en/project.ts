@@ -232,7 +232,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Spawned one interviewer persona per job role in the session, scoring in parallel against role-specific criteria (frontend = rendering/state management, backend = concurrency/transactions, and so on), with the overall score derived in code from a fixed technical:logic:delivery weighting (0.5:0.25:0.25).',
+                'Spawned an interviewer persona per job role in the session, scoring in parallel against role-specific criteria to derive the overall score.',
             },
           ],
         },
