@@ -230,6 +230,10 @@ const project: IProject.Payload = {
               content:
                 'Scores, narrative evaluation, and rationale stored as a structured report, shareable via public link.',
             },
+            {
+              content:
+                'Spawned one interviewer persona per job role in the session, scoring in parallel against role-specific criteria (frontend = rendering/state management, backend = concurrency/transactions, and so on), with the overall score derived in code from a fixed technical:logic:delivery weighting (0.5:0.25:0.25).',
+            },
           ],
         },
         {
@@ -302,13 +306,17 @@ const project: IProject.Payload = {
       title: 'Developed UniScope - A Platform for Nationwide University Information',
       startedAt: '2025-08',
       endedAt: '2025-11',
-      where: 'KakaoTechCampus (South Korea)',
+      where: 'KakaoTechCampus (South Korea, Tech Lead)',
       descriptions: [
         {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
           weight: 'SEMI_BOLD',
           preIcon: 'github',
+        },
+        {
+          content:
+            'Served as Tech Lead - designed the frontend architecture and led the overall development process.',
         },
         {
           content: 'Kakao Tech Campus Final Presentation - UniScope Platform',

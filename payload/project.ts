@@ -188,6 +188,10 @@ const project: IProject.Payload = {
               content:
                 '모델 티어별 Temperature 분리 - 분석·판정은 0.2로 낮게, 꼬리질문은 0.4로 높게 설정',
             },
+            {
+              content:
+                '세션에 등장한 직군 수만큼 심사위원 페르소나를 생성해 직군별 기준 병렬 채점하고 종합 점수 산출',
+            },
           ],
         },
         {
@@ -196,19 +200,15 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '계획·설계·구현·테스트를 각각 전담 에이전트에 분담하는 멀티 에이전트 방식으로 개발 진행',
+                '계획·설계·구현·테스트를 각각 전담 에이전트에 분담하는 멀티 에이전트 방식 도입',
             },
             {
               content:
-                '단계별 산출물을 다음 에이전트의 입력으로 넘기는 구조 - 설계를 확정한 뒤 구현에 착수하고 테스트로 회수',
+                '단계별 산출물을 다음 에이전트의 입력으로 넘기는 구조 - 설계 확정 후 구현에 착수하고 테스트로 회수',
             },
             {
               content:
-                '설계 단계에 시간을 집중 투자해 아키텍처·프롬프트·출력 스키마를 먼저 확정하고, 구현은 그 규격을 따르도록 고정',
-            },
-            {
-              content:
-                '프로젝트 전용 컨텍스트 문서와 규칙을 정의한 AI 개발 하네스를 구축해 에이전트별 역할과 산출물 형식을 표준화',
+                '프로젝트 전용 컨텍스트 문서와 규칙을 정의한 AI 개발 하네스를 구축해 에이전트별 역할 명시',
             },
           ],
         },
@@ -259,13 +259,16 @@ const project: IProject.Payload = {
       title: '전국 대학 정보를 한 눈에 볼 수 있는 플랫폼 - UniScope 개발',
       startedAt: '2025-08',
       endedAt: '2025-11',
-      where: '카카오테크캠퍼스 (KakaoTechCampus)',
+      where: '카카오테크캠퍼스 (KakaoTechCampus, 테크 리더)',
       descriptions: [
         {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
           weight: 'SEMI_BOLD',
           preIcon: 'github',
+        },
+        {
+          content: '테크 리더 역할 수행 - 소프트웨어 아키텍처 설계 및 개발 프로세스 전반 리드',
         },
         {
           content: '카카오테크캠퍼스 최종 발표 - 전국 대학 정보 통합 플랫폼 UniScope',
