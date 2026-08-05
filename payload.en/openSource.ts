@@ -15,7 +15,7 @@ const openSource: IOpenSource.Payload = {
         {
           content: 'https://github.com/myles/awesome-static-generators/pull/221',
           href: 'https://github.com/myles/awesome-static-generators/pull/221',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
@@ -55,13 +55,14 @@ const openSource: IOpenSource.Payload = {
         {
           content: 'https://github.com/i3months/eziwiki',
           href: 'https://github.com/i3months/eziwiki',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
           content: 'https://eziwiki.vercel.app/',
           href: 'https://eziwiki.vercel.app/',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
+          preIcon: 'link',
         },
         {
           content: 'Github Stars: ',

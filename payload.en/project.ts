@@ -126,7 +126,7 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/Team-StackUp/stackup',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
@@ -161,23 +161,23 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Split documents by paragraph, then line, then word, and attached surrounding context to each chunk so meaning is not lost.',
+                'Split documents recursively by heading, paragraph, line, and word, prefixing each chunk with a document summary and its heading path to preserve context a lone chunk would lose.',
             },
             {
               content:
-                'Embedded documents and queries in different modes to improve retrieval accuracy, storing the vectors in pgvector.',
+                'Used separate embedding prefixes for indexing and querying to improve alignment, storing vectors in pgvector with an HNSW index.',
             },
             {
               content:
-                'Ran keyword search alongside vector search to catch technical terms the vectors miss, then merged the two rankings.',
+                'Ran keyword search alongside vector search to cover technical terms the vectors miss, fusing the two rankings with RRF.',
             },
             {
               content:
-                'Retrieved in two stages - a fast pass narrows to 20 candidates, a precise model picks the final 5.',
+                'Tried a second-stage LLM reranker, then removed it - it added latency without improving accuracy, so retrieval went back to plain top-k hybrid search.',
             },
             {
               content:
-                'Designed a fallback path so question generation continues from the base documents even when retrieval fails.',
+                'Designed a fallback path so generation continues from the base context when retrieval fails or exceeds a 1.5s timeout.',
             },
           ],
         },
@@ -262,13 +262,13 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/i3months/Embedded-Challenge',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
           content: 'Practice run (full completion) video',
           href: 'https://youtube.com/shorts/dIfozfXyMbs',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'youtube',
         },
         {
@@ -303,7 +303,7 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {

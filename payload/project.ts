@@ -121,7 +121,7 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/Team-StackUp/stackup',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
@@ -133,22 +133,23 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '문단 → 줄 → 단어 순으로 문서를 잘라 청킹하고, 각 조각에 원문 맥락을 덧붙여 의미 손실 방지',
+                '헤딩 → 문단 → 줄 → 단어 순으로 재귀 분할하고, 각 청크에 문서 요약과 헤딩 경로를 붙여 조각 단독으로는 잃기 쉬운 원문 맥락을 보존',
             },
             {
               content:
-                '저장할 때와 검색할 때 임베딩 모드를 다르게 적용해 검색 정확도를 높이고 pgvector에 저장',
+                '인덱싱과 검색에 서로 다른 임베딩 프리픽스를 적용해 정합도를 높이고 pgvector(HNSW 인덱스)에 저장',
             },
             {
               content:
-                '벡터 검색이 놓치는 기술 용어를 잡기 위해 키워드 검색을 함께 돌리고 두 결과의 순위를 합산',
+                '벡터 검색이 놓치는 기술 용어 매칭을 보완하기 위해 키워드 검색을 병행하고 RRF로 두 결과의 순위를 융합',
             },
             {
               content:
-                '1차로 후보 20개를 빠르게 추리고 2차로 정밀 모델이 5개를 선별하는 2단계 검색',
+                'LLM 리랭커를 얹은 2단계 검색을 시도했으나 지연만 늘고 정확도 개선이 없어 제거하고 단순 top-k 하이브리드 검색으로 회귀',
             },
             {
-              content: '검색에 실패해도 기본 자료만으로 질문 생성이 이어지도록 폴백 경로 설계',
+              content:
+                '검색 실패나 타임아웃(1.5초) 시 기본 컨텍스트만으로 생성을 이어가도록 폴백 경로 설계',
             },
           ],
         },
@@ -233,13 +234,13 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/i3months/Embedded-Challenge',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
           content: '연습 주행 완주 영상',
           href: 'https://youtube.com/shorts/dIfozfXyMbs',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'youtube',
         },
         {
@@ -273,7 +274,7 @@ const project: IProject.Payload = {
         {
           content: 'GitHub Repository',
           href: 'https://github.com/kakao-tech-campus-3rd-step3/Team21_FE',
-          weight: 'BOLD',
+          weight: 'SEMI_BOLD',
           preIcon: 'github',
         },
         {
