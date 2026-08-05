@@ -61,18 +61,18 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '공유 DB·공용 도메인 모듈 아키텍처 - 예약·결제·알림을 단일 트랜잭션으로 처리하고 채팅·결제는 격리해 장애 전파 차단',
+                '공유 DB·도메인 모듈 아키텍처 - 예약·결제·알림을 단일 트랜잭션으로 처리하고 채팅·결제는 격리해 장애 전파 차단',
             },
             {
-              content: 'React Native 앱에 Feature-Sliced Design(FSD) 아키텍처 도입',
-            },
-            {
-              content:
-                '푸시 발송 경로 이원화 - iOS는 React Native 환경 제약을 피해 APNs로 직접 발송하고, Android는 FCM 멀티캐스트를 사용',
+              content: 'React Native 프론트엔드 아키텍처로 Feature-Sliced Design 도입',
             },
             {
               content:
-                'AI 친화적 아키텍처 관점의 서비스 분리 - AI가 한 번에 파악 가능한 크기로 서버를 나누고 서비스별 컨텍스트 문서를 분리',
+                '푸시 발송 경로 이원화 - iOS는 React Native 환경 제약을 피해 APNs로 직접 발송, Android는 FCM 멀티캐스트 사용',
+            },
+            {
+              content:
+                'AI가 한 번에 파악할 수 있는 단위로 서버를 구분하고 서비스별 컨텍스트 문서를 분리',
             },
           ],
         },
@@ -82,15 +82,15 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '프로젝트에 맞춘 AI 개발 하네스 구축 - 서비스별 컨텍스트 문서 분리, 도메인 용어 사전, 위임하지 않을 영역을 규정한 금지 규칙',
+                '프로젝트에 맞춘 AI 개발 하네스 구축 - 서비스별 컨텍스트 문서 분리, 도메인 용어 사전, 금지 규칙 설정',
             },
             {
               content:
-                'Claude Code 커스텀 스킬·커맨드로 반복 작업 표준화 - 다국어 7개 언어 키 추가, 예외 타입 일괄 갱신, 배포 전 체크리스트',
+                'Claude Code 커스텀 스킬을 활용해 반복 작업 자동화 - 다국어 7개 언어 키 추가, 예외 타입 일괄 갱신',
             },
             {
               content:
-                'Hook으로 시크릿 하드코딩과 운영 DB 설정 실수를 도구 실행 단계에서 강제 차단',
+                'Hook으로 시크릿 하드코딩과 운영 DB 설정 등 자주 발생하는 실수를 도구 실행 단계에서 강제 차단',
             },
             {
               content:
