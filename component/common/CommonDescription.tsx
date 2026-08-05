@@ -103,7 +103,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
           {renderIcon()}
           {content}
           {contentLinks.map((link) => (
-            <span key={link.text}>
+            <span key={link.text} style={link.bold ? getFontWeight('BOLD') : {}}>
               {link.href ? <HrefTargetBlank url={link.href} text={link.text} /> : link.text}
             </span>
           ))}

@@ -88,6 +88,13 @@ export declare namespace IRow {
 
     /** ### 링크 URL (선택사항) */
     href?: string;
+
+    /**
+     * ### 강조 여부 (선택사항)
+     *
+     * @description `true` 일 경우 해당 텍스트만 굵게 표시된다. (예: 논문 저자 목록에서 본인 이름)
+     */
+    bold?: boolean;
   }
 
   export type FontWeightType =

@@ -2,7 +2,7 @@ import { IPresentation } from '../component/presentation/IPresentation';
 
 const presentation: IPresentation.Payload = {
   disable: false,
-  title: 'PUBLICATION',
+  title: 'PUBLICATIONS & PRESENTATIONS',
 
   list: [
     {
@@ -13,7 +13,16 @@ const presentation: IPresentation.Payload = {
       at: '2026-08',
       descriptions: [
         {
-          content: 'Authors: Joonmo Jeong, Yoonjae Kim, Minsu Kim, Jong-Ryul Lee',
+          content: 'Authors: ',
+          contentLinks: [
+            {
+              text: 'Joonmo Jeong',
+              bold: true,
+            },
+            {
+              text: ', Yoonjae Kim, Minsu Kim, Prof. Jong-Ryul Lee (corresponding author)',
+            },
+          ],
         },
         {
           content: 'Under review · Poster presentation anticipated (2026.10.15)',
@@ -27,7 +36,13 @@ const presentation: IPresentation.Payload = {
       at: '2026-07',
       descriptions: [
         {
-          content: 'Authors: Minseok Park, Joonmo Jeong',
+          content: 'Authors: Minseok Park, ',
+          contentLinks: [
+            {
+              text: 'Joonmo Jeong',
+              bold: true,
+            },
+          ],
         },
         {
           content: 'Accepted · Poster presentation anticipated (2026.11.21)',
@@ -40,11 +55,20 @@ const presentation: IPresentation.Payload = {
       at: '2026-06',
       descriptions: [
         {
-          content:
-            'Authors: Minyong Jeong, Joonmo Jeong, Woojin An, Seohyeon Cho, Seungwoo Jeong, Venkatesan Muthukumar',
+          content: 'Authors: Minyong Jeong, ',
+          contentLinks: [
+            {
+              text: 'Joonmo Jeong',
+              bold: true,
+            },
+            {
+              text:
+                ', Woojin An, Seohyeon Cho, Seungwoo Jeong, Prof. Venkatesan Muthukumar (corresponding author)',
+            },
+          ],
         },
         {
-          content: 'Presented (2026.06.24)',
+          content: 'Presented at the conference (2026.06.24)',
         },
       ],
     },

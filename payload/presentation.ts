@@ -2,7 +2,7 @@ import { IPresentation } from '../component/presentation/IPresentation';
 
 const presentation: IPresentation.Payload = {
   disable: false,
-  title: '논문.',
+  title: '연구 논문 및 학술 발표.',
 
   list: [
     {
@@ -13,7 +13,16 @@ const presentation: IPresentation.Payload = {
       at: '2026-08',
       descriptions: [
         {
-          content: '저자: 정준모, 김윤재, 김민수, 이종렬',
+          content: '저자: ',
+          contentLinks: [
+            {
+              text: '정준모',
+              bold: true,
+            },
+            {
+              text: ', 김윤재, 김민수, 이종률 교수 (교신저자)',
+            },
+          ],
         },
         {
           content: 'Under Review · 포스터 발표 예정 (2026.10.15)',
@@ -27,7 +36,13 @@ const presentation: IPresentation.Payload = {
       at: '2026-07',
       descriptions: [
         {
-          content: '저자: 박민석, 정준모',
+          content: '저자: 박민석, ',
+          contentLinks: [
+            {
+              text: '정준모',
+              bold: true,
+            },
+          ],
         },
         {
           content: 'Accepted · 포스터 발표 예정 (2026.11.21)',
@@ -40,10 +55,19 @@ const presentation: IPresentation.Payload = {
       at: '2026-06',
       descriptions: [
         {
-          content: '저자: 정민용, 정준모, 안우진, 조서현, 정승우, Venkatesan Muthukumar',
+          content: '저자: 정민용, ',
+          contentLinks: [
+            {
+              text: '정준모',
+              bold: true,
+            },
+            {
+              text: ', 안우진, 조서현, 정승우, Venkatesan Muthukumar 교수 (교신저자)',
+            },
+          ],
         },
         {
-          content: '발표 완료 (2026.06.24)',
+          content: 'Presented · 학술대회 발표 (2026.06.24)',
         },
       ],
     },
