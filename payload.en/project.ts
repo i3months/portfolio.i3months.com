@@ -184,7 +184,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Managed a question pool structured as breadth × depth × k - topics are opened, weak points are probed, and the session ends at the overall question cap.',
+                'Managed the question pool as breadth × depth × k - topics are opened and weak points probed, ending at the session-wide question cap.',
             },
             {
               content:
@@ -192,14 +192,14 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Scored answers on four axes - specificity, logic, structure (STAR), and correctness - with rubrics weighted per question category.',
+                'Scored answers on four axes - specificity, logic, structure (STAR), and correctness - branching the criteria by question category.',
             },
             {
               content: 'Verified the correctness axis against evidence retrieved through RAG.',
             },
             {
               content:
-                'Integrated Deepgram and Whisper STT/TTS and fed speech metrics such as speaking rate and silence into the evaluation.',
+                'Integrated Deepgram STT and extracted speech metrics such as speaking rate and silence for the report.',
             },
           ],
         },
