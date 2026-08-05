@@ -19,6 +19,7 @@ const project: IProject.Payload = {
         {
           content:
             '개발 리더 및 AI 서버 개발 담당 - RAG, LangChain, VectorDB, Embedding 등 AI 모듈 개발 및 소프트웨어 아키텍처 설계',
+          weight: 'MEDIUM',
         },
         { content: 'Claude Code 등 LLM을 적극 활용해 개발 생산성 향상' },
         {
@@ -42,10 +43,12 @@ const project: IProject.Payload = {
         {
           content:
             '주제별로 꼬리질문을 이어가는 적응형 질문 생성 - 질문·꼬리질문은 단일 LLM으로 처리하고 멀티에이전트는 피드백 단계에만 적용',
+          weight: 'MEDIUM',
         },
         {
           content:
             '채점 노이즈 완화를 위해 답변별 평가(specificity·logic·structure·correctness) → 결정론적 집계 → LLM 종합 판정 순으로 설계하고, 감점 지점을 명시한 근거를 점수에 부여',
+          weight: 'MEDIUM',
         },
         {
           content:
@@ -54,13 +57,14 @@ const project: IProject.Payload = {
         {
           content:
             '리포트 산출물 - 점수·서술형 평가·근거·사용자 히스토리 관리 및 공유 가능한 구조화 리포트와 PDF 추출 제공',
+          weight: 'MEDIUM',
         },
       ],
       skillKeywords: ['LangChain', 'RAG', 'VectorDB', 'Embedding', 'LLM', 'Multi-Agent'],
     },
     {
-      title: '임베디드 챌린지 - STM32 기반 미로 자율주행 로봇',
-      startedAt: '2026-04',
+      title: '초음파·적외선 센서 기반 미로 자율주행 로봇 - 임베디드 챌린지',
+      startedAt: '2026-03',
       endedAt: '2026-06',
       where: '충남대학교 임베디드 챌린지 (2인 팀)',
       descriptions: [
@@ -72,22 +76,51 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'STM32F429·FreeRTOS 기반 미로 자율주행 로봇 개발 - 초음파 센서와 적외선 센서 결합',
+            'STM32F429(Cortex-M4)·FreeRTOS 기반으로 초음파 3개와 적외선 2개 센서를 융합해, 사전 전역 경로 없이 북쪽 탈출구로 수렴하는 미로 자율주행 로봇 개발',
+          weight: 'MEDIUM',
         },
         {
           content:
-            '측벽 거리 변화량으로 교차로를 감지하고 방향 기준으로 분기하는 FSM 주행 알고리즘 설계',
+            '하드웨어 제약(좌우 모터 출력 비대칭·IMU 부재)으로 Occupancy Grid + A* 풀스택 경로계획을 기각하고, 당일 공개되는 맵을 하드코딩 + 동적 구간만 확률 모델링하는 견고성 우선 설계로 축약',
+          weight: 'MEDIUM',
         },
         {
           content:
-            'EKF 센서 퓨전으로 오도메트리 드리프트 보정 - IMU 없이 측벽 형상 기반 헤딩 관측을 기준으로 주행',
+            'Greedy Cardinal FSM 북향 내비게이션 - 측벽 거리 변화량(Δd)으로 코너·교차로를 이산 감지하고 cardinal heading(상대 방향)으로 분기해 위치 추정 누적 오차(drift)에 강건',
+          weight: 'MEDIUM',
+        },
+        {
+          content: 'EKF 센서 퓨전 설계',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '휠 오도메트리를 RK2(중점) 적분으로 누적하고, 초음파는 하드코딩 벽 선분과의 해석적 Ray–Segment 교차로 측정 야코비안을 닫힌 형태로 계산',
+            },
+            {
+              content:
+                '센서별 순차 1D Kalman 갱신 + 이노베이션 게이팅(|y| > 3√S 제외) + Joseph form으로 발산을 막고 대칭 양정치 보존',
+            },
+            {
+              content:
+                '측벽 형상 기반 arctan 헤딩 관측(θ = θ_wall + arctan(Δd/L))으로 IMU 부재에 따른 헤딩 드리프트를 절대 기준에 고정',
+            },
+          ],
         },
         {
           content:
-            'FreeRTOS 4태스크(센싱·IR·제어·디버그) 선점 스케줄링과 Lock-Free 공유 상태를 사용해 센싱·제어 계층 분리',
+            '동적 장애물 확률 모델링 - 센서 빔 종점의 점유 확률을 시간 가중으로 누적·감쇠해 정적 벽과 이동체를 분리하고, 통과 창이 열리면 순항 속도를 일시 부스트(V_cruise → V_dash)해 빠르게 통과',
+          weight: 'MEDIUM',
         },
         {
-          content: 'Encoder 기반 90도 회전 캘리브레이션 및 좌우 모터 출력 비대칭 보정',
+          content:
+            '극한의 캘리브레이션 - 배터리 의존성·좌우 모터 비대칭을 좌/우 분리 substep과 폐루프 pivot으로 보정하고, 시리얼 연결 없이 상태를 읽도록 LED 우선순위 인코딩 디버깅 구현',
+          weight: 'MEDIUM',
+        },
+        {
+          content:
+            'FreeRTOS 4태스크(Sensor·IR·Control·Debug) 우선순위 선점 스케줄링과 단일 생산자–단일 소비자 Lock-Free 공유 상태로 센싱·제어 계층 분리',
+          weight: 'MEDIUM',
         },
         {
           content: '연습 주행 완주 영상',
@@ -111,6 +144,7 @@ const project: IProject.Payload = {
         {
           content:
             '기획부터 개발·배포·운영까지 전 과정을 직접 주도 - 사용자 앱과 운영용 어드민까지 갖춘 production-ready 서비스로 Google Play·iOS App Store 출시 후 운영 중',
+          weight: 'MEDIUM',
         },
         {
           content:
