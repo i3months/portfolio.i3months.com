@@ -5,6 +5,95 @@ const project: IProject.Payload = {
   title: '프로젝트 내역.',
   list: [
     {
+      title: 'PACK-UP - 여행 예약 플랫폼 개발 및 운영',
+      startedAt: '2025-02',
+      where: '팀 프로젝트 (기획·개발·배포·운영)',
+      descriptions: [
+        {
+          content: 'packup.asia',
+          href: 'https://packup.asia',
+          weight: 'SEMI_BOLD',
+          preIcon: 'link',
+        },
+        {
+          content:
+            '기획부터 개발·배포·운영까지 전 과정을 담당 - Google Play·App Store 출시 후 서비스 운영 중',
+        },
+        {
+          content: '시스템 구성',
+          weight: 'MEDIUM',
+          descriptions: [
+            { content: '모바일 앱 React Native, 어드민 React, 백엔드 Spring Boot' },
+            { content: '역할별 5개 서버 분리 - 코어·결제·채팅·어드민·배치' },
+            { content: '페이레터·카카오페이·KG이니시스 PG 연동 (결제 서버 격리)' },
+            { content: 'GCP Cloud Run 배포 및 Cloud SQL, GCS, Cloudflare DNS 구성' },
+          ],
+        },
+        {
+          content: '인프라 구축 및 운영',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content: 'HTTPS 로드밸런서 URL Map 호스트 라우팅으로 서브도메인 4개 분리',
+            },
+            {
+              content: 'DB를 VPC 내부에 격리 - Cloud SQL Private IP 전환을 무중단으로 진행',
+            },
+            {
+              content:
+                'Cloud Armor 적용 - per-IP Rate Limit(300 req/min), SQLi·XSS 차단, Adaptive Protection',
+            },
+            {
+              content: 'GitHub Actions 배포 자동화 및 Cloud Scheduler 기반 배치 분리',
+            },
+            {
+              content: 'Sentry 에러 추적, Cloud Monitoring Uptime Check 및 Budget Alert 설정',
+            },
+          ],
+        },
+        {
+          content: '아키텍처 설계 및 고민',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '공유 DB·공용 도메인 모듈 기반의 MSA-lite 구조 채택 - 예약·결제·알림을 단일 트랜잭션으로 처리하고 채팅·결제는 격리해 장애 전파 차단',
+            },
+            {
+              content: 'React Native 앱에 Feature-Sliced Design(FSD) 아키텍처 도입',
+            },
+            {
+              content:
+                'AI 친화적 아키텍처 관점의 서비스 분리 - AI가 한 번에 파악 가능한 크기로 서버를 나누고 서비스별 컨텍스트 문서를 분리',
+            },
+          ],
+        },
+        {
+          content: 'AI 활용 개발',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Claude Code 커스텀 스킬·커맨드로 반복 작업 표준화 - 다국어 7개 언어 키 추가, 예외 타입 일괄 갱신, 배포 전 체크리스트',
+            },
+            {
+              content: 'Hook으로 시크릿 하드코딩과 운영 DB 설정 실수를 배포 전에 차단',
+            },
+          ],
+        },
+      ],
+      skillKeywords: [
+        'React Native',
+        'Spring Boot',
+        'React',
+        'FSD',
+        'GCP',
+        'Cloud Run',
+        'Cloud SQL',
+        'Cloud Armor',
+      ],
+    },
+    {
       title: 'IT 직군을 위한 AI 면접 플랫폼 - STACK-UP 개발',
       startedAt: '2026-01',
       endedAt: '2026-06',
@@ -97,78 +186,6 @@ const project: IProject.Payload = {
         },
       ],
       skillKeywords: ['STM32', 'Cortex-M4', 'FreeRTOS', 'C', 'EKF', 'Sensor Fusion'],
-    },
-    {
-      title: 'PACK-UP - 여행 예약 플랫폼 개발 및 운영',
-      startedAt: '2025-02',
-      endedAt: '2026-05',
-      where: '팀 프로젝트 (기획·개발·배포)',
-      descriptions: [
-        {
-          content: 'packup.asia',
-          href: 'https://packup.asia',
-          weight: 'SEMI_BOLD',
-          preIcon: 'link',
-        },
-        {
-          content:
-            '기획부터 개발·배포·운영까지 전 과정을 직접 주도 - 사용자 앱과 운영용 어드민까지 갖춘 production-ready 서비스로 Google Play·iOS App Store 출시 후 운영 중',
-        },
-        {
-          content:
-            'Claude Code 공식 문서를 학습해 프로젝트에 맞는 커스텀 스킬을 직접 제작·활용하며 AI 친화적으로 개발 생산성 극대화',
-        },
-        {
-          content: '시스템 구성',
-          weight: 'MEDIUM',
-          descriptions: [
-            { content: '모바일 앱: React Native + Spring Boot' },
-            { content: '어드민: Spring Boot + React' },
-            { content: '코어·결제·채팅·배치·어드민 등 여러 서버로 분리 구성' },
-            { content: 'GCP Cloud Run 환경에 배포' },
-          ],
-        },
-        {
-          content: '아키텍처 설계 및 고민',
-          weight: 'MEDIUM',
-          descriptions: [
-            {
-              content:
-                'React Native 앱에 Feature-Sliced Design(FSD) 아키텍처를 도입해 기능 단위 모듈 구조로 유지보수성·확장성 확보',
-            },
-            {
-              content:
-                'Cloud Armor(GCP WAF)를 로드밸런서와 애플리케이션 서버 사이에 배치해 SQLi·XSS 등 알려진 공격 패턴을 차단하고, per-IP Rate Limit(300 req/min 초과 시 429)과 Adaptive Protection 기반 ML DDoS 탐지를 적용',
-            },
-            {
-              content:
-                'JPA + MyBatis로 쓰기(Command)·읽기(Query) 로직을 분리하고, 저장소(Elasticsearch·Redis·PostgreSQL) 분리까지 고려한 CQRS 설계 검토',
-            },
-            {
-              content: 'AI 친화적 아키텍처(AI-friendly architecture) 관점의 MSA 고찰',
-              descriptions: [
-                {
-                  content:
-                    '대규모 모놀리스는 AI가 전체 맥락을 파악하기 어려운 반면, MSA는 서비스 단위로 AI 에이전트에 도메인을 전담시킬 수 있음',
-                },
-                {
-                  content:
-                    '모델 컨텍스트가 커지는 미래에는 모놀리스를 분리하지 않아도 파악 가능해질 수 있어, 서비스 분리 기준을 지속적으로 고민',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      skillKeywords: [
-        'React Native',
-        'FSD',
-        'Spring Boot',
-        'React',
-        'GCP',
-        'Cloud Run',
-        'Cloud Armor',
-      ],
     },
     {
       title: '전국 대학 정보를 한 눈에 볼 수 있는 플랫폼 - UniScope 개발',

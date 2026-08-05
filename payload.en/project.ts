@@ -4,6 +4,103 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
+      title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
+      startedAt: '2025-02',
+      where: 'Team Project (Planning, Development, Deployment & Operation)',
+      descriptions: [
+        {
+          content: 'packup.asia',
+          href: 'https://packup.asia',
+          weight: 'SEMI_BOLD',
+          preIcon: 'link',
+        },
+        {
+          content:
+            'Owned the entire process from planning to development, deployment, and operation - in service after launching on Google Play and the App Store.',
+        },
+        {
+          content: 'System Composition',
+          weight: 'MEDIUM',
+          descriptions: [
+            { content: 'React Native app, React admin, Spring Boot backend.' },
+            { content: 'Five servers split by role - core, payment, chat, admin, and batch.' },
+            {
+              content:
+                'Integrated PayLetter, KakaoPay, and KG Inicis payment gateways, with payment isolated in its own server.',
+            },
+            { content: 'Deployed on GCP Cloud Run with Cloud SQL, GCS, and Cloudflare DNS.' },
+          ],
+        },
+        {
+          content: 'Infrastructure & Operations',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Routed four subdomains through an HTTPS load balancer using URL Map host routing.',
+            },
+            {
+              content:
+                'Isolated the database inside a VPC, migrating Cloud SQL to a private IP with no downtime.',
+            },
+            {
+              content:
+                'Applied Cloud Armor - per-IP rate limiting (300 req/min), SQLi/XSS blocking, and Adaptive Protection.',
+            },
+            {
+              content:
+                'Automated deployment with GitHub Actions and separated batch jobs via Cloud Scheduler.',
+            },
+            {
+              content:
+                'Set up Sentry error tracking, Cloud Monitoring uptime checks, and budget alerts.',
+            },
+          ],
+        },
+        {
+          content: 'Architecture Design & Considerations',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Adopted an MSA-lite structure over a shared database and shared domain module - booking, payment, and notification stay in a single transaction, while chat and payment are isolated to contain failures.',
+            },
+            {
+              content: 'Adopted Feature-Sliced Design (FSD) architecture in the React Native app.',
+            },
+            {
+              content:
+                'Split services from an AI-friendly architecture perspective - each server sized for an AI agent to grasp at once, with per-service context documents.',
+            },
+          ],
+        },
+        {
+          content: 'AI-Assisted Development',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Standardized repetitive work with custom Claude Code skills and commands - i18n keys across 7 languages, exception type updates, and a pre-deploy checklist.',
+            },
+            {
+              content:
+                'Used hooks to block hardcoded secrets and production database misconfiguration before deployment.',
+            },
+          ],
+        },
+      ],
+      skillKeywords: [
+        'React Native',
+        'Spring Boot',
+        'React',
+        'FSD',
+        'GCP',
+        'Cloud Run',
+        'Cloud SQL',
+        'Cloud Armor',
+      ],
+    },
+    {
       title: 'Developed STACK-UP - An AI Interview Platform for IT Roles',
       startedAt: '2026-01',
       endedAt: '2026-06',
@@ -100,80 +197,6 @@ const project: IProject.Payload = {
         },
       ],
       skillKeywords: ['STM32', 'Cortex-M4', 'FreeRTOS', 'C', 'EKF', 'Sensor Fusion'],
-    },
-    {
-      title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
-      startedAt: '2025-02',
-      endedAt: '2026-05',
-      where: 'Team Project (Planning, Development & Deployment)',
-      descriptions: [
-        {
-          content: 'packup.asia',
-          href: 'https://packup.asia',
-          weight: 'SEMI_BOLD',
-          preIcon: 'link',
-        },
-        {
-          content:
-            'Personally drove the entire process from planning to development, deployment, and operation - a production-ready service with both a user app and an operations admin, in service after launching on Google Play and the iOS App Store.',
-        },
-        {
-          content:
-            'Studied the official Claude Code documentation and built and used custom skills tailored to the project, maximizing development productivity in an AI-friendly way.',
-        },
-        {
-          content: 'System Composition',
-          weight: 'MEDIUM',
-          descriptions: [
-            { content: 'Mobile App: React Native + Spring Boot' },
-            { content: 'Admin: Spring Boot + React' },
-            {
-              content: 'Separated into multiple servers - core, payment, chat, batch, and admin.',
-            },
-            { content: 'Deployed on GCP Cloud Run.' },
-          ],
-        },
-        {
-          content: 'Architecture Design & Considerations',
-          weight: 'MEDIUM',
-          descriptions: [
-            {
-              content:
-                'Adopted Feature-Sliced Design (FSD) architecture in the React Native app for a feature-based modular structure, ensuring maintainability and scalability.',
-            },
-            {
-              content:
-                'Placed Cloud Armor (GCP WAF) between the load balancer and application servers to block known attack patterns such as SQLi and XSS, and applied per-IP Rate Limiting (429 on exceeding 300 req/min) and ML-based DDoS detection via Adaptive Protection.',
-            },
-            {
-              content:
-                'Reviewed a CQRS design separating write (Command) and read (Query) logic with JPA + MyBatis, considering store separation across Elasticsearch, Redis, and PostgreSQL.',
-            },
-            {
-              content: 'Examined MSA from an AI-friendly architecture perspective',
-              descriptions: [
-                {
-                  content:
-                    'A large monolith is hard for AI to grasp in full context, whereas MSA lets AI agents take charge of a domain on a per-service basis.',
-                },
-                {
-                  content:
-                    'As model context windows grow, a monolith may become understandable without splitting it - so the criteria for service separation warrant continued consideration.',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      skillKeywords: [
-        'React Native',
-        'FSD',
-        'Spring Boot',
-        'React',
-        'GCP',
-        'Cloud Run',
-        'Cloud Armor',
-      ],
     },
     {
       title: 'Developed UniScope - A Platform for Nationwide University Information',
