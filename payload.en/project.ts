@@ -224,7 +224,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Temperature set by model tier - low for analysis and judgment, higher for follow-ups.',
+                'Two temperature tiers bound to the models - 0.2 on the larger model keeps fact extraction and judgment consistent, 0.4 on the lightweight one varies the angle of follow-up questions.',
             },
             {
               content:
