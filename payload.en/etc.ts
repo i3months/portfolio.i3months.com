@@ -43,7 +43,8 @@ const etc: IEtc.Payload = {
       subTitleLinksPrefix: 'Research Paper',
       subTitleLinks: [
         {
-          text: 'Hammering-Precursor Monitoring for Embedded Systems under OOD Stress',
+          text:
+            'Environment-Conditioned Hammering-Precursor Monitoring for Reliable Embedded Systems',
         },
       ],
     },
