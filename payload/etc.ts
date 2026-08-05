@@ -6,6 +6,17 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: 'Google AI Professional Certificate 수료',
+      subTitle: 'Google 제공 · Coursera 전문 과정 (7개 강좌)',
+      startedAt: '2026-07',
+      descriptions: [
+        {
+          content:
+            'AI Fundamentals, Brainstorming and Planning, Research and Insights, Writing and Communicating, Content Creation, Data Analysis, App Building',
+        },
+      ],
+    },
+    {
       title: '충남대학교 실전코딩 (Practical Coding) 교과목 튜터',
       subTitle:
         'MSA, CI/CD (Docker, Kubernetes), Software Testing, Agentic AI 및 AI 기반 개발 도구 활용 학습 지원',

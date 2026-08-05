@@ -5,6 +5,20 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'Chungnam National University Algorithm Competition – DevDay',
+      subTitle: '4× Bronze Prize / 1× Encouragement Prize',
+      at: '2026-06',
+      descriptions: [
+        {
+          content: 'University-wide algorithm competition held every spring and fall.',
+        },
+        {
+          content:
+            'Bronze Prize in June 2026, November 2025, June 2025, and June 2022 / Encouragement Prize in November 2021.',
+        },
+      ],
+    },
+    {
       title: 'ABC Bootcamp: Data-Driven Course',
       subTitle: "Excellence Prize (SW-Centered University Project Director's Award)",
       at: '2026-01',
@@ -12,20 +26,6 @@ const presentation: IAward.Payload = {
         {
           content:
             'Developed "D-Village" a survival-based community building platform for small groups using React and FastAPI.',
-        },
-      ],
-    },
-    {
-      title: 'Chungnam National University Algorithm Competition – DevDay',
-      subTitle: '3× Bronze Prize / 1× Encouragement Prize',
-      at: '2025-11',
-      descriptions: [
-        {
-          content: 'University-wide algorithm competition held every spring and fall.',
-        },
-        {
-          content:
-            'Bronze Prize in November 2025, June 2025, and June 2022 / Encouragement Prize in November 2021.',
         },
       ],
     },

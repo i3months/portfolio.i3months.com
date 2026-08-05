@@ -5,6 +5,17 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: 'Google AI Professional Certificate',
+      subTitle: 'Professional Certificate by Google on Coursera (7 courses)',
+      startedAt: '2026-07',
+      descriptions: [
+        {
+          content:
+            'AI Fundamentals, Brainstorming and Planning, Research and Insights, Writing and Communicating, Content Creation, Data Analysis, App Building',
+        },
+      ],
+    },
+    {
       title: 'Chungnam National University Practical Coding Course Tutor',
       subTitle:
         'Assisted students in learning MSA, CI/CD (Docker, Kubernetes), Software Testing, Agentic AI, and AI-powered Development Tools',

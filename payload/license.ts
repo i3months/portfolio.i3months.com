@@ -6,9 +6,15 @@ const license: ILicense.Payload = {
 
   list: [
     {
+      title: 'AWS Certified Solutions Architect – Associate',
+      subTitle: 'Amazon Web Services (SAA-C03)',
+      startedAt: '2026-08',
+      endedAt: '2029-08',
+    },
+    {
       title: 'TOPCIT 정기평가',
-      subTitle: 'Test of Practical Competency in IT (수준 4, 685점)',
-      startedAt: '2026-05',
+      subTitle: 'Test of Practical Competency in IT (수준 4)',
+      startedAt: '2026-06',
     },
     {
       title: 'TOEIC Speaking',
