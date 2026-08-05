@@ -279,7 +279,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Served as Tech Lead - designed the frontend architecture and led the overall development process.',
+            'Served as Tech Lead - designed the software architecture and led the overall development process.',
         },
         {
           content: 'Kakao Tech Campus Final Presentation - UniScope Platform',
@@ -362,7 +362,7 @@ const project: IProject.Payload = {
             'Visualized statistical data using ApexChart and implemented favorites and table search features.',
         },
       ],
-      skillKeywords: ['Java', 'Spring Boot', 'MariaDB', 'Tibero', 'jQuery', 'ApexChart'],
+      skillKeywords: ['Java', 'Spring', 'MariaDB', 'Tibero', 'jQuery', 'ApexChart'],
     },
     {
       title: 'Enhanced functionalities of the DBpia service',
@@ -391,12 +391,12 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Maintained DBpia service operations – Fixed Excel download bugs, managed the PDF download server, and handled long-term inactive users.',
+            'Maintained DBpia service operations - fixed Excel download bugs, managed the PDF download server, and handled long-term inactive users.',
         },
       ],
       skillKeywords: [
         'Java',
-        'Spring Boot',
+        'Spring',
         'Redis',
         'Elasticsearch',
         'SQL Server',
@@ -435,7 +435,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Configured Spring Security with custom filters and authenticators, implemented LDAP-based login.',
+                'Configured Spring Security with custom filters and authenticators, implemented LDAP-based AD account login.',
             },
             {
               content:
@@ -498,8 +498,7 @@ const project: IProject.Payload = {
                 'Refactored a legacy C++ batch system into Spring Batch, integrating ERP and DCM services to enhance stability and processing speed.',
             },
             {
-              content:
-                'Developed a temporary storage system for research papers to periodically save input data.',
+              content: 'Developed editor draft saving - auto-saved input every 5 minutes.',
             },
             {
               content:
@@ -587,8 +586,8 @@ const project: IProject.Payload = {
               href: 'https://13months.tistory.com/639',
             },
             { content: 'Detected changes at the project level and updated only modified data.' },
-            { content: 'Used AtomicBoolean api to ensure only one scheduler runs at a time.' },
-            { content: 'Handled scheduler tasks asynchronously with CompletableFuture api.' },
+            { content: 'Used AtomicBoolean to ensure only one scheduler runs at a time.' },
+            { content: 'Handled scheduler tasks asynchronously with CompletableFuture.' },
             { content: 'Conducted performance benchmarking tests considering JVM warm-up.' },
           ],
         },
@@ -623,7 +622,7 @@ const project: IProject.Payload = {
           content: 'Implemented a WebSocket-based broadcast feature for connected users.',
         },
       ],
-      skillKeywords: ['Spring Boot', 'd3.js', 'WebSocket', 'jQuery', 'MySQL'],
+      skillKeywords: ['Spring Boot', 'd3.js', 'JavaScript', 'jQuery', 'MySQL'],
     },
   ],
 };
