@@ -54,12 +54,12 @@ const project: IProject.Payload = {
           ],
         },
         {
-          content: '아키텍처 설계 및 고민',
+          content: '소프트웨어 아키텍처 설계',
           weight: 'MEDIUM',
           descriptions: [
             {
               content:
-                '공유 DB·공용 도메인 모듈 기반의 MSA-lite 구조 채택 - 예약·결제·알림을 단일 트랜잭션으로 처리하고 채팅·결제는 격리해 장애 전파 차단',
+                '공유 DB·공용 도메인 모듈 아키텍처 - 예약·결제·알림을 단일 트랜잭션으로 처리하고 채팅·결제는 격리해 장애 전파 차단',
             },
             {
               content: 'React Native 앱에 Feature-Sliced Design(FSD) 아키텍처 도입',
