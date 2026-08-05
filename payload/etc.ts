@@ -6,17 +6,6 @@ const etc: IEtc.Payload = {
 
   list: [
     {
-      title: 'Google AI Professional Certificate 수료',
-      subTitle: 'Google 제공 · Coursera 전문 과정 (7개 강좌)',
-      startedAt: '2026-07',
-      descriptions: [
-        {
-          content:
-            'AI Fundamentals, Brainstorming and Planning, Research and Insights, Writing and Communicating, Content Creation, Data Analysis, App Building',
-        },
-      ],
-    },
-    {
       title: '충남대학교 Deep Learning SC Lab - 학부연구생',
       subTitle: '충남대학교 하계방학 학생성공장학생 선정',
       startedAt: '2026-03',
@@ -26,6 +15,11 @@ const etc: IEtc.Payload = {
           text: '멀티모달 AI 기반 서비스 연구 개발 - RAG 검색 및 LLM 멀티에이전트 파이프라인 설계',
         },
       ],
+    },
+    {
+      title: 'Google AI Professional Certificate 수료',
+      subTitle: 'Google 제공 · Coursera 전문 과정 (AI 활용 기획·분석·앱 개발 등 7개 강좌)',
+      startedAt: '2026-07',
     },
     {
       title: '충남대학교 실전코딩 (Practical Coding) 교과목 튜터',

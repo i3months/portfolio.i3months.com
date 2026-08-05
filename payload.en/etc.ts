@@ -5,17 +5,6 @@ const etc: IEtc.Payload = {
 
   list: [
     {
-      title: 'Google AI Professional Certificate',
-      subTitle: 'Professional Certificate by Google on Coursera (7 courses)',
-      startedAt: '2026-07',
-      descriptions: [
-        {
-          content:
-            'AI Fundamentals, Brainstorming and Planning, Research and Insights, Writing and Communicating, Content Creation, Data Analysis, App Building',
-        },
-      ],
-    },
-    {
       title: 'Chungnam National University Deep Learning SC Lab - Undergraduate Researcher',
       subTitle: 'Selected as a CNU Summer Session Student Success Scholar',
       startedAt: '2026-03',
@@ -26,6 +15,12 @@ const etc: IEtc.Payload = {
             'Research and development of multimodal AI services - RAG retrieval and LLM multi-agent pipeline design',
         },
       ],
+    },
+    {
+      title: 'Google AI Professional Certificate',
+      subTitle:
+        'Professional Certificate by Google on Coursera (7 courses on AI-driven planning, analysis, and app building)',
+      startedAt: '2026-07',
     },
     {
       title: 'Chungnam National University Practical Coding Course Tutor',
