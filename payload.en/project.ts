@@ -104,7 +104,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Established a cycle that delegates code writing while keeping design, review, testing, and deployment in my own hands.',
+                'Split design, implementation, and review across dedicated agents that hand off only artifacts - each stage is verified, while final approval and deployment stay in my own hands.',
             },
           ],
         },
