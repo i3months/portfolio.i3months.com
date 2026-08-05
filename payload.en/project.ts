@@ -28,10 +28,11 @@ const project: IProject.Payload = {
             { content: 'Five servers split by role - core, payment, chat, admin, and batch.' },
             {
               content:
-                'Integrated PayLetter, KakaoPay, and KG Inicis payment gateways, with payment isolated in its own server.',
+                'KG Inicis payment gateway in production, with overseas payment channels (PayLetter, KakaoPay) being added - payment isolated in its own server.',
             },
             {
-              content: 'Built on GCP - Cloud Run, Cloud SQL, GCS, and Cloudflare DNS.',
+              content:
+                'Built on GCP - Cloud Run, Cloud SQL, GCS, Firebase Hosting, and Cloudflare DNS.',
             },
           ],
         },
@@ -41,11 +42,11 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Protected traffic with Cloud Armor - per-IP rate limiting (300 requests/min), SQL injection and XSS blocking, and ML-based DDoS detection.',
+                'Protected traffic with Cloud Armor - per-IP rate limiting, SQL injection and XSS blocking - plus an application-level rate limiter that resolves the real client IP through verified proxy hops.',
             },
             {
               content:
-                'Set up GitHub Actions CI - builds and tests only the changed services, with automatic formatting on pull requests (deployment standardized through per-service scripts).',
+                'Set up GitHub Actions CI - path-filtered builds and tests, with automatic Spotless formatting on pull requests.',
             },
             {
               content:
@@ -61,7 +62,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Consolidated the infrastructure on GCP - translation, maps, push, and social login all run on Google services, so keys, permissions, and billing are managed in a single project.',
+                'Concentrated external integrations in one shared infrastructure module - translation (DeepL), maps, push (FCM/APNs), storage, and payment clients are shared across all five servers, while GCP keys, IAM, and billing stay in a single project.',
             },
           ],
         },
@@ -71,7 +72,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Adopted an MSA-lite structure over a shared database and shared domain module - booking, payment, and notification stay in a single transaction, while chat and payment are isolated to contain failures.',
+                'Shared database and domain module architecture - booking and payment run in a single transaction for consistency, while notifications are dispatched asynchronously after commit so an external delivery failure never rolls back a booking.',
             },
             {
               content: 'Adopted Feature-Sliced Design (FSD) architecture in the React Native app.',
@@ -104,7 +105,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Split design, implementation, and review across dedicated agents that hand off only artifacts - each stage is verified, while final approval and deployment stay in my own hands.',
+                'Delegated verification to permission-scoped agents - concurrency, security, schema, and i18n reviewed adversarially in separate contexts, with source-write permission removed so a reviewer cannot edit the code (implementation, final approval, and deployment stay in my own hands).',
             },
           ],
         },

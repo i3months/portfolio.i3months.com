@@ -28,7 +28,8 @@ const project: IProject.Payload = {
             { content: '역할별 5개 서버 분리 - 코어·결제·채팅·어드민·배치' },
             { content: '페이레터·카카오페이·KG이니시스 PG 연동 (결제 서버 격리)' },
             {
-              content: 'GCP 기반 시스템 구축 - Cloud Run, Cloud SQL, GCS, Cloudflare DNS',
+              content:
+                'GCP 기반 시스템 구축 - Cloud Run, Cloud SQL, GCS, Firebase Hosting, Cloudflare DNS',
             },
           ],
         },
@@ -51,7 +52,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'GCP 기반 인프라 통합 - 번역·지도·푸시·인증 키, 권한, 과금을 단일 프로젝트에서 관리',
+                '외부 연동을 공용 인프라 모듈 한 곳으로 통합 - 번역·지도·푸시·스토리지·PG 클라이언트를 5개 서버가 공유하도록 설정 ',
             },
           ],
         },
@@ -61,7 +62,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '공유 DB·도메인 모듈 아키텍처 - 예약·결제·알림을 단일 트랜잭션으로 처리하고 채팅·결제는 격리해 장애 전파 차단',
+                '공유 DB·도메인 모듈 아키텍처 - 예약·결제는 단일 트랜잭션으로 정합성을 보장하고, 알림은 커밋 이후 비동기로 분리해 외부 발송 실패가 예약을 롤백시키지 않도록 설계',
             },
             {
               content: 'React Native 프론트엔드 아키텍처로 Feature-Sliced Design 도입',
@@ -94,7 +95,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                '설계·구현·리뷰를 담당 에이전트로 분리하고 산출물로만 주고받도록 구성 - 각 단계 검증을 강제하고 최종 승인과 배포는 직접 수행',
+                '검증 단계를 권한이 분리된 전용 에이전트로 위임 - 동시성·보안·스키마·다국어 4개 관점을 각각 새 컨텍스트에서 적대적으로 검토하게 하고, 소스 수정 권한을 제거해 리뷰어가 코드를 고칠 수 없도록 강제 (구현·최종 승인·배포는 직접 수행)',
             },
           ],
         },
