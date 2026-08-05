@@ -209,19 +209,26 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Reduced scoring noise with a per-answer evaluation → deterministic aggregation → LLM final judgment flow, attaching rationale that pinpoints where points were deducted.',
+                'Staged scoring - per-answer LLM rating -> averaging in code -> LLM summary.',
+            },
+            {
+              content: 'Code owns the totals, so the same session always yields the same score.',
             },
             {
               content:
-                'Split models by stage - a larger model for analysis, opening questions, and final feedback, a lightweight model for latency-sensitive follow-ups.',
+                'The LLM summary never changes the score - it only explains strengths, weaknesses, and deductions.',
             },
             {
               content:
-                'Tuned temperature by purpose - low for fact extraction and scoring, higher for follow-ups that probe weaknesses from varied angles.',
+                'Models split by stage - a larger model for analysis, opening questions, and the summary, a lightweight one for follow-ups.',
             },
             {
               content:
-                'Delivered reports with scores, narrative evaluation, rationale, and history as a shareable structured report and PDF export.',
+                'Temperature set by model tier - low for analysis and judgment, higher for follow-ups.',
+            },
+            {
+              content:
+                'Scores, narrative evaluation, and rationale stored as a structured report, shareable via public link.',
             },
           ],
         },
