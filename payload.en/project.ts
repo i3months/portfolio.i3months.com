@@ -105,7 +105,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Delegated verification to permission-scoped agents - concurrency, security, schema, and i18n reviewed adversarially in separate contexts, with source-write permission removed so a reviewer cannot edit the code (implementation, final approval, and deployment stay in my own hands).',
+                'Ran review-only agents across four angles - concurrency, security, schema, and i18n - with source-write permission removed to separate review from implementation.',
             },
           ],
         },
