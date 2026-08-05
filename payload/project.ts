@@ -62,7 +62,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '공유 DB·도메인 모듈 아키텍처 - 예약·결제는 단일 트랜잭션으로 정합성을 보장하고, 알림은 커밋 이후 비동기로 분리해 외부 발송 실패가 예약을 롤백시키지 않도록 설계',
+                '공유 DB·도메인 모듈 아키텍처 - 예약·결제는 단일 트랜잭션으로 정합성을 보장하고, 알림은 커밋 이후 비동기로 분리',
             },
             {
               content: 'React Native 프론트엔드 아키텍처로 Feature-Sliced Design 도입',
