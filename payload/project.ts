@@ -126,45 +126,126 @@ const project: IProject.Payload = {
         },
         {
           content:
-            '개발 리더 및 AI 서버 개발 담당 - RAG, LangChain, VectorDB, Embedding 등 AI 모듈 개발 및 소프트웨어 아키텍처 설계',
-        },
-        { content: 'Claude Code 등 LLM을 적극 활용해 개발 생산성 향상' },
-        {
-          content:
-            '평가위원 페르소나·채점 기준 설계에 최신 프롬프트 엔지니어링 기법을 적극 적용해 출력 일관성과 평가 신뢰도 확보',
+            '개발 리더 및 AI 서버 개발 담당 - 자료 분석부터 질문 생성, 답변 평가, 종합 피드백까지 AI 파이프라인 전반 설계',
         },
         {
-          content: '멀티 면접관 패널 기반 피드백 설계 (멀티에이전트)',
+          content: '자료 분석 파이프라인',
           weight: 'MEDIUM',
           descriptions: [
             {
               content:
-                '동일 LLM에 페르소나·평가축만 다르게 준 프롬프트 멀티콜로 평가위원 패널을 병렬 호출 - 직군 기술(technical_accuracy)·논리(logic_score)·커뮤니케이션(음성 지표 활용, communication_score) 평가위원 구성 (PERSONALITY 모드에서는 인성·협업 평가위원으로 교체)',
+                'PDF·웹 이력서와 GitHub 레포지토리를 단일 LLM 체인으로 구조화 마크다운으로 변환 - Vision 모델을 적용해 이미지형 PDF까지 처리',
             },
             {
               content:
-                '종합 점수는 코드 기반 가중평균(0.5·기술 + 0.25·논리 + 0.25·전달)으로 산출하고, synthesis LLM 1콜로 서술형 강점·약점·학습 방향(study_plan) 생성',
+                'GitHub 분석은 설정 파일에 가중치를 둔 우선순위 기반 수집 알고리즘으로 핵심 소스만 선별 추출',
+            },
+            {
+              content:
+                '웹 이력서는 본문 추출 실패 시 헤드리스 렌더링으로 폴백해 JS 기반 포트폴리오까지 대응',
+            },
+            {
+              content:
+                '환각 차단을 위해 사실 구조화 추출 → 요약 생성 2단계로 분리하고 출처를 기록, Pydantic 스키마 검증으로 LLM 출력 형식 강제',
             },
           ],
         },
         {
-          content:
-            '주제별로 꼬리질문을 이어가는 적응형 질문 생성 - 질문·꼬리질문은 단일 LLM으로 처리하고 멀티에이전트는 피드백 단계에만 적용',
+          content: 'RAG 검색 시스템',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '문단·줄·단어 우선순위로 분해하는 청킹과 Contextual Retrieval을 적용해 고립된 청크의 맥락 손실 방지',
+            },
+            {
+              content:
+                '인덱싱과 검색 시점에 서로 다른 Task Prefix를 적용해 임베딩 정합도를 최적화하고 pgvector에 적재',
+            },
+            {
+              content:
+                '기술 용어 누락 문제를 해결하기 위해 벡터·키워드 하이브리드 검색을 RRF로 융합',
+            },
+            {
+              content:
+                'bi-encoder top-20 → cross-encoder 리랭킹 top-5의 2단계 검색으로 정밀도 확보',
+            },
+            {
+              content: '임베딩·검색 실패 시 기본 컨텍스트만으로 생성을 이어가도록 폴백 경로 설계',
+            },
+          ],
         },
         {
-          content:
-            '채점 노이즈 완화를 위해 답변별 평가(specificity·logic·structure·correctness) → 결정론적 집계 → LLM 종합 판정 순으로 설계하고, 감점 지점을 명시한 근거를 점수에 부여',
+          content: '질문 생성 및 답변 평가',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'breadth × depth × k 구조의 질문 풀 관리 - 주제를 펼치고 약한 지점을 파고들되 전체 질문 상한에서 종료',
+            },
+            {
+              content:
+                '초기 질문은 직군·자료 요약, 꼬리질문은 직전 질문·답변으로 RAG 쿼리를 분리해 검색 대상을 전환',
+            },
+            {
+              content:
+                '답변을 구체성·논리·구조(STAR)·정확성 4축으로 정량 채점하고 질문 카테고리별 루브릭을 차등 적용',
+            },
+            {
+              content: '정확성 축은 RAG로 검색한 근거와 대조해 검증',
+            },
+            {
+              content:
+                'Deepgram·Whisper 기반 STT/TTS를 연동하고 발화 속도·무음 등 음성 지표를 평가에 반영',
+            },
+          ],
         },
         {
-          content:
-            '직무·기술 문서를 청킹·임베딩해 VectorDB에 적재하고, 검색된 context chunk로 지원자 답변의 사실성을 검증하는 RAG 파이프라인 구축',
+          content: '종합 피드백 및 모델 운용',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '채점 노이즈 완화를 위해 답변별 평가 → 결정론적 집계 → LLM 종합 판정 순으로 설계하고 감점 지점을 명시한 근거를 부여',
+            },
+            {
+              content:
+                '단계별 모델 분리 - 분석·초기 질문·종합 피드백은 상위 모델, 저지연이 필요한 꼬리질문은 경량 모델',
+            },
+            {
+              content:
+                '용도별 temperature 분리 - 사실 추출과 평가는 낮게, 약점을 다양한 각도로 파고드는 꼬리질문은 상대적으로 높게 설정',
+            },
+            {
+              content:
+                '리포트 산출물 - 점수·서술형 평가·근거·히스토리를 공유 가능한 구조화 리포트와 PDF로 제공',
+            },
+          ],
         },
         {
-          content:
-            '리포트 산출물 - 점수·서술형 평가·근거·사용자 히스토리 관리 및 공유 가능한 구조화 리포트와 PDF 추출 제공',
+          content: 'AI 활용 개발',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '계획·설계·구현·테스트를 각각 전담 에이전트에 분담하는 멀티 에이전트 방식으로 개발 진행',
+            },
+            {
+              content:
+                '단계별 산출물을 다음 에이전트의 입력으로 넘기는 구조 - 설계를 확정한 뒤 구현에 착수하고 테스트로 회수',
+            },
+            {
+              content:
+                '설계 단계에 시간을 집중 투자해 아키텍처·프롬프트·출력 스키마를 먼저 확정하고, 구현은 그 규격을 따르도록 고정',
+            },
+            {
+              content:
+                '프로젝트 전용 컨텍스트 문서와 규칙을 정의한 AI 개발 하네스를 구축해 에이전트별 역할과 산출물 형식을 표준화',
+            },
+          ],
         },
       ],
-      skillKeywords: ['LangChain', 'RAG', 'VectorDB', 'Embedding', 'LLM', 'Multi-Agent'],
+      skillKeywords: ['LangChain', 'RAG', 'pgvector', 'Embedding', 'LLM', 'Gemini', 'FastAPI'],
     },
     {
       title: '임베디드 챌린지 - STM32 기반 미로 자율주행 로봇',

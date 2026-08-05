@@ -131,48 +131,127 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Served as development lead and AI server developer - built AI modules (RAG, LangChain, VectorDB, Embedding) and designed the software architecture.',
+            'Served as development lead and AI server developer - designed the whole AI pipeline from document analysis to question generation, answer scoring, and final feedback.',
         },
         {
-          content:
-            'Boosted development productivity by actively leveraging LLMs such as Claude Code.',
-        },
-        {
-          content:
-            'Applied state-of-the-art prompt engineering techniques to the evaluator personas and scoring criteria to secure output consistency and evaluation reliability.',
-        },
-        {
-          content: 'Designed multi-interviewer panel feedback (multi-agent)',
+          content: 'Document Analysis Pipeline',
           weight: 'MEDIUM',
           descriptions: [
             {
               content:
-                'Calls a panel of evaluators in parallel via prompt multi-calls on the same LLM differing only in persona and evaluation axis - technical (technical_accuracy), logic (logic_score), and communication (using voice metrics, communication_score) evaluators (swapped for personality/collaboration evaluators in PERSONALITY mode).',
+                'Converted PDF and web resumes and GitHub repositories into structured markdown through a single LLM chain, with a vision model handling image-based PDFs.',
             },
             {
               content:
-                'Computes the overall score via code-based weighted averaging (0.5·technical + 0.25·logic + 0.25·delivery) and generates narrative strengths/weaknesses and a study_plan with a single synthesis LLM call.',
+                'Collected GitHub sources with a priority-based algorithm weighted toward configuration files, extracting only the essential code.',
+            },
+            {
+              content:
+                'Fell back to headless rendering when web resume extraction returned nothing, covering JS-rendered portfolios.',
+            },
+            {
+              content:
+                'Prevented hallucination by splitting structured fact extraction from summary generation and recording provenance, with Pydantic schemas enforcing the LLM output format.',
             },
           ],
         },
         {
-          content:
-            'Adaptive question generation that follows up topic by topic - questions and follow-ups use a single LLM, while multi-agent is applied only at the feedback stage.',
+          content: 'RAG Retrieval System',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Chunked documents by paragraph, line, and word priority and applied Contextual Retrieval so isolated chunks keep their context.',
+            },
+            {
+              content:
+                'Applied different task prefixes at indexing and query time to optimize embedding alignment, storing vectors in pgvector.',
+            },
+            {
+              content:
+                'Fused vector and keyword search with RRF to stop technical terms from being missed.',
+            },
+            {
+              content:
+                'Added two-stage retrieval - bi-encoder top-20 followed by cross-encoder reranking to top-5.',
+            },
+            {
+              content:
+                'Designed a fallback path that continues generation from base context when embedding or retrieval fails.',
+            },
+          ],
         },
         {
-          content:
-            'To mitigate scoring noise, designed the flow as per-answer evaluation (specificity, logic, structure, correctness) → deterministic aggregation → LLM final judgment, attaching rationale that pinpoints where points were deducted.',
+          content: 'Question Generation & Answer Scoring',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Managed a question pool structured as breadth × depth × k - topics are opened, weak points are probed, and the session ends at the overall question cap.',
+            },
+            {
+              content:
+                'Separated RAG queries by stage - opening questions from the job role and document summary, follow-ups from the previous question and answer.',
+            },
+            {
+              content:
+                'Scored answers on four axes - specificity, logic, structure (STAR), and correctness - with rubrics weighted per question category.',
+            },
+            {
+              content: 'Verified the correctness axis against evidence retrieved through RAG.',
+            },
+            {
+              content:
+                'Integrated Deepgram and Whisper STT/TTS and fed speech metrics such as speaking rate and silence into the evaluation.',
+            },
+          ],
         },
         {
-          content:
-            'Built a RAG pipeline that chunks and embeds job/technical documents into a VectorDB and verifies the factual accuracy of candidate answers using retrieved context chunks.',
+          content: 'Final Feedback & Model Operations',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Reduced scoring noise with a per-answer evaluation → deterministic aggregation → LLM final judgment flow, attaching rationale that pinpoints where points were deducted.',
+            },
+            {
+              content:
+                'Split models by stage - a larger model for analysis, opening questions, and final feedback, a lightweight model for latency-sensitive follow-ups.',
+            },
+            {
+              content:
+                'Tuned temperature by purpose - low for fact extraction and scoring, higher for follow-ups that probe weaknesses from varied angles.',
+            },
+            {
+              content:
+                'Delivered reports with scores, narrative evaluation, rationale, and history as a shareable structured report and PDF export.',
+            },
+          ],
         },
         {
-          content:
-            'Report deliverables - provides scores, narrative evaluation, rationale, and user history management, along with a shareable structured report and PDF export.',
+          content: 'AI-Assisted Development',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                'Ran development as a multi-agent workflow, assigning planning, design, implementation, and testing to dedicated agents.',
+            },
+            {
+              content:
+                'Passed each stage\u2019s artifact to the next agent as input - design is settled before implementation starts, and testing closes the loop.',
+            },
+            {
+              content:
+                'Invested heavily in the design stage, fixing architecture, prompts, and output schemas up front so implementation only follows the spec.',
+            },
+            {
+              content:
+                'Built an AI development harness with project-specific context documents and rules that standardize each agent\u2019s role and artifact format.',
+            },
+          ],
         },
       ],
-      skillKeywords: ['LangChain', 'RAG', 'VectorDB', 'Embedding', 'LLM', 'Multi-Agent'],
+      skillKeywords: ['LangChain', 'RAG', 'pgvector', 'Embedding', 'LLM', 'Gemini', 'FastAPI'],
     },
     {
       title: 'Embedded Challenge - Autonomous Maze Navigation Robot on STM32',
