@@ -131,7 +131,7 @@ const project: IProject.Payload = {
           content: 'RAG 검색 시스템',
           weight: 'MEDIUM',
           descriptions: [
-            { content: '헤딩 → 문단 → 줄 → 단어 순으로 재귀 분할해 청킹' },
+            { content: '헤딩·문단·줄·단어 순으로 재귀 분할해 청킹' },
             {
               content:
                 '각 청크에 문서 요약과 헤딩 경로를 붙여 원문 맥락 보존 (경량 Contextual Retrieval)',
