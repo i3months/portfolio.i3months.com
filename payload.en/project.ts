@@ -159,21 +159,18 @@ const project: IProject.Payload = {
           content: 'RAG Retrieval System',
           weight: 'MEDIUM',
           descriptions: [
+            { content: 'Chunked documents recursively by heading, paragraph, line, and word.' },
             {
               content:
-                'Split documents recursively by heading, paragraph, line, and word, prefixing each chunk with a document summary and its heading path to preserve context a lone chunk would lose.',
+                'Prefixed each chunk with a document summary and its heading path to preserve context (lightweight Contextual Retrieval, no LLM call).',
             },
             {
               content:
-                'Used separate embedding prefixes for indexing and querying to improve alignment, storing vectors in pgvector with an HNSW index.',
+                'Separated embedding prefixes - RETRIEVAL_DOCUMENT for indexing, RETRIEVAL_QUERY for search - and stored vectors in pgvector with an HNSW index.',
             },
             {
               content:
-                'Ran keyword search alongside vector search to cover technical terms the vectors miss, fusing the two rankings with RRF.',
-            },
-            {
-              content:
-                'Tried a second-stage LLM reranker, then removed it - it added latency without improving accuracy, so retrieval went back to plain top-k hybrid search.',
+                'Ran keyword search alongside vector search to match technical terms (gRPC, Kafka) the vectors miss, fusing rankings with RRF.',
             },
             {
               content:
