@@ -3,9 +3,10 @@ import { IProject } from '../component/project/IProject';
 const project: IProject.Payload = {
   disable: false,
   title: '프로젝트 내역.',
+  presentLabel: '현재',
   list: [
     {
-      title: 'PACK-UP - 여행 예약 플랫폼 개발 및 운영',
+      title: 'PACK UP - 여행자와 로컬 호스트를 연결하는 체험 예약 플랫폼 개발 및 운영',
       startedAt: '2025-02',
       where: '팀 프로젝트 (기획·개발·배포·운영)',
       descriptions: [
@@ -26,6 +27,7 @@ const project: IProject.Payload = {
             { content: '모바일 앱 React Native, 어드민 React, 백엔드 Spring Boot' },
             { content: '역할별 5개 서버 분리 - 코어·결제·채팅·어드민·배치' },
             { content: '페이레터·카카오페이·KG이니시스 PG 연동 (결제 서버 격리)' },
+            { content: '7개 언어 다국어 지원 및 WebSocket 기반 실시간 채팅 제공' },
             { content: 'GCP Cloud Run 배포 및 Cloud SQL, GCS, Cloudflare DNS 구성' },
           ],
         },
@@ -44,7 +46,8 @@ const project: IProject.Payload = {
                 'Cloud Armor 적용 - per-IP Rate Limit(300 req/min), SQLi·XSS 차단, Adaptive Protection',
             },
             {
-              content: 'GitHub Actions 배포 자동화 및 Cloud Scheduler 기반 배치 분리',
+              content:
+                'GitHub Actions 배포 자동화, Cloud Scheduler 기반 배치 분리, min-instance 설정으로 Cold Start 대응',
             },
             {
               content: 'Sentry 에러 추적, Cloud Monitoring Uptime Check 및 Budget Alert 설정',
@@ -61,6 +64,10 @@ const project: IProject.Payload = {
             },
             {
               content: 'React Native 앱에 Feature-Sliced Design(FSD) 아키텍처 도입',
+            },
+            {
+              content:
+                'React Native 환경 제약으로 FCM 대신 APNs 토큰을 서버에서 직접 발송하는 푸시 구조로 전환',
             },
             {
               content:

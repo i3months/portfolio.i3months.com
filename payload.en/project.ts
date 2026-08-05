@@ -2,9 +2,11 @@ import { IProject } from '../component/project/IProject';
 
 const project: IProject.Payload = {
   disable: false,
+  presentLabel: 'Present',
   list: [
     {
-      title: 'PACK-UP - Developed and Operated a Travel Booking Platform',
+      title:
+        'PACK UP - Developed and Operated an Experience Booking Platform Connecting Travelers and Local Hosts',
       startedAt: '2025-02',
       where: 'Team Project (Planning, Development, Deployment & Operation)',
       descriptions: [
@@ -28,6 +30,7 @@ const project: IProject.Payload = {
               content:
                 'Integrated PayLetter, KakaoPay, and KG Inicis payment gateways, with payment isolated in its own server.',
             },
+            { content: 'Localized in 7 languages, with WebSocket-based real-time chat.' },
             { content: 'Deployed on GCP Cloud Run with Cloud SQL, GCS, and Cloudflare DNS.' },
           ],
         },
@@ -49,7 +52,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Automated deployment with GitHub Actions and separated batch jobs via Cloud Scheduler.',
+                'Automated deployment with GitHub Actions, separated batch jobs via Cloud Scheduler, and handled cold starts with min-instance settings.',
             },
             {
               content:
@@ -67,6 +70,10 @@ const project: IProject.Payload = {
             },
             {
               content: 'Adopted Feature-Sliced Design (FSD) architecture in the React Native app.',
+            },
+            {
+              content:
+                'Switched push delivery to server-side APNs tokens instead of FCM, working around React Native constraints.',
             },
             {
               content:
