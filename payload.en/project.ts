@@ -131,7 +131,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            'Served as development lead and AI server developer - designed the whole AI pipeline from document analysis to question generation, answer scoring, and final feedback.',
+            'Served as development lead and AI server developer - designed the AI pipeline and the software architecture.',
         },
         {
           content: 'Document Analysis Pipeline',
