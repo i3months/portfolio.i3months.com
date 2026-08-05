@@ -45,7 +45,15 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Automated deployment with GitHub Actions, separated batch jobs via Cloud Scheduler, and handled cold starts with min-instance settings.',
+                'Set up GitHub Actions CI - builds and tests only the changed services, with automatic formatting on pull requests (deployment standardized through per-service scripts).',
+            },
+            {
+              content:
+                'Isolated batch work in a dedicated server - pinned to a single instance (min=max=1, CPU always allocated) to prevent duplicate runs, with execution history recorded automatically via AOP.',
+            },
+            {
+              content:
+                'Cloud Scheduler calls internal endpoints with token verification for jobs such as exchange-rate and region refresh, and min-instance settings keep cold starts down.',
             },
             {
               content:
@@ -70,7 +78,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Switched push delivery to server-side APNs tokens instead of FCM, working around React Native constraints.',
+                'Split push delivery by platform - iOS goes straight to APNs to work around React Native constraints, while Android uses FCM multicast.',
             },
             {
               content:

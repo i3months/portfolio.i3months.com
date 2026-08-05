@@ -37,12 +37,14 @@ const project: IProject.Payload = {
           weight: 'MEDIUM',
           descriptions: [
             {
-              content:
-                'Cloud Armor로 트래픽 보호 - IP당 요청 제한, SQL Injection·XSS 차단, ML 기반 DDoS 탐지',
+              content: 'Cloud Armor로 트래픽 보호 - IP당 요청 제한, SQL Injection·XSS 차단',
             },
             {
               content:
-                'GitHub Actions 배포 자동화, Cloud Scheduler 기반 배치 분리, min-instance 설정으로 Cold Start 대응',
+                '배치 전용 서버 격리 - 단일 인스턴스 고정으로 중복 실행을 차단하고 배치 실행 이력 자동 적재',
+            },
+            {
+              content: 'Cloud Run min-instance 설정으로 Cold Start 대응',
             },
             {
               content: 'Sentry 에러 추적, Cloud Monitoring Uptime Check 및 Budget Alert 설정',
@@ -66,7 +68,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'React Native 환경 제약으로 FCM 대신 APNs 토큰을 서버에서 직접 발송하는 푸시 구조로 전환',
+                '푸시 발송 경로 이원화 - iOS는 React Native 환경 제약을 피해 APNs로 직접 발송하고, Android는 FCM 멀티캐스트를 사용',
             },
             {
               content:
