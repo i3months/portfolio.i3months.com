@@ -28,14 +28,22 @@ const openSource: IOpenSource.Payload = {
       title: 'eziwiki',
       descriptions: [
         {
-          content: 'A modern, lightweight wiki and documentation site generator built with Next.js',
+          content:
+            'A modern, lightweight wiki and documentation site generator built with Next.js (November 2025 - present)',
           href: 'https://13months.tistory.com/778',
         },
         {
-          content: 'Markdown-based content creation with customizable navigation',
+          content:
+            "Combines Obsidian's linking model, Notion's UI/UX, and the deployment simplicity of a static site",
         },
         {
-          content: 'Hash-based URLs for privacy protection and static site deployment support',
+          content: 'Graph view for document links, with tab and history navigation',
+        },
+        {
+          content: 'Published on npm - npx create-eziwiki',
+        },
+        {
+          content: 'Lighthouse - Performance 99 / Accessibility 100 / Best Practices 100 / SEO 100',
         },
         {
           content: 'Owner & Maintainer',
@@ -55,10 +63,6 @@ const openSource: IOpenSource.Payload = {
         {
           content: 'Github Stars: ',
           postImage: 'https://img.shields.io/github/stars/i3months/eziwiki.svg?style=popout',
-        },
-        {
-          content: 'Codacy : ',
-          postImage: 'https://app.codacy.com/project/badge/Grade/52948e0fb28648bba1c3ab8f4a3919f9',
         },
       ],
     },

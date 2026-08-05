@@ -29,14 +29,20 @@ const openSource: IOpenSource.Payload = {
       title: 'eziwiki',
       descriptions: [
         {
-          content: 'Next.js 기반 경량 위키 및 문서 사이트 생성기',
+          content: 'Next.js 기반 경량 위키 및 문서 사이트 생성기 (2025.11 ~ 현재 운영 중)',
           href: 'https://13months.tistory.com/778',
         },
         {
-          content: 'Markdown 기반 콘텐츠 작성 및 커스터마이징 가능한 네비게이션 제공',
+          content: 'Obsidian의 링크 모델, Notion의 UI/UX, 정적 사이트의 배포 편의성을 결합',
         },
         {
-          content: 'Hash 기반 URL로 프라이버시 보호 및 정적 사이트 배포 지원',
+          content: '그래프 뷰 기반 문서 간 링크 시각화 및 탭·히스토리 탐색 지원',
+        },
+        {
+          content: 'npm 배포 - npx create-eziwiki',
+        },
+        {
+          content: 'Lighthouse - Performance 99 / Accessibility 100 / Best Practices 100 / SEO 100',
         },
         {
           content: 'Owner & Maintainer',
@@ -56,10 +62,6 @@ const openSource: IOpenSource.Payload = {
         {
           content: 'Github Stars: ',
           postImage: 'https://img.shields.io/github/stars/i3months/eziwiki.svg?style=popout',
-        },
-        {
-          content: 'Codacy : ',
-          postImage: 'https://app.codacy.com/project/badge/Grade/52948e0fb28648bba1c3ab8f4a3919f9',
         },
       ],
     },
