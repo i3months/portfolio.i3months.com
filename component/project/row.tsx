@@ -10,13 +10,19 @@ export default function ProjectRow({ payload }: PropsWithChildren<{ payload: IPr
   return (
     <EmptyRowCol>
       {payload.list.map((item, index) => {
-        return <CommonRows key={index.toString()} payload={serialize(item)} index={index} />;
+        return (
+          <CommonRows
+            key={index.toString()}
+            payload={serialize(item, payload.presentLabel)}
+            index={index}
+          />
+        );
       })}
     </EmptyRowCol>
   );
 }
 
-function serialize(payload: IProject.Item): IRow.Payload {
+function serialize(payload: IProject.Item, presentLabel?: string): IRow.Payload {
   const DATE_FORMAT = Util.LUXON_DATE_FORMAT;
   const startedAt = DateTime.fromFormat(payload.startedAt, DATE_FORMAT.YYYY_LL).toFormat(
     DATE_FORMAT.YYYY_DOT_LL,
@@ -28,7 +34,7 @@ function serialize(payload: IProject.Item): IRow.Payload {
       );
       return `${startedAt} ~ ${endedAt}`;
     }
-    return `${startedAt} ~`;
+    return presentLabel ? `${startedAt} ~ ${presentLabel}` : `${startedAt} ~`;
   })();
 
   return {

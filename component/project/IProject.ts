@@ -20,6 +20,14 @@ export declare namespace IProject {
 
     /** ### 프로젝트 리스트 */
     list: Item[];
+
+    /**
+     * ### 종료일이 없는 프로젝트의 기간 표기
+     *
+     * @description `endedAt` 이 undefined 인 항목의 `~` 뒤에 붙는다. (예: "현재", "Present")
+     * @example '현재'
+     */
+    presentLabel?: string;
   }
 
   export interface Item {
