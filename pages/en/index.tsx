@@ -16,6 +16,7 @@ import { OpenSource } from '../../component/openSource';
 import { Style } from '../../component/common/Style';
 import Payload from '../../payload.en';
 import { Article } from '../../component/article';
+import { Presentation } from '../../component/presentation';
 
 function ResumeEN() {
   return (
@@ -33,12 +34,12 @@ function ResumeEN() {
         <OpenSource.Component payload={Payload.openSource} />
         <Skill.Component payload={Payload.skill} />
         <Award.Component payload={Payload.award} />
+        <Presentation.Component payload={Payload.presentation} />
         <Education.Component payload={Payload.education} />
         <Etc.Component payload={Payload.etc} />
         <License.Component payload={Payload.license} />
         <Article.Component payload={Payload.article} />
 
-        {/* <Presentation.Component payload={Payload.presentation} /> */}
         {/* <Footer.Component payload={Payload.footer} /> */}
       </Container>
     </>

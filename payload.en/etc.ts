@@ -64,10 +64,10 @@ const etc: IEtc.Payload = {
           text: 'Fault Injection',
           href: 'https://13months.tistory.com/802',
         },
-        {
-          text: 'LoRA / RAG',
-          href: 'https://13months.tistory.com/802',
-        },
+        // {
+        //   text: 'LoRA / RAG',
+        //   href: 'https://13months.tistory.com/802',
+        // },
       ],
     },
     {
