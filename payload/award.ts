@@ -14,7 +14,7 @@ const presentation: IAward.Payload = {
           content: '라이프로그 데이터 기반 수면 및 컨디션 지표 예측 모델 개발',
         },
         {
-          content: 'ICTC 2026 논문 투고 예정',
+          content: 'ICTC 2026 논문 투고 (심사 중)',
         },
       ],
     },
@@ -63,7 +63,7 @@ const presentation: IAward.Payload = {
       ],
     },
     {
-      title: '제 11회 NTIS 정보활용 경진대회',
+      title: '제11회 NTIS 정보활용 경진대회',
       subTitle: '대상 (과학기술정보통신부장관상) 수상',
       at: '2023-12',
       descriptions: [

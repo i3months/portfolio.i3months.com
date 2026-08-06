@@ -14,7 +14,7 @@ const presentation: IAward.Payload = {
             'Developed a model predicting sleep and well-being indicators from lifelog data.',
         },
         {
-          content: 'Paper to be submitted to ICTC 2026.',
+          content: 'Paper submitted to ICTC 2026 (under review).',
         },
       ],
     },
@@ -91,7 +91,7 @@ const presentation: IAward.Payload = {
       descriptions: [
         {
           content:
-            'Planned "CEAP" a platform for analyzing company-specific carbon emissions using greenhouse gas data.',
+            'Developed "CEAP" a platform for analyzing company-specific carbon emissions using greenhouse gas data.',
         },
       ],
     },
