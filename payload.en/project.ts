@@ -120,7 +120,6 @@ const project: IProject.Payload = {
     {
       title: 'Developed STACK-UP - An AI Interview Platform for IT Roles',
       startedAt: '2026-01',
-      endedAt: '2026-06',
       where: 'Team Project (Development Lead / AI Server)',
       descriptions: [
         {
