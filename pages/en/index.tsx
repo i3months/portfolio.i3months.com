@@ -17,6 +17,7 @@ import { Style } from '../../component/common/Style';
 import Payload from '../../payload.en';
 import { Article } from '../../component/article';
 import { Presentation } from '../../component/presentation';
+import { LocaleToggle } from '../../component/common/LocaleToggle';
 
 function ResumeEN() {
   return (
@@ -42,6 +43,7 @@ function ResumeEN() {
 
         {/* <Footer.Component payload={Payload.footer} /> */}
       </Container>
+      <LocaleToggle locale="en" />
     </>
   );
 }
