@@ -6,7 +6,6 @@ import { EmptyRowCol } from '../common';
 import { CommonSection } from '../common/CommonSection';
 import { CommonDescription } from '../common/CommonDescription';
 import Util from '../common/Util';
-import { Style } from '../common/Style';
 
 type Payload = IArticle.Payload;
 
@@ -21,7 +20,7 @@ export const Article = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <Col style={Style.articleCover}>
+    <Col>
       <CommonSection title={payload.title || 'ARTICLE'}>
         <ArticleRow payload={payload} />
       </CommonSection>
