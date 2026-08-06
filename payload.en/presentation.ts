@@ -6,11 +6,31 @@ const presentation: IPresentation.Payload = {
 
   list: [
     {
+      title: 'Quality-Aware Facial Mesh Filtering for Robust Contactless Head-Pose Assessment',
+      subTitle:
+        'ICIIBMS 2026 (International Conference on Intelligent Informatics and BioMedical Sciences) · Okinawa, Japan',
+      at: '2026-11',
+      descriptions: [
+        {
+          content: 'Authors: Minseok Park, ',
+          contentLinks: [
+            {
+              text: 'Joonmo Jeong',
+              bold: true,
+            },
+          ],
+        },
+        {
+          content: 'Accepted · Poster presentation anticipated (2026.11.21)',
+        },
+      ],
+    },
+    {
       title:
         'Structure over Scale: A Multi-Axis Ensemble for Small-Sample Multimodal Lifelog Prediction',
       subTitle:
-        'ICTC 2026 (International Conference on Information and Communication Technology Convergence)',
-      at: '2026-08',
+        'ICTC 2026 (International Conference on Information and Communication Technology Convergence) · Jeju, Korea',
+      at: '2026-10',
       descriptions: [
         {
           content: 'Authors: ',
@@ -30,28 +50,8 @@ const presentation: IPresentation.Payload = {
       ],
     },
     {
-      title: 'Quality-Aware Facial Mesh Filtering for Robust Contactless Head-Pose Assessment',
-      subTitle:
-        'ICIIBMS 2026 (International Conference on Intelligent Informatics and BioMedical Sciences)',
-      at: '2026-07',
-      descriptions: [
-        {
-          content: 'Authors: Minseok Park, ',
-          contentLinks: [
-            {
-              text: 'Joonmo Jeong',
-              bold: true,
-            },
-          ],
-        },
-        {
-          content: 'Accepted · Poster presentation anticipated (2026.11.21)',
-        },
-      ],
-    },
-    {
       title: 'Environment-Conditioned Hammering-Precursor Monitoring for Reliable Embedded Systems',
-      subTitle: 'KCC 2026 (Korea Computer Congress)',
+      subTitle: 'KCC 2026 (53rd Korea Computer Congress) · Jeju, Korea',
       at: '2026-06',
       descriptions: [
         {
