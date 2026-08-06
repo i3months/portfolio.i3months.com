@@ -6,7 +6,7 @@ const presentation: IAward.Payload = {
   list: [
     {
       title: '53rd Korea Computer Congress (KCC 2026) Paper Competition',
-      subTitle: 'Encouragement Prize',
+      subTitle: 'Encouragement Prize, Undergraduate Division',
       at: '2026-08',
       descriptions: [
         {
