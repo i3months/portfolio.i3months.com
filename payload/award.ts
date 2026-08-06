@@ -6,6 +6,17 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: '제53회 한국컴퓨터종합학술대회(KCC 2026) 논문경진대회',
+      subTitle: '장려상 수상',
+      at: '2026-08',
+      descriptions: [
+        {
+          content:
+            '"Environment-Conditioned Hammering-Precursor Monitoring for Reliable Embedded Systems" 논문 발표',
+        },
+      ],
+    },
+    {
       title: '제5회 ETRI 휴먼이해 인공지능 논문경진대회',
       subTitle: 'Private 리더보드 5위 (2026.10 시상 예정)',
       at: '2026-06',

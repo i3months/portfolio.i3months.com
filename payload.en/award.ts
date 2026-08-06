@@ -5,6 +5,17 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: '53rd Korea Computer Congress (KCC 2026) Paper Competition',
+      subTitle: 'Encouragement Prize',
+      at: '2026-08',
+      descriptions: [
+        {
+          content:
+            'Presented the paper "Environment-Conditioned Hammering-Precursor Monitoring for Reliable Embedded Systems".',
+        },
+      ],
+    },
+    {
       title: '5th ETRI Human-Understanding AI Paper Competition',
       subTitle: '5th place on the private leaderboard (awards ceremony in October 2026)',
       at: '2026-06',

@@ -68,7 +68,10 @@ const presentation: IPresentation.Payload = {
           ],
         },
         {
-          content: 'Presented at the conference (2026.06.24)',
+          content: 'Presented · Conference presentation (2026.06.24)',
+        },
+        {
+          content: 'Awarded · Encouragement Prize, Paper Competition (2026.08)',
         },
       ],
     },

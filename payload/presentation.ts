@@ -12,7 +12,7 @@ const presentation: IPresentation.Payload = {
       at: '2026-11',
       descriptions: [
         {
-          content: '저자: 박민석, ',
+          content: 'Authors: 박민석, ',
           contentLinks: [
             {
               text: '정준모',
@@ -33,7 +33,7 @@ const presentation: IPresentation.Payload = {
       at: '2026-10',
       descriptions: [
         {
-          content: '저자: ',
+          content: 'Authors: ',
           contentLinks: [
             {
               text: '정준모',
@@ -55,7 +55,7 @@ const presentation: IPresentation.Payload = {
       at: '2026-06',
       descriptions: [
         {
-          content: '저자: 정민용, ',
+          content: 'Authors: 정민용, ',
           contentLinks: [
             {
               text: '정준모',
@@ -68,6 +68,9 @@ const presentation: IPresentation.Payload = {
         },
         {
           content: 'Presented · 학술대회 발표 (2026.06.24)',
+        },
+        {
+          content: 'Awarded · 논문경진대회 장려상 (2026.08)',
         },
       ],
     },
