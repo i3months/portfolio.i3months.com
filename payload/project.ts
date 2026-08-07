@@ -113,7 +113,7 @@ const project: IProject.Payload = {
       ],
     },
     {
-      title: 'IT 직군을 위한 AI 면접 플랫폼 - STACK-UP 개발',
+      title: 'STACK UP - IT 직군을 위한 AI 면접 플랫폼 개발 및 운영',
       startedAt: '2026-01',
       where: '팀 프로젝트 (개발 리더 및 AI 서버 개발)',
       descriptions: [

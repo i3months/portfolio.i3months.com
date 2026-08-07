@@ -118,7 +118,7 @@ const project: IProject.Payload = {
       ],
     },
     {
-      title: 'Developed STACK-UP - An AI Interview Platform for IT Roles',
+      title: 'STACK UP - Developed and Operated an AI Interview Platform for IT Roles',
       startedAt: '2026-01',
       where: 'Team Project (Development Lead / AI Server)',
       descriptions: [
