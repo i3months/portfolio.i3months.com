@@ -118,14 +118,14 @@ const ChipPalette = {
     level: '#868E97',
   },
   dark: {
-    // 순검정은 무거워서 한 단계 밝은 슬레이트를 쓴다. 흰 글씨 대비는 7:1 수준으로 넉넉하다.
-    background: '#4B5563',
-    border: '#4B5563',
+    // 순검정은 무거워서 밝은 슬레이트를 쓴다. 흰 글씨 대비는 약 5.8:1 로 WCAG AA 를 넘는다.
+    background: '#5C6675',
+    border: '#5C6675',
     text: '#FFFFFF',
-    hoverBackground: '#59636F',
-    hoverBorder: '#59636F',
-    marker: '#C7CED6',
-    level: '#D3D9DF',
+    hoverBackground: '#6A7482',
+    hoverBorder: '#6A7482',
+    marker: '#D5DAE1',
+    level: '#DDE2E7',
   },
 };
 
