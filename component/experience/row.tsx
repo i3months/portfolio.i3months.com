@@ -4,6 +4,7 @@ import { DateTime } from 'luxon';
 import { PropsWithChildren } from 'react';
 import { IExperience } from './IExperience';
 import { Style } from '../common/Style';
+import { TechChipList } from '../common/TechChip';
 import Util from '../common/Util';
 
 type PositionWithDates = IExperience.Position & {
@@ -99,18 +100,7 @@ export default function ExperienceRow({
             <i style={Style.gray}>{position.title}</i>
             {/* Skill Keywords를 직책명 바로 아래에 표시 */}
             {position.skillKeywords && position.skillKeywords.length > 0 && (
-              <div className="mt-1 mb-2">
-                {position.skillKeywords.map((keyword, keywordIndex) => (
-                  <Badge
-                    style={Style.skillKeywordBadge}
-                    key={keywordIndex.toString()}
-                    color="secondary"
-                    className="mr-1"
-                  >
-                    {keyword}
-                  </Badge>
-                ))}
-              </div>
+              <TechChipList names={position.skillKeywords} size="sm" className="mt-2 mb-2" />
             )}
             <ul className="pt-2">
               {position.descriptions.map((description, descIndex) => (

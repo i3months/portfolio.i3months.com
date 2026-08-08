@@ -1,8 +1,9 @@
 import { PropsWithChildren } from 'react';
-import { Row, Col, Badge } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { IRow } from './IRow';
 import { Style } from './Style';
 import { CommonDescription } from './CommonDescription';
+import { TechChipList } from './TechChip';
 
 export function CommonRows({
   index,
@@ -29,18 +30,7 @@ export function CommonRows({
           {right.subTitle ? <i style={Style.gray}>{right.subTitle}</i> : ''}
           {/* Skill Keywords를 subTitle 바로 아래에 표시 */}
           {right.skillKeywords && right.skillKeywords.length > 0 && (
-            <div className="mt-1 mb-2">
-              {right.skillKeywords.map((keyword, keywordIndex) => (
-                <Badge
-                  style={Style.skillKeywordBadge}
-                  key={keywordIndex.toString()}
-                  color="secondary"
-                  className="mr-1"
-                >
-                  {keyword}
-                </Badge>
-              ))}
-            </div>
+            <TechChipList names={right.skillKeywords} size="sm" className="mt-2 mb-2" />
           )}
           {right.descriptions ? (
             <CommonDescription
