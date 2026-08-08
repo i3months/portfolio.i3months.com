@@ -12,6 +12,9 @@ const languages: ISkill.Skill = {
     {
       title: 'Python',
     },
+    {
+      title: 'C++',
+    },
   ],
 };
 
@@ -57,15 +60,20 @@ const intrastructureDatabase: ISkill.Skill = {
     {
       title: 'Elasticsearch',
     },
+    {
+      title: 'GCP',
+    },
+    {
+      title: 'Kubernetes',
+    },
+    {
+      title: 'MySQL',
+    },
   ],
 };
 const skill: ISkill.Payload = {
   disable: false,
-  skills: [
-    languages,
-    frameworkLibrary,
-    intrastructureDatabase,
-  ],
+  skills: [languages, frameworkLibrary, intrastructureDatabase],
 };
 
 export default skill;

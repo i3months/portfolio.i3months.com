@@ -212,7 +212,7 @@ const project: IProject.Payload = {
           ],
         },
       ],
-      skillKeywords: ['LangChain', 'RAG', 'pgvector', 'Embedding', 'LLM', 'Gemini', 'FastAPI'],
+      skillKeywords: ['LangChain', 'RAG', 'pgvector', 'Embedding', 'LLM', 'FastAPI'],
     },
     {
       title: '임베디드 챌린지 - STM32 기반 미로 자율주행 로봇',

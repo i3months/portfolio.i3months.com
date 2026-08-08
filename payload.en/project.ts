@@ -221,7 +221,7 @@ const project: IProject.Payload = {
           ],
         },
       ],
-      skillKeywords: ['LangChain', 'RAG', 'pgvector', 'Embedding', 'LLM', 'Gemini', 'FastAPI'],
+      skillKeywords: ['LangChain', 'RAG', 'pgvector', 'Embedding', 'LLM', 'FastAPI'],
     },
     {
       title: 'Embedded Challenge - Autonomous Maze Navigation Robot on STM32',

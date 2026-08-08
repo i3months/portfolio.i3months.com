@@ -12,6 +12,9 @@ const languages: ISkill.Skill = {
     {
       title: 'Python',
     },
+    {
+      title: 'C++',
+    },
   ],
 };
 
@@ -56,6 +59,15 @@ const intrastructureDatabase: ISkill.Skill = {
     },
     {
       title: 'Elasticsearch',
+    },
+    {
+      title: 'GCP',
+    },
+    {
+      title: 'Kubernetes',
+    },
+    {
+      title: 'MySQL',
     },
   ],
 };
