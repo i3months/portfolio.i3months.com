@@ -99,21 +99,37 @@ export function findBrandLogo(name: string): BrandLogo | undefined {
 }
 
 /**
- * ### 칩 색상
+ * ### 칩 테마
  *
- * @description 칩 배경·테두리·글자는 항목과 무관하게 단색으로 통일한다.
- *              색을 갖는 요소는 로고뿐이다.
- *              농도를 바꾸려면 여기 한 곳만 만지면 전체에 반영된다.
+ * @description `CHIP_THEME` 한 단어로 밝은 칩 / 어두운 칩을 바꾼다.
+ *              어느 쪽이든 배경·테두리·글자는 단색으로 통일하고, 색을 갖는 요소는 로고뿐이다.
+ *              농도만 조절하려면 해당 팔레트의 `background` / `border` 를 만지면 된다.
  */
-const ChipColor = {
-  background: '#EEF1F5',
-  border: '#DCE1E8',
-  text: '#2B3138',
-  hoverBackground: '#E4E9F0',
-  hoverBorder: '#C9D1DB',
-  marker: '#9AA3AD',
-  level: '#868E97',
+const CHIP_THEME: 'light' | 'dark' = 'dark';
+
+const ChipPalette = {
+  light: {
+    background: '#EEF1F5',
+    border: '#DCE1E8',
+    text: '#2B3138',
+    hoverBackground: '#E4E9F0',
+    hoverBorder: '#C9D1DB',
+    marker: '#9AA3AD',
+    level: '#868E97',
+  },
+  dark: {
+    // 순검정은 무거워서 한 단계 밝은 슬레이트를 쓴다. 흰 글씨 대비는 7:1 수준으로 넉넉하다.
+    background: '#4B5563',
+    border: '#4B5563',
+    text: '#FFFFFF',
+    hoverBackground: '#59636F',
+    hoverBorder: '#59636F',
+    marker: '#C7CED6',
+    level: '#D3D9DF',
+  },
 };
+
+const ChipColor = ChipPalette[CHIP_THEME];
 
 const Chip = styled.span`
   display: inline-flex;
@@ -140,6 +156,13 @@ const Chip = styled.span`
     padding: 0.06em 0.5em 0.06em 0.42em;
     font-size: 0.765rem;
   }
+
+  /* 인쇄·PDF 저장에서는 배경을 지우는 브라우저가 있어, 흰 글씨가 사라지지 않도록 밝은 칩으로 바꾼다. */
+  @media print {
+    border-color: ${ChipPalette.light.border};
+    background: ${ChipPalette.light.background};
+    color: ${ChipPalette.light.text};
+  }
 `;
 
 const Logo = styled.svg`
@@ -147,6 +170,10 @@ const Logo = styled.svg`
   height: 0.98em;
   flex: 0 0 auto;
   color: var(--tech-chip-logo);
+
+  @media print {
+    color: var(--tech-chip-logo-print);
+  }
 `;
 
 const Marker = styled.span`
@@ -178,7 +205,12 @@ export function TechChip({
   size = 'md',
 }: PropsWithChildren<{ name: string; level?: number; size?: 'md' | 'sm' }>) {
   const logo = findBrandLogo(name);
-  const logoStyle = logo ? ({ '--tech-chip-logo': logo.colorOnLight } as CSSProperties) : undefined;
+  const logoStyle = logo
+    ? ({
+        '--tech-chip-logo': CHIP_THEME === 'dark' ? logo.colorOnDark : logo.colorOnLight,
+        '--tech-chip-logo-print': logo.colorOnLight,
+      } as CSSProperties)
+    : undefined;
 
   return (
     <Chip data-size={size}>
