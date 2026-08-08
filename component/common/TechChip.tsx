@@ -118,14 +118,15 @@ const ChipPalette = {
     level: '#868E97',
   },
   dark: {
-    // 순검정은 무거워서 밝은 슬레이트를 쓴다. 흰 글씨 대비는 약 5.8:1 로 WCAG AA 를 넘는다.
-    background: '#5C6675',
-    border: '#5C6675',
+    // 순검정은 무거워서 밝은 슬레이트를 쓴다. 흰 글씨 대비는 약 4.9:1 로 WCAG AA 를 넘는다.
+    // 여기서 더 밝히면 흰 글씨 대비가 AA 아래로 떨어지므로, 그때는 글자를 진한 색으로 바꿔야 한다.
+    background: '#6B7583',
+    border: '#6B7583',
     text: '#FFFFFF',
-    hoverBackground: '#6A7482',
-    hoverBorder: '#6A7482',
-    marker: '#D5DAE1',
-    level: '#DDE2E7',
+    hoverBackground: '#79828F',
+    hoverBorder: '#79828F',
+    marker: '#E2E6EB',
+    level: '#E8ECF0',
   },
 };
 
