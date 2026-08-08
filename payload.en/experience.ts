@@ -8,7 +8,7 @@ const experience: IExperience.Payload = {
       title: 'IWAZ (South Korea)',
       positions: [
         {
-          title: 'Intelligent Technology Department Staff - Web Developer',
+          title: 'Intelligent Technology Department Staff',
           startedAt: '2024-02',
           endedAt: '2025-03',
           descriptions: [
@@ -41,7 +41,7 @@ const experience: IExperience.Payload = {
       title: 'CHIRON SOFT (South Korea)',
       positions: [
         {
-          title: 'Research & Development Department Researcher - Web Developer',
+          title: 'Research & Development Department Researcher',
           startedAt: '2023-03',
           endedAt: '2024-02',
           descriptions: [

@@ -10,7 +10,7 @@ const experience: IExperience.Payload = {
       title: '아이와즈 (IWAZ)',
       positions: [
         {
-          title: '지능기술사업부 사원 - 웹 개발자',
+          title: '지능기술사업부 사원',
           startedAt: '2024-02',
           endedAt: '2025-03',
           descriptions: [
@@ -44,7 +44,7 @@ const experience: IExperience.Payload = {
       title: '카이런소프트 (CHIRON SOFT)',
       positions: [
         {
-          title: '연구개발부 연구원 - 웹 개발자',
+          title: '연구개발부 연구원',
           startedAt: '2023-03',
           endedAt: '2024-02',
           descriptions: [
