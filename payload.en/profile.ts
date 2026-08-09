@@ -1,8 +1,9 @@
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+// 전화번호를 다시 넣을 때 faPhone 도 같이 되살린다.
+import { faEnvelope /* , faPhone */ } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faBloggerB, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { IProfile } from '../component/profile/IProfile';
-// 원형 아바타에는 얼굴이 크게 잡힌 크롭을 쓴다. (profile_alt-medium.jpg 는 더 넓은 크롭)
+// 원형 아바타이므로 얼굴이 크게 잡힌 크롭을 쓴다.
 import profileImage from '../asset/profile@2x.jpg';
 
 const profile: IProfile.Payload = {
@@ -18,10 +19,11 @@ const profile: IProfile.Payload = {
       link: 'mailto:j3ong.joonmo@gmail.com',
       icon: faEnvelope,
     },
-    {
-      title: '+82) -',
-      icon: faPhone,
-    },
+    // 번호를 공개하지 않는 동안은 빈 행이 미완성처럼 보여 감춰둔다.
+    // {
+    //   title: '+82) -',
+    //   icon: faPhone,
+    // },
     {
       link: 'https://github.com/i3months',
       icon: faGithub,

@@ -170,6 +170,26 @@ function luminance([r, g, b]) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
+/**
+ * WCAG 상대 휘도.
+ *
+ * 위 `luminance()` 는 감마 보정이 없는 선형 합이라 사람이 느끼는 밝기와 어긋난다.
+ * 중간 톤 파랑(#4479A1 등)이 0.44 로 계산돼 "충분히 밝다"고 판정되는 문제가 있었으므로,
+ * 대비 계산에는 반드시 이 함수를 쓴다.
+ */
+function relativeLuminance(hex) {
+  const [r, g, b] = toRgb(hex.replace('#', '')).map((v) =>
+    v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4,
+  );
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+function contrast(a, b) {
+  const la = relativeLuminance(a);
+  const lb = relativeLuminance(b);
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+}
+
 function toHsl([r, g, b]) {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
@@ -209,18 +229,50 @@ function toHex({ h, s, l }) {
     .join('')}`;
 }
 
-/** 어두운 브랜드 컬러는 다크 배경에서 안 보이므로 밝기를 올린다. */
+/**
+ * 칩 위에 얹히는 로고 색.
+ *
+ * `TechChip` 은 라이트/다크 두 테마 모두 이 값을 쓴다. 칩 배경이 양쪽 다 어둡기 때문인데,
+ * 둘 중 밝은 쪽이 라이트 테마의 `--chip-bg`(#6B7583) 이므로 그 배경을 기준으로 대비를 맞추면
+ * 다크 테마(#2A3038)는 자동으로 함께 충족된다.
+ *
+ * 밝기 임계값으로 판정하면 배경과 우연히 밝기가 같은 색을 걸러낼 수 없다.
+ * (예: MySQL #4479A1 은 칩 배경과 대비 1.00:1 — 아이콘이 사실상 보이지 않았다)
+ * 그래서 목표 대비에 닿을 때까지 색상(hue)은 유지하고 밝기만 올린다.
+ *
+ * 대비만 보면 안 되고 반드시 배경보다 "밝은" 쪽으로 올려야 한다.
+ * 어두운 브랜드 색(pandas #150458 등)은 회색 칩과의 대비는 넉넉하지만
+ * 그대로 두면 다크 테마 칩(#2A3038)에서 1:1 에 가까워져 사라진다.
+ */
+const CHIP_BG_ON_LIGHT = '#6B7583';
+const LOGO_MIN_CONTRAST = 2.6;
+
+function isLegible(color) {
+  return (
+    contrast(color, CHIP_BG_ON_LIGHT) >= LOGO_MIN_CONTRAST &&
+    relativeLuminance(color) > relativeLuminance(CHIP_BG_ON_LIGHT)
+  );
+}
+
 function toColorOnDark(hex) {
-  const rgb = toRgb(hex);
-  if (luminance(rgb) >= 0.3) {
+  if (isLegible(`#${hex}`)) {
     return `#${hex}`;
   }
 
-  const hsl = toHsl(rgb);
+  const hsl = toHsl(toRgb(hex));
   if (hsl.s < 0.18) {
     return '#E8EDF2'; // 무채색 계열은 밝은 회백색으로
   }
-  return toHex({ h: hsl.h, s: Math.max(hsl.s, 0.55), l: Math.max(hsl.l, 0.68) });
+
+  // 채도를 조금 보강해 밝히는 동안 색이 완전히 빠지지 않게 한다.
+  const saturation = Math.max(hsl.s, 0.45);
+  for (let l = hsl.l; l <= 0.99; l += 0.01) {
+    const candidate = toHex({ h: hsl.h, s: saturation, l });
+    if (isLegible(candidate)) {
+      return candidate;
+    }
+  }
+  return '#E8EDF2';
 }
 
 /** 반대로 너무 밝은 브랜드 컬러(JavaScript 노랑 등)는 흰 배경에서 안 보인다. */

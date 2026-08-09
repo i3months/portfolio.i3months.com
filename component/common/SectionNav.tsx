@@ -87,6 +87,15 @@ export function SectionNav({ locale }: { locale: 'ko' | 'en' }) {
     event.preventDefault();
     target.scrollIntoView({ behavior: 'auto', block: 'start' });
 
+    /**
+     * 활성 표시를 직접 옮긴다.
+     *
+     * 이동한 제목은 `scroll-margin-top`(1.5rem) 만큼만 내려와 화면 최상단에 붙는데,
+     * 관찰자의 감지 구간은 `rootMargin` 때문에 화면 높이의 10~30% 다. 즉 제목이 구간보다 위에
+     * 놓여 관찰자가 갱신되지 않고, 누른 항목이 아닌 직전 섹션이 계속 굵게 남는다.
+     */
+    setActiveId(id);
+
     // 주소창에 현재 섹션을 남긴다. (뒤로가기 히스토리는 더럽히지 않는다)
     window.history.replaceState(null, '', `#${id}`);
   };
@@ -167,8 +176,9 @@ export function SectionNav({ locale }: { locale: 'ko' | 'en' }) {
           border-radius: 3px;
         }
 
+        /* 0.72rem 이라 큰 글자 기준을 못 쓴다. 본문 기준(4.5:1)을 넘는 진한 강조색을 쓴다. */
         a.is-active {
-          color: var(--resume-accent);
+          color: var(--resume-accent-strong);
           font-weight: 700;
         }
 

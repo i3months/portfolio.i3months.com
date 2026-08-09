@@ -1,6 +1,5 @@
 import 'jquery/dist/jquery.slim';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/fonts.css';
 // Bootstrap 기본값을 덮어야 하므로 항상 마지막에 로드한다.
 import '../styles/global.css';
 

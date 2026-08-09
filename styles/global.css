@@ -11,6 +11,14 @@
   --resume-text: #1f2328;
   --resume-muted: #656d76;
   --resume-accent: #1f7fe0;
+  /**
+   * 작은 글씨용 강조색.
+   *
+   * `--resume-accent` 는 큰 제목(h2, 24px)에 쓰라고 고른 색이라 흰 배경 대비 4.06:1 이다.
+   * 큰 글자 기준(3:1)은 넘지만 본문 크기 기준(4.5:1)에는 미달하므로,
+   * 섹션 목차처럼 작은 글씨에 강조를 줄 때는 이 색을 쓴다. (5.05:1)
+   */
+  --resume-accent-strong: #1a6fc9;
   --resume-line: #e8ebee;
   --resume-marker: #b9c0c8;
 
@@ -37,6 +45,8 @@ html[data-theme='dark'] {
   --resume-text: #e6e8ea;
   --resume-muted: #9aa3ad;
   --resume-accent: #5aa9f8;
+  /* 다크 배경에서는 기본 강조색이 이미 7.16:1 이라 따로 진하게 할 필요가 없다. */
+  --resume-accent-strong: #5aa9f8;
   --resume-line: #2b3037;
   --resume-marker: #5f6873;
 
@@ -393,6 +403,7 @@ h3 {
     --resume-text: #1f2328;
     --resume-muted: #656d76;
     --resume-accent: #1f7fe0;
+    --resume-accent-strong: #1a6fc9;
     --resume-line: #e8ebee;
     --resume-marker: #b9c0c8;
     --chip-bg: #6b7583;

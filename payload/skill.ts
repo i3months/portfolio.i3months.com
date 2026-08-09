@@ -33,48 +33,55 @@ const frameworkLibrary: ISkill.Skill = {
   ],
 };
 
-const intrastructureDatabase: ISkill.Skill = {
-  category: 'Infrastructure & Databases',
+const infrastructure: ISkill.Skill = {
+  category: 'Infrastructure',
   items: [
     {
       title: 'AWS',
     },
     {
-      title: 'NGINX',
-    },
-    {
-      title: 'Redis',
-    },
-    {
-      title: 'Tomcat',
+      title: 'GCP',
     },
     {
       title: 'Docker',
     },
     {
+      title: 'Kubernetes',
+    },
+    {
+      title: 'NGINX',
+    },
+    {
       title: 'Linux',
+    },
+    {
+      title: 'Tomcat',
+    },
+  ],
+};
+
+const database: ISkill.Skill = {
+  category: 'Databases',
+  items: [
+    {
+      title: 'MySQL',
     },
     {
       title: 'SQL Server',
     },
     {
+      title: 'Redis',
+    },
+    {
       title: 'Elasticsearch',
-    },
-    {
-      title: 'GCP',
-    },
-    {
-      title: 'Kubernetes',
-    },
-    {
-      title: 'MySQL',
     },
   ],
 };
+
 const skill: ISkill.Payload = {
   disable: false,
   title: '기술 스택.',
-  skills: [languages, frameworkLibrary, intrastructureDatabase],
+  skills: [languages, frameworkLibrary, infrastructure, database],
 };
 
 export default skill;
