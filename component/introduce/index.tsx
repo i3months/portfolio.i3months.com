@@ -5,6 +5,7 @@ import { Style } from '../common/Style';
 import Util from '../common/Util';
 import { IIntroduce } from './IIntroduce';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
+import { CommonSection } from '../common/CommonSection';
 
 type Payload = IIntroduce.Payload;
 
@@ -27,12 +28,10 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   );
 
   return (
-    <div className="mt-5">
+    <CommonSection title={payload.title || 'INTRODUCE'}>
+      {/* 본문은 다른 섹션의 내용 컬럼과 같은 위치에서 시작하도록 좌측을 비운다. */}
       <Row>
-        <Col sm={12} md={3}>
-          <h2 style={Style.blue}>{payload.title || 'INTRODUCE'}</h2>
-        </Col>
-        <Col sm={12} md={9}>
+        <Col sm={12} md={{ size: 9, offset: 3 }}>
           {payload.contents.map((content, index) => (
             <p key={index.toString()}>{content}</p>
           ))}
@@ -51,6 +50,6 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
           </p>
         </Col>
       </Row>
-    </div>
+    </CommonSection>
   );
 }

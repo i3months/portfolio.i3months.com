@@ -21,6 +21,12 @@ export declare namespace IProfile {
       /** ### 이름 옆 괄호로 작게 표시해주는 이름 */
       small?: string;
     };
+    /**
+     * ### 이름 아래 한 줄 소개
+     *
+     * @description 직무나 지향을 한 줄로 표현한다. (예: `Software Engineer`)
+     */
+    tagline?: string;
     /** ### 연락 수단 목록 */
     contact: Contact[];
     /** ### 공지 */

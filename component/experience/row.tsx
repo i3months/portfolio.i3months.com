@@ -66,10 +66,10 @@ export default function ExperienceRow({
       {/* 최상위 Row: 전체 재직 기간과 회사명 표시 */}
       <Row>
         <Col sm={12} md={3} className="text-md-right">
-          <h4 style={Style.gray}>{periodTitle}</h4>
+          <h3 style={Style.gray}>{periodTitle}</h3>
         </Col>
         <Col sm={12} md={9}>
-          <h4 style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <h3 style={{ display: 'inline-flex', alignItems: 'center' }}>
             {item.title}{' '}
             <span style={{ fontSize: '65%', display: 'inline-flex', alignItems: 'center' }}>
               {isCurrentlyEmployed && (
@@ -81,13 +81,13 @@ export default function ExperienceRow({
                 {Util.getFormattingDuration(minStartedAt, maxEndedAt, durationLocale || 'en')}
               </Badge>
             </span>
-          </h4>
+          </h3>
         </Col>
       </Row>
 
       {/* 각 Position을 최신 순으로 반복하여 개별 재직 기간과 직책 표시 */}
       {sortedPositions.map((position, posIndex) => (
-        <Row key={posIndex.toString()} className="mt-2">
+        <Row key={posIndex.toString()} className="mt-1">
           <Col sm={12} md={3} className="text-md-right">
             {/* positions가 1개 이상일 때만 Position의 재직 기간 표시 */}
             {hasMultiplePositions && (
@@ -97,7 +97,10 @@ export default function ExperienceRow({
             )}
           </Col>
           <Col sm={12} md={9}>
-            <i style={Style.gray}>{position.title}</i>
+            {/* 한글 이탤릭은 합성되어 가독성이 떨어지므로 색으로만 구분한다. */}
+            <div className="resume-subtitle" style={Style.gray}>
+              {position.title}
+            </div>
             {/* Skill Keywords를 직책명 바로 아래에 표시 */}
             {position.skillKeywords && position.skillKeywords.length > 0 && (
               <TechChipList names={position.skillKeywords} size="sm" className="mt-2 mb-2" />

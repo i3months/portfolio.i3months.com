@@ -22,7 +22,7 @@ export default function SkillRow({
       {index > 0 ? <hr /> : ''}
       <Row>
         <Col sm={12} md={3} className="text-md-right">
-          <h4 style={Style.gray}>{skill.category}</h4>
+          <h3 style={Style.gray}>{skill.category}</h3>
         </Col>
         <Col sm={12} md={9}>
           <ChipList className="mt-1 mt-md-2 mb-2">

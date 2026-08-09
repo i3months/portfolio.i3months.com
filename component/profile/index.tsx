@@ -18,15 +18,15 @@ export const Profile = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
-  const { image, contact, name } = payload;
+  const { image, contact, name, tagline } = payload;
   return (
     <div className="mt-5">
       <Row>
         <Col md={3} sm={12}>
-          <ProfileImage src={image} />
+          <ProfileImage src={image} name={name.title} />
         </Col>
         <Col md={9} sm={12}>
-          {createNameArea(name)}
+          {createNameArea(name, tagline)}
           {createProfileContactMap(contact)}
           {/* {createNoticeArea(notice)} */}
         </Col>
@@ -35,13 +35,14 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   );
 }
 
-function createNameArea(name: Payload['name']) {
+function createNameArea(name: Payload['name'], tagline?: Payload['tagline']) {
   return (
     <Row>
       <Col className="text-center text-md-left">
         <h1 style={Style.blue}>
           {name.title} <small>{name.small || ''}</small>
         </h1>
+        {tagline ? <p className="resume-tagline">{tagline}</p> : ''}
       </Col>
     </Row>
   );
