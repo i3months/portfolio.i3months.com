@@ -47,6 +47,7 @@ const SLUGS = {
   // 인프라 / 클라우드
   amazonwebservices: '13',
   googlecloud: LATEST,
+  cloudflare: LATEST,
   nginx: LATEST,
   apachetomcat: LATEST,
   docker: LATEST,

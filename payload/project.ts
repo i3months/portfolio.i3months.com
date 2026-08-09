@@ -29,7 +29,10 @@ const project: IProject.Payload = {
             { content: '페이레터·카카오페이·KG이니시스 PG 연동 (결제 서버 격리)' },
             {
               content:
-                'GCP 기반 시스템 구축 - Cloud Run, Cloud SQL, GCS, Firebase Hosting, Cloudflare DNS',
+                'GCP 기반 시스템 구축 - Compute Engine, Docker Compose, Cloud SQL, Cloud Storage, Firebase',
+            },
+            {
+              content: 'Cloudflare를 프록시로 설정해 DDoS 완화 및 엣지 캐싱 처리',
             },
           ],
         },
@@ -38,21 +41,22 @@ const project: IProject.Payload = {
           weight: 'MEDIUM',
           descriptions: [
             {
-              content: 'Cloud Armor로 트래픽 보호 - IP당 요청 제한, SQL Injection·XSS 차단',
+              content:
+                'NGINX WAF와 Cloudflare로 트래픽 보호 - IP당 요청 제한, SQL Injection·XSS 차단',
             },
             {
               content:
                 '배치 전용 서버 격리 - 단일 인스턴스 고정으로 중복 실행을 차단하고 배치 실행 이력 자동 적재',
             },
             {
-              content: 'Cloud Run min-instance 설정으로 Cold Start 대응',
+              content: 'Cloud Run에서 Compute Engine으로 이전 - 상시 기동 VM으로 서버 비용 절감',
             },
             {
               content: 'Sentry 에러 추적, Cloud Monitoring Uptime Check 및 Budget Alert 설정',
             },
             {
               content:
-                '외부 연동을 공용 인프라 모듈 한 곳으로 통합 - 번역·지도·푸시·스토리지·PG 클라이언트를 5개 서버가 공유하도록 설정 ',
+                '외부 연동을 공용 인프라 모듈 한 곳으로 통합 - 번역·지도·푸시·스토리지·PG 클라이언트를 5개 서버가 공유하도록 설정',
             },
           ],
         },
@@ -107,9 +111,11 @@ const project: IProject.Payload = {
         'React',
         'FSD',
         'GCP',
-        'Cloud Run',
+        'Compute Engine',
         'Cloud SQL',
-        'Cloud Armor',
+        'Docker Compose',
+        'NGINX',
+        'Cloudflare',
       ],
     },
     {

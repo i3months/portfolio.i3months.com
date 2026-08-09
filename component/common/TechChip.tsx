@@ -45,6 +45,8 @@ const LogoAlias: Record<string, string> = {
   cloudsql: 'googlecloud',
   cloudarmor: 'googlecloud',
   cloudstorage: 'googlecloud',
+  computeengine: 'googlecloud',
+  gce: 'googlecloud',
   bigquery: 'googlecloud',
   dockercompose: 'docker',
   k8s: 'kubernetes',

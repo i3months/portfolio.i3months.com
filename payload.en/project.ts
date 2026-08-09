@@ -32,7 +32,11 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Built on GCP - Cloud Run, Cloud SQL, GCS, Firebase Hosting, and Cloudflare DNS.',
+                'Built on GCP - servers run under Docker Compose on Compute Engine, with Cloud SQL, GCS, and Firebase Hosting.',
+            },
+            {
+              content:
+                'Put Cloudflare in front as a proxy, handling TLS termination, DDoS mitigation, and edge caching.',
             },
           ],
         },
@@ -42,14 +46,15 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Protected traffic with Cloud Armor - per-IP rate limiting, SQL injection and XSS blocking.',
+                'Protected traffic with an NGINX WAF and Cloudflare - per-IP rate limiting, SQL injection and XSS blocking.',
             },
             {
               content:
                 'Isolated batch work in a dedicated server - pinned to a single instance to prevent duplicate runs, with execution history recorded automatically.',
             },
             {
-              content: 'Handled cold starts with Cloud Run min-instance settings.',
+              content:
+                'Moved from Cloud Run to Compute Engine - keeping min-instances warm to avoid cold starts cost more than the traffic justified, so I switched to an always-on VM and cut the bill.',
             },
             {
               content:
@@ -112,9 +117,11 @@ const project: IProject.Payload = {
         'React',
         'FSD',
         'GCP',
-        'Cloud Run',
+        'Compute Engine',
         'Cloud SQL',
-        'Cloud Armor',
+        'Docker Compose',
+        'NGINX',
+        'Cloudflare',
       ],
     },
     {
