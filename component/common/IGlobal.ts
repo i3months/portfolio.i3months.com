@@ -11,8 +11,11 @@ export declare namespace IGlobal {
 
     /**
      * ### favicon 이미지
+     *
+     * @deprecated 파비콘은 `public/favicon.ico` 와 `pages/_document.tsx` 의 링크로 제공한다.
+     *             여기서 asset 을 import 하면 next-images 가 base64 로 인라인해 페이지 HTML 이 커진다.
      */
-    favicon: string;
+    favicon?: string;
 
     /**
      * ### SEO Properties
