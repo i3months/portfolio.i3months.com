@@ -99,48 +99,21 @@ export function findBrandLogo(name: string): BrandLogo | undefined {
 }
 
 /**
- * ### 칩 테마
+ * ### 칩 색상
  *
- * @description `CHIP_THEME` 한 단어로 밝은 칩 / 어두운 칩을 바꾼다.
- *              어느 쪽이든 배경·테두리·글자는 단색으로 통일하고, 색을 갖는 요소는 로고뿐이다.
- *              농도만 조절하려면 해당 팔레트의 `background` / `border` 를 만지면 된다.
+ * @description 실제 값은 `styles/global.css` 의 `--chip-*` 변수가 갖는다.
+ *              다크 테마에서 변수만 바뀌므로 이 컴포넌트는 손댈 필요가 없고,
+ *              인쇄 시에도 화면과 같은 색으로 나온다.
  */
-const CHIP_THEME: 'light' | 'dark' = 'dark';
-
-const ChipPalette = {
-  light: {
-    background: '#EEF1F5',
-    border: '#DCE1E8',
-    text: '#2B3138',
-    hoverBackground: '#E4E9F0',
-    hoverBorder: '#C9D1DB',
-    marker: '#9AA3AD',
-    level: '#868E97',
-  },
-  dark: {
-    // 순검정은 무거워서 밝은 슬레이트를 쓴다. 흰 글씨 대비는 약 4.9:1 로 WCAG AA 를 넘는다.
-    // 여기서 더 밝히면 흰 글씨 대비가 AA 아래로 떨어지므로, 그때는 글자를 진한 색으로 바꿔야 한다.
-    background: '#6B7583',
-    border: '#6B7583',
-    text: '#FFFFFF',
-    hoverBackground: '#79828F',
-    hoverBorder: '#79828F',
-    marker: '#E2E6EB',
-    level: '#E8ECF0',
-  },
-};
-
-const ChipColor = ChipPalette[CHIP_THEME];
-
 const Chip = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
   padding: 0.1em 0.58em 0.1em 0.48em;
   border-radius: 6px;
-  border: 1px solid ${ChipColor.border};
-  background: ${ChipColor.background};
-  color: ${ChipColor.text};
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
   font-size: 0.83rem;
   font-weight: 600;
   line-height: 1.65;
@@ -148,8 +121,8 @@ const Chip = styled.span`
   transition: border-color 0.15s ease, background 0.15s ease;
 
   &:hover {
-    border-color: ${ChipColor.hoverBorder};
-    background: ${ChipColor.hoverBackground};
+    border-color: var(--chip-border-hover);
+    background: var(--chip-bg-hover);
   }
 
   &[data-size='sm'] {
@@ -158,11 +131,29 @@ const Chip = styled.span`
     font-size: 0.765rem;
   }
 
-  /* 인쇄·PDF 저장에서는 배경을 지우는 브라우저가 있어, 흰 글씨가 사라지지 않도록 밝은 칩으로 바꾼다. */
+  /* 모바일에서는 칩이 여러 줄을 차지하므로 한 톤 더 조인다. */
+  @media (max-width: 767.98px) {
+    font-size: 0.78rem;
+
+    &[data-size='sm'] {
+      gap: 0.3em;
+      padding: 0.04em 0.44em 0.04em 0.36em;
+      font-size: 0.725rem;
+    }
+  }
+
+  /**
+   * 인쇄 폭(A4 약 700px)은 위 모바일 분기에 걸린다.
+   * 종이에서는 화면(데스크탑)과 같은 크기로 나와야 하므로 되돌린다.
+   */
   @media print {
-    border-color: ${ChipPalette.light.border};
-    background: ${ChipPalette.light.background};
-    color: ${ChipPalette.light.text};
+    font-size: 0.83rem;
+
+    &[data-size='sm'] {
+      gap: 0.34em;
+      padding: 0.06em 0.5em 0.06em 0.42em;
+      font-size: 0.765rem;
+    }
   }
 `;
 
@@ -171,10 +162,6 @@ const Logo = styled.svg`
   height: 0.98em;
   flex: 0 0 auto;
   color: var(--tech-chip-logo);
-
-  @media print {
-    color: var(--tech-chip-logo-print);
-  }
 `;
 
 const Marker = styled.span`
@@ -183,12 +170,12 @@ const Marker = styled.span`
   margin: 0 0.16em;
   flex: 0 0 auto;
   border-radius: 50%;
-  background: ${ChipColor.marker};
+  background: var(--chip-marker);
 `;
 
 const Level = styled.span`
   margin-left: 0.1em;
-  color: ${ChipColor.level};
+  color: var(--chip-level);
   font-size: 0.82em;
   font-weight: 500;
 `;
@@ -198,6 +185,15 @@ const List = styled.span`
   flex-wrap: wrap;
   gap: 0.32rem 0.36rem;
   align-items: center;
+
+  @media (max-width: 767.98px) {
+    gap: 0.26rem 0.3rem;
+  }
+
+  /* 인쇄 폭이 모바일 분기에 걸리므로 데스크탑 간격으로 되돌린다. */
+  @media print {
+    gap: 0.32rem 0.36rem;
+  }
 `;
 
 export function TechChip({
@@ -206,12 +202,8 @@ export function TechChip({
   size = 'md',
 }: PropsWithChildren<{ name: string; level?: number; size?: 'md' | 'sm' }>) {
   const logo = findBrandLogo(name);
-  const logoStyle = logo
-    ? ({
-        '--tech-chip-logo': CHIP_THEME === 'dark' ? logo.colorOnDark : logo.colorOnLight,
-        '--tech-chip-logo-print': logo.colorOnLight,
-      } as CSSProperties)
-    : undefined;
+  // 칩 배경이 어두우므로 로고는 어두운 배경용 보정색을 쓴다.
+  const logoStyle = logo ? ({ '--tech-chip-logo': logo.colorOnDark } as CSSProperties) : undefined;
 
   return (
     <Chip data-size={size}>

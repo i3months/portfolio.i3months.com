@@ -9,7 +9,7 @@ export function LocaleToggle({ locale }: { locale: 'ko' | 'en' }) {
   const isKo = locale === 'ko';
 
   return (
-    <nav className="locale-toggle" aria-label={isKo ? '언어 선택' : 'Language'}>
+    <nav className="locale-toggle resume-screen-only" aria-label={isKo ? '언어 선택' : 'Language'}>
       {isKo ? (
         <span className="segment segment-active" aria-current="page">
           KO
@@ -71,15 +71,15 @@ export function LocaleToggle({ locale }: { locale: 'ko' | 'en' }) {
 
         a.segment:hover,
         a.segment:focus {
-          color: #2997fb;
-          background-color: rgba(41, 151, 251, 0.09);
+          color: var(--resume-accent, #1f7fe0);
+          background-color: rgba(31, 127, 224, 0.09);
           text-decoration: none;
         }
 
         .segment-active {
           color: #fff;
-          background-color: #2997fb;
-          box-shadow: 0 2px 6px rgba(41, 151, 251, 0.4);
+          background-color: var(--resume-accent, #1f7fe0);
+          box-shadow: 0 2px 6px rgba(31, 127, 224, 0.35);
         }
 
         @media (max-width: 576px) {
