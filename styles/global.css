@@ -371,6 +371,23 @@ h3 {
  *  - 항목이 페이지 경계에서 잘리지 않도록 끊김을 막는다.
  */
 @media print {
+  /**
+   * Bootstrap 의 인쇄 스타일 무력화
+   *
+   * bootstrap.min.css 의 `@media print` 블록이 이력서에 맞지 않는 값을 강제한다.
+   *   - `.badge { border: 1px solid #000 }` → 기간 배지에 검은 테두리가 생긴다
+   *   - `body/.container { min-width: 992px !important }` → A4(약 700px)를 넘겨 오른쪽이 잘린다
+   *   - `@page { size: a3 }` → 용지를 A3 로 바꿔버린다 (아래에서 A4 로 다시 지정)
+   */
+  body,
+  .container {
+    min-width: 0 !important;
+  }
+
+  .container .badge {
+    border: 0 !important;
+  }
+
   html[data-theme='dark'] {
     --resume-bg: #ffffff;
     --resume-text: #1f2328;

@@ -110,11 +110,11 @@ const Chip = styled.span`
   align-items: center;
   gap: 0.4em;
   padding: 0.1em 0.58em 0.1em 0.48em;
-  border-radius: 6px;
+  border-radius: 5px;
   border: 1px solid var(--chip-border);
   background: var(--chip-bg);
   color: var(--chip-text);
-  font-size: 0.83rem;
+  font-size: 0.76rem;
   font-weight: 600;
   line-height: 1.65;
   white-space: nowrap;
@@ -128,31 +128,40 @@ const Chip = styled.span`
   &[data-size='sm'] {
     gap: 0.34em;
     padding: 0.06em 0.5em 0.06em 0.42em;
-    font-size: 0.765rem;
+    font-size: 0.7rem;
   }
 
   /* 모바일에서는 칩이 여러 줄을 차지하므로 한 톤 더 조인다. */
   @media (max-width: 767.98px) {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
 
     &[data-size='sm'] {
       gap: 0.3em;
       padding: 0.04em 0.44em 0.04em 0.36em;
-      font-size: 0.725rem;
+      font-size: 0.67rem;
     }
   }
 
   /**
-   * 인쇄 폭(A4 약 700px)은 위 모바일 분기에 걸린다.
-   * 종이에서는 화면(데스크탑)과 같은 크기로 나와야 하므로 되돌린다.
+   * 인쇄용 크기
+   *
+   * 인쇄 폭(A4 약 700px)은 위 모바일 분기에 걸리므로 값을 다시 지정해야 한다.
+   * 다만 화면과 같은 rem 값을 쓰면 안 된다. 인쇄 본문은 10.5pt(약 14px)로 줄어드는데
+   * 칩은 rem(루트 16px) 기준이라 함께 줄지 않아 본문 대비 커 보인다.
+   * 종이에서는 칩이 본문을 읽는 흐름을 끊지 않아야 하므로 화면 비율(본문의 76%)보다
+   * 더 낮은 본문의 약 62%(작은 칩 57%)까지 내렸다. 로고 크기는 em 단위이므로 함께 줄어든다.
+   * 주의: 이 주석은 템플릿 리터럴 안이므로 백틱을 쓰면 문자열이 끊긴다.
    */
   @media print {
-    font-size: 0.83rem;
+    gap: 0.28em;
+    padding: 0.04em 0.36em 0.04em 0.28em;
+    border-radius: 3px;
+    font-size: 0.54rem;
 
     &[data-size='sm'] {
-      gap: 0.34em;
-      padding: 0.06em 0.5em 0.06em 0.42em;
-      font-size: 0.765rem;
+      gap: 0.26em;
+      padding: 0.02em 0.32em 0.02em 0.26em;
+      font-size: 0.5rem;
     }
   }
 `;
@@ -190,9 +199,9 @@ const List = styled.span`
     gap: 0.26rem 0.3rem;
   }
 
-  /* 인쇄 폭이 모바일 분기에 걸리므로 데스크탑 간격으로 되돌린다. */
+  /* 인쇄에서는 칩이 작아지므로 간격도 함께 좁힌다. */
   @media print {
-    gap: 0.32rem 0.36rem;
+    gap: 0.18rem 0.22rem;
   }
 `;
 
