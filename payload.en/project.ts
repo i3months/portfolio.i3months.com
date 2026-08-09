@@ -45,7 +45,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Layered traffic protection - Cloudflare (DDoS mitigation, TLS), NGINX (SQL injection and XSS pattern blocking), and the application (per-IP login limits and per-user request limits).',
+                'Layered traffic protection - DDoS mitigation and TLS, SQL injection and XSS pattern blocking, and per-IP login and per-user request limits.',
             },
             {
               content:
@@ -53,7 +53,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Moved from Cloud Run to Compute Engine - cut infrastructure cost by 81% (₩380,000 → ₩70,000 per month).',
+                'Moved from Cloud Run to Compute Engine - cut server cost by switching to an always-on VM.',
             },
             {
               content:
