@@ -1,0 +1,493 @@
+/**
+ * 전역 타이포그래피 / 레이아웃 / 테마
+ *
+ * Bootstrap 이후에 로드되어 기본값을 덮는다. (pages/_app.tsx 의 import 순서)
+ * 색은 모두 CSS 변수로 두고, 다크 테마는 `html[data-theme='dark']` 에서 값만 바꾼다.
+ * 인쇄는 화면과 동일하게 나와야 하므로 별도의 색 규칙을 두지 않고 배경 인쇄만 강제한다.
+ */
+
+:root {
+  --resume-bg: #ffffff;
+  --resume-text: #1f2328;
+  --resume-muted: #656d76;
+  --resume-accent: #1f7fe0;
+  --resume-line: #e8ebee;
+  --resume-marker: #b9c0c8;
+
+  /* 기술 칩 */
+  --chip-bg: #6b7583;
+  --chip-border: #6b7583;
+  --chip-text: #ffffff;
+  --chip-bg-hover: #79828f;
+  --chip-border-hover: #79828f;
+  --chip-marker: #e2e6eb;
+  --chip-level: #e8ecf0;
+
+  /* 기간 배지 */
+  --badge-bg: #eef1f5;
+  --badge-text: #5b6470;
+}
+
+html[data-theme='dark'] {
+  --resume-bg: #16181c;
+  --resume-text: #e6e8ea;
+  --resume-muted: #9aa3ad;
+  --resume-accent: #5aa9f8;
+  --resume-line: #2b3037;
+  --resume-marker: #5f6873;
+
+  --chip-bg: #2a3038;
+  --chip-border: #3a424c;
+  --chip-text: #e6e8ea;
+  --chip-bg-hover: #333b45;
+  --chip-border-hover: #47505b;
+  --chip-marker: #7f8894;
+  --chip-level: #9aa3ad;
+
+  --badge-bg: #2a3038;
+  --badge-text: #b9c0c8;
+}
+
+html,
+body {
+  background-color: var(--resume-bg);
+}
+
+/**
+ * `scroll-behavior: smooth` 는 여기에 두지 않는다.
+ * Next 라우터가 hashchange 를 처리하면서 브라우저의 smooth 스크롤을 취소해 이동이 아예 되지 않는다.
+ * 부드러운 이동은 `SectionNav` 가 scrollIntoView 로 직접 처리한다.
+ */
+
+/* 앵커로 이동했을 때 제목이 화면 맨 위에 딱 붙지 않도록 (scrollIntoView 도 이 값을 존중한다) */
+.container h2 {
+  scroll-margin-top: 1.5rem;
+}
+
+/* 움직임에 민감한 사용자에게는 전환·스크롤 애니메이션을 끈다 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR',
+    'Segoe UI', sans-serif;
+  color: var(--resume-text);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * 단 폭
+ *
+ * 페이지 전체 폭은 좁히되, 본문이 두 줄로 밀리지 않도록 본문 폭은 유지한다.
+ * 방법은 거의 비어 있는 좌측 라벨 거터(기본 25%)를 17% 로 줄이는 것.
+ *
+ * xl 구간에서만 적용한다. lg(992~1199px)는 container 가 960px 로 이미 좁아
+ * 거터까지 줄이면 기간이 들어갈 폭이 부족해진다.
+ *
+ * 계산 (container 1100px → 안쪽 1070px):
+ *   - 거터  1070 * 17% - 30(padding) = 152px  → "2024. 02 ~ 2025. 03" (약 143px) 한 줄에 들어감
+ *   - 본문  1070 * 83% - 30(padding) = 858px  → 기존 855px 보다 넓어 두 줄로 밀릴 일이 없음
+ *
+ * 이 컬럼에 `white-space: nowrap` 을 걸면 안 된다.
+ * 같은 자리에 기술 스택의 분류 라벨("Infrastructure & Databases")도 들어오는데,
+ * 줄바꿈이 막히면 컬럼을 넘어 본문 위로 삐져나온다.
+ */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px;
+  }
+
+  .container .col-md-3 {
+    flex: 0 0 17%;
+    max-width: 17%;
+  }
+
+  .container .col-md-9 {
+    flex: 0 0 83%;
+    max-width: 83%;
+  }
+
+  .container .offset-md-3 {
+    margin-left: 17%;
+  }
+}
+
+/* 긴 URL 이 레이아웃을 밀어내지 않도록 (본문은 keep-all 유지) */
+a {
+  overflow-wrap: anywhere;
+}
+
+/* ===== 제목 ===== */
+
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 이름 아래 한 줄 소개 */
+.resume-tagline {
+  margin-top: -0.35rem;
+  margin-bottom: 0;
+  color: var(--resume-muted);
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+/**
+ * 섹션 제목은 아래에 얇은 룰을 둬서 섹션의 시작을 분명히 한다.
+ * 룰이 있으면 색에 의존하지 않고도 위계가 잡힌다.
+ */
+.container h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--resume-line);
+}
+
+/* 항목 제목 (회사명 / 프로젝트명 / 수상명 …) */
+h3 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  /* Bootstrap 기본 0.5rem 은 바로 아래 붙는 보조 줄과의 간격을 필요 이상으로 벌린다 */
+  margin-bottom: 0.2rem;
+}
+
+/* 좌측 컬럼(기간 / 분류)은 제목이 아니라 라벨이므로 무게를 낮추고 숫자 폭을 고정한다 */
+.text-md-right h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--resume-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 태블릿 구간에서는 좌측 컬럼 폭이 좁아 기간이 두 줄로 깨진다 */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .text-md-right h3 {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+}
+
+/* 직책 / 소속 등 항목 제목 아래의 보조 줄 */
+.resume-subtitle {
+  font-size: 0.94rem;
+  margin-top: 0;
+}
+
+/**
+ * 기간 배지
+ *
+ * Bootstrap 기본 배지는 채도·명도가 높아 본문보다 먼저 눈에 들어온다.
+ * 기간은 보조 정보이므로 회색 계열로 낮춘다.
+ */
+.container .badge {
+  font-weight: 500;
+  font-size: 0.72em;
+  padding: 0.3em 0.5em;
+  vertical-align: 0.15em;
+}
+
+.container .badge-info,
+.container .badge-secondary,
+.container .badge-primary {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+}
+
+/* ===== 리스트 ===== */
+
+/**
+ * 마커는 대시로 통일한다. 원형 불릿보다 시선을 덜 끌어 본문이 먼저 읽힌다.
+ * 들여쓰기는 마커가 보일 만큼만 남긴다. (Bootstrap 기본값 2rem 은 깊이마다 누적된다)
+ *
+ * `li` 의 padding-left 가 마커와 본문 사이 간격이 된다.
+ */
+.container ul {
+  padding-left: 1.35rem;
+  margin-bottom: 0.4rem;
+  list-style-type: '–';
+}
+
+.container ul ul {
+  padding-left: 1.05rem;
+  margin-top: 0.08rem;
+  list-style-type: '·';
+}
+
+.container li {
+  /**
+   * 본문 line-height(1.7)를 그대로 쓰면 한 줄짜리 항목 사이가 한 줄 높이만큼 벌어진다.
+   * 목록은 문단보다 촘촘해야 훑어보기 쉬우므로 행간을 따로 잡는다.
+   */
+  line-height: 1.55;
+  margin-bottom: 0.06rem;
+  padding-left: 0.5rem;
+}
+
+.container li::marker {
+  color: var(--resume-marker);
+}
+
+/* 가운뎃점은 기본 크기에서 너무 작아 보여 한 단계 키운다 */
+.container ul ul > li::marker {
+  font-size: 1.35em;
+}
+
+/**
+ * 하위 항목을 가진 줄(그룹 소제목)은 위쪽 여백으로 앞 그룹과 떼어낸다.
+ * 첫 줄이면 여백이 필요 없으므로 제외한다.
+ */
+.container li.resume-desc-group:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.container li.resume-desc-group {
+  color: var(--resume-text);
+}
+
+/* ===== 구분선 ===== */
+
+.container hr {
+  margin: 1.6rem 0;
+  border-top-color: var(--resume-line);
+}
+
+/* ===== 프로필 이미지 ===== */
+
+/**
+ * 어떤 비율의 사진을 넣어도 같은 원형으로 잘리도록 고정 크기 + cover 로 처리한다.
+ * 모바일에서는 첫 화면을 사진이 다 차지하지 않도록 크게 줄인다.
+ */
+.resume-avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--resume-line);
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .resume-tagline {
+    font-size: 0.95rem;
+    margin-top: -0.2rem;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.02rem;
+  }
+
+  /**
+   * 좌측 컬럼이 제목 위로 쌓이는 구간이다.
+   * 제목(h3) 크기를 그대로 쓰면 항목 제목과 위계가 뒤집히므로 캡션 크기로 낮춘다.
+   */
+  .text-md-right h3 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.15rem;
+  }
+
+  .container ul {
+    padding-left: 1rem;
+  }
+
+  .container ul ul {
+    padding-left: 0.85rem;
+  }
+
+  .container hr {
+    margin: 1.25rem 0;
+  }
+
+  /* 섹션 간격(mt-5 = 3rem)은 모바일에서 과하다 */
+  .container .mt-5 {
+    margin-top: 2.1rem !important;
+  }
+
+  .resume-avatar {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+/* ===== 인쇄 ===== */
+
+/**
+ * 인쇄는 화면(데스크탑)과 똑같이 나와야 한다.
+ *
+ * 가장 큰 함정: A4 인쇄 폭은 약 700px 이라 모바일 분기(≤767.98px)에 걸린다.
+ * 그대로 두면 종이에 2단 레이아웃이 아니라 모바일 레이아웃이 찍힌다.
+ * 그래서 이 블록에서 데스크탑 값을 다시 못 박는다.
+ *
+ * 그 외:
+ *  - 다크 테마로 보던 중 인쇄해도 종이에서는 라이트 기준으로 나온다.
+ *  - `print-color-adjust: exact` 로 배경과 칩 색이 지워지지 않게 강제한다.
+ *  - 화면 전용 컨트롤(언어 토글, 우측 내비, 유틸 버튼)만 숨긴다.
+ *  - 항목이 페이지 경계에서 잘리지 않도록 끊김을 막는다.
+ */
+@media print {
+  html[data-theme='dark'] {
+    --resume-bg: #ffffff;
+    --resume-text: #1f2328;
+    --resume-muted: #656d76;
+    --resume-accent: #1f7fe0;
+    --resume-line: #e8ebee;
+    --resume-marker: #b9c0c8;
+    --chip-bg: #6b7583;
+    --chip-border: #6b7583;
+    --chip-text: #ffffff;
+    --chip-marker: #e2e6eb;
+    --chip-level: #e8ecf0;
+    --badge-bg: #eef1f5;
+    --badge-text: #5b6470;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .resume-screen-only {
+    display: none !important;
+  }
+
+  /* 종이 폭을 그대로 쓴다 (padding 은 row 의 음수 margin 과 상쇄되므로 남겨둔다) */
+  .container {
+    max-width: none !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  /* --- 여기부터: 모바일 분기로 떨어지는 것을 막고 데스크탑 2단을 유지한다 --- */
+
+  /**
+   * 종이(A4 여백 12mm → 약 700px)에서 거터 폭 계산:
+   *   700 * 24% - 30(padding) = 138px  → "2023. 03 ~ 2024. 02" (0.86rem 기준 약 123px) 한 줄에 들어감
+   */
+  .container .col-md-3 {
+    flex: 0 0 24% !important;
+    max-width: 24% !important;
+  }
+
+  .container .col-md-9 {
+    flex: 0 0 76% !important;
+    max-width: 76% !important;
+  }
+
+  .container .offset-md-3 {
+    margin-left: 24% !important;
+  }
+
+  .container .text-md-right {
+    text-align: right !important;
+  }
+
+  .container .text-md-left {
+    text-align: left !important;
+  }
+
+  body {
+    font-size: 10.5pt;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .resume-tagline {
+    font-size: 1rem;
+    margin-top: -0.3rem;
+  }
+
+  .container h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  .container .text-md-right h3 {
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 0;
+    white-space: normal;
+  }
+
+  .container ul {
+    padding-left: 1.3rem;
+  }
+
+  .container ul ul {
+    padding-left: 1rem;
+  }
+
+  .container hr {
+    margin: 1.4rem 0;
+  }
+
+  .container .mt-5 {
+    margin-top: 2.4rem !important;
+  }
+
+  .resume-avatar {
+    width: 124px;
+    height: 124px;
+  }
+
+  /**
+   * 페이지 나눔
+   *
+   * `.row` 전체에 break-inside: avoid 를 걸면 안 된다.
+   * 프로젝트 한 항목이 한 페이지보다 길어서, 통째로 넘기려다 앞 페이지에 큰 공백만 남는다.
+   * 그래서 한 줄 단위(li)와 제목 뒤(h2/h3)만 끊기지 않게 막는다.
+   */
+  .container li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .container h2,
+  .container h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* 앵커 여백은 화면용이므로 종이에서는 필요 없다 */
+  .container h2 {
+    scroll-margin-top: 0;
+  }
+}
