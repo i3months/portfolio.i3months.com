@@ -2,7 +2,8 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faBloggerB, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { IProfile } from '../component/profile/IProfile';
-import profileImage from '../asset/profile.jpg';
+// 원형 아바타에는 얼굴이 크게 잡힌 크롭을 쓴다. (profile_alt-medium.jpg 는 더 넓은 크롭)
+import profileImage from '../asset/profile@2x.jpg';
 
 const profile: IProfile.Payload = {
   image: profileImage,
@@ -10,6 +11,7 @@ const profile: IProfile.Payload = {
     title: '정준모',
     small: '(i3months)',
   },
+  tagline: 'Software Engineer',
   contact: [
     {
       title: 'j3ong.joonmo@gmail.com',
