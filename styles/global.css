@@ -223,8 +223,14 @@ h3 {
 
 .container ul ul {
   padding-left: 1.05rem;
-  margin-top: 0.08rem;
-  list-style-type: '·';
+  margin-top: 0.06rem;
+  /**
+   * 2단계 마커는 정상 크기로 보이는 글리프를 쓴다.
+   * 가운뎃점(·)은 작아서 `::marker { font-size }` 로 키워야 했는데,
+   * 마커 폰트를 키우면 그 줄의 라인 박스가 함께 커져서
+   * 중첩 항목 간격만 1단계 목록보다 벌어진다.
+   */
+  list-style-type: '◦';
 }
 
 .container li {
@@ -241,17 +247,16 @@ h3 {
   color: var(--resume-marker);
 }
 
-/* 가운뎃점은 기본 크기에서 너무 작아 보여 한 단계 키운다 */
-.container ul ul > li::marker {
-  font-size: 1.35em;
-}
-
 /**
  * 하위 항목을 가진 줄(그룹 소제목)은 위쪽 여백으로 앞 그룹과 떼어낸다.
  * 첫 줄이면 여백이 필요 없으므로 제외한다.
  */
+/**
+ * 그룹 소제목만 위 여백을 조금 둔다.
+ * 값이 크면 "중첩이 있는 목록"과 "그냥 나열한 목록"의 간격이 눈에 띄게 달라 보인다.
+ */
 .container li.resume-desc-group:not(:first-child) {
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
 }
 
 .container li.resume-desc-group {
