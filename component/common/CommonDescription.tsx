@@ -1,4 +1,4 @@
-import { CSSProperties, PropsWithChildren } from 'react';
+import { CSSProperties, Fragment, PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -37,17 +37,14 @@ export function CommonDescription({
         <ul className={option?.padding ? 'pt-2' : ''}>
           {descriptions.map((description, descIndex) => {
             return (
-              <>
-                <Description description={description} key={descIndex.toString()} />
+              <Fragment key={descIndex.toString()}>
+                <Description description={description} />
                 {description.descriptions ? (
-                  <DescriptionRecursion
-                    descriptions={description.descriptions}
-                    key={descIndex.toString()}
-                  />
+                  <DescriptionRecursion descriptions={description.descriptions} />
                 ) : (
                   ''
                 )}
-              </>
+              </Fragment>
             );
           })}
         </ul>
@@ -66,17 +63,14 @@ function DescriptionRecursion({
     <ul>
       {descriptions.map((description, index) => {
         return (
-          <>
-            <Description description={description} key={index.toString()} />
+          <Fragment key={index.toString()}>
+            <Description description={description} />
             {description.descriptions ? (
-              <DescriptionRecursion
-                descriptions={description.descriptions}
-                key={index.toString()}
-              />
+              <DescriptionRecursion descriptions={description.descriptions} />
             ) : (
               ''
             )}
-          </>
+          </Fragment>
         );
       })}
     </ul>
@@ -85,6 +79,15 @@ function DescriptionRecursion({
 
 function Description({ description }: PropsWithChildren<{ description: IRow.Description }>) {
   const { content, href, postImage, postHref, weight, contentLinks, preIcon } = description;
+
+  /**
+   * 하위 항목을 가진 줄은 그룹의 소제목 역할을 한다.
+   * 위쪽 여백으로 그룹을 시각적으로 떼어내기 위해 클래스를 붙인다. (styles/global.css)
+   */
+  const groupClass =
+    description.descriptions && description.descriptions.length > 0
+      ? 'resume-desc-group'
+      : undefined;
 
   // preIcon 렌더링 헬퍼
   const renderIcon = () => {
@@ -100,7 +103,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     // contentLinks가 있으면 content와 contentLinks를 조합해서 렌더링
     if (contentLinks && contentLinks.length > 0) {
       return (
-        <li style={getFontWeight(weight)}>
+        <li style={getFontWeight(weight)} className={groupClass}>
           {renderIcon()}
           {content}
           {contentLinks.map((link) => (
@@ -113,7 +116,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     }
     if (href && postImage) {
       return (
-        <li style={getFontWeight(weight)}>
+        <li style={getFontWeight(weight)} className={groupClass}>
           {renderIcon()}
           <HrefTargetBlank url={href} text={content} /> <img src={postImage} alt={postImage} />
         </li>
@@ -121,7 +124,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     }
     if (href) {
       return (
-        <li style={getFontWeight(weight)}>
+        <li style={getFontWeight(weight)} className={groupClass}>
           {renderIcon()}
           <HrefTargetBlank url={href} text={content} />
         </li>
@@ -129,7 +132,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     }
     if (postHref && postImage) {
       return (
-        <li style={getFontWeight(weight)}>
+        <li style={getFontWeight(weight)} className={groupClass}>
           {renderIcon()}
           {content} <HrefTargetBlank url={postHref} text={postHref} />{' '}
           <img src={postImage} alt={postImage} />
@@ -138,7 +141,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     }
     if (postHref) {
       return (
-        <li style={getFontWeight(weight)}>
+        <li style={getFontWeight(weight)} className={groupClass}>
           {renderIcon()}
           {content} <HrefTargetBlank url={postHref} text={postHref} />
         </li>
@@ -146,20 +149,17 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     }
     if (postImage) {
       return (
-        <li style={getFontWeight(weight)}>
+        <li style={getFontWeight(weight)} className={groupClass}>
           {renderIcon()}
           {content} <img src={postImage} alt={postImage} />
         </li>
       );
     }
     return (
-      <>
-        <meta name="format-detection" content="telephone=no" />
-        <li style={getFontWeight(weight)}>
-          {renderIcon()}
-          {content}
-        </li>
-      </>
+      <li style={getFontWeight(weight)} className={groupClass}>
+        {renderIcon()}
+        {content}
+      </li>
     );
   })();
 
