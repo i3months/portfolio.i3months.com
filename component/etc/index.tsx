@@ -61,7 +61,7 @@ function ExtraLinksRow({
       {index > 0 ? <hr /> : ''}
       <Row>
         <Col sm={12} md={3} className="text-md-right">
-          <h4 style={Style.gray}>{extraLinksTitle || 'Extra Links'}</h4>
+          <h3 style={Style.gray}>{extraLinksTitle || 'Extra Links'}</h3>
         </Col>
         <Col sm={12} md={9}>
           <ul style={{ paddingLeft: '1.5rem', marginTop: 0 }}>
