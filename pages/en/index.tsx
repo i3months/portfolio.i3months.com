@@ -2,7 +2,7 @@
 import { Container } from 'reactstrap';
 
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
+import { NextSeo, SocialProfileJsonLd } from 'next-seo';
 import { Education } from '../../component/education';
 import { License } from '../../component/license';
 import { Etc } from '../../component/etc';
@@ -18,14 +18,29 @@ import Payload from '../../payload.en';
 import { Article } from '../../component/article';
 import { Presentation } from '../../component/presentation';
 import { LocaleToggle } from '../../component/common/LocaleToggle';
+import { SectionNav } from '../../component/common/SectionNav';
+import { ViewControls } from '../../component/common/ViewControls';
 
 function ResumeEN() {
   return (
     <>
       <NextSeo {...Payload._global.seo} />
+      {/* 검색엔진이 사람(Person)으로 인식하도록 구조화 데이터를 제공한다 */}
+      <SocialProfileJsonLd
+        type="Person"
+        name={Payload.profile.name.title}
+        url="https://portfolio.i3months.com/en"
+        sameAs={Payload.profile.contact
+          .map((contact) => contact.link)
+          .filter((link): link is string => !!link && link.startsWith('http'))}
+      />
       <Head>
         <title>{Payload._global.headTitle}</title>
-        <link rel="shortcut icon" href={Payload._global.favicon} />
+        {/**
+         * 파비콘은 `public/favicon.ico` 와 `_document` 의 PNG 링크로 제공한다.
+         * asset 에서 import 하면 next-images 가 base64 로 인라인해 페이지마다 8KB 이상 늘어난다.
+         */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <Container style={Style.global}>
         <Profile.Component payload={Payload.profile} />
@@ -43,6 +58,8 @@ function ResumeEN() {
 
         {/* <Footer.Component payload={Payload.footer} /> */}
       </Container>
+      <SectionNav locale="en" />
+      <ViewControls locale="en" />
       <LocaleToggle locale="en" />
     </>
   );
