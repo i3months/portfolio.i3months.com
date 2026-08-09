@@ -32,11 +32,10 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Built on GCP - servers run under Docker Compose on Compute Engine, with Cloud SQL, GCS, and Firebase Hosting.',
+                'Built on GCP - Compute Engine, Docker Compose, Cloud SQL, Cloud Storage, and Firebase.',
             },
             {
-              content:
-                'Put Cloudflare in front as a proxy, handling TLS termination, DDoS mitigation, and edge caching.',
+              content: 'Put Cloudflare in front as a proxy for DDoS mitigation and edge caching.',
             },
           ],
         },
@@ -46,7 +45,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'Protected traffic with an NGINX WAF and Cloudflare - per-IP rate limiting, SQL injection and XSS blocking.',
+                'Layered traffic protection - Cloudflare (DDoS mitigation, TLS), NGINX (SQL injection and XSS pattern blocking), and the application (per-IP login limits and per-user request limits).',
             },
             {
               content:
@@ -54,7 +53,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Moved from Cloud Run to Compute Engine - keeping min-instances warm to avoid cold starts cost more than the traffic justified, so I switched to an always-on VM and cut the bill.',
+                'Moved from Cloud Run to Compute Engine - cut infrastructure cost by 81% (₩380,000 → ₩70,000 per month).',
             },
             {
               content:

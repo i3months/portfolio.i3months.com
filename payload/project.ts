@@ -42,7 +42,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                'NGINX WAF와 Cloudflare로 트래픽 보호 - IP당 요청 제한, SQL Injection·XSS 차단',
+                '다층 트래픽 보호 - DDoS 완화 및 TLS, SQL Injection·XSS 패턴 차단, 로그인 IP·사용자 단위 요청 제한',
             },
             {
               content:
