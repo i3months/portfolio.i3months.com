@@ -40,9 +40,13 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
               {payload.latestUpdatedLocale === 'ko' ? '최근 업데이트' : 'Latest Updated'}
             </small>{' '}
             <Badge color="secondary">
-              {`${latestUpdated.toFormat(
-                Util.LUXON_DATE_FORMAT.YYYY_DOT_LL_DOT_DD,
-              )} (D+${latestUpdatedByNow})`}
+              {/**
+               * 갱신 당일에는 `(D+0)` 이 붙어 자리표시자처럼 보이므로 날짜만 보여준다.
+               * 시계 차이로 음수가 나오는 경우도 같이 걸러진다.
+               */}
+              {`${latestUpdated.toFormat(Util.LUXON_DATE_FORMAT.YYYY_DOT_LL_DOT_DD)}${
+                latestUpdatedByNow > 0 ? ` (D+${latestUpdatedByNow})` : ''
+              }`}
             </Badge>
           </p>
           <p className="text-right" style={Style.sign}>
