@@ -26,6 +26,28 @@ const openSource: IOpenSource.Payload = {
       ],
     },
     {
+      title: 'awesome-nextjs',
+      descriptions: [
+        {
+          content: 'Added eziwiki to the Documentation section of the Awesome Next.js list',
+        },
+        {
+          content: 'Contributor',
+        },
+        {
+          content: 'https://github.com/officialrajdeepsingh/awesome-nextjs/pull/87',
+          href: 'https://github.com/officialrajdeepsingh/awesome-nextjs/pull/87',
+          weight: 'SEMI_BOLD',
+          preIcon: 'github',
+        },
+        {
+          content: 'Github Stars: ',
+          postImage:
+            'https://img.shields.io/github/stars/officialrajdeepsingh/awesome-nextjs.svg?style=popout',
+        },
+      ],
+    },
+    {
       title: 'eziwiki',
       descriptions: [
         {

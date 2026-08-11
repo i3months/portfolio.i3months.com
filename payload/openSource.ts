@@ -27,6 +27,28 @@ const openSource: IOpenSource.Payload = {
       ],
     },
     {
+      title: 'awesome-nextjs',
+      descriptions: [
+        {
+          content: 'Awesome Next.js 목록의 Documentation 항목에 eziwiki 등록',
+        },
+        {
+          content: 'Contributor',
+        },
+        {
+          content: 'https://github.com/officialrajdeepsingh/awesome-nextjs/pull/87',
+          href: 'https://github.com/officialrajdeepsingh/awesome-nextjs/pull/87',
+          weight: 'SEMI_BOLD',
+          preIcon: 'github',
+        },
+        {
+          content: 'Github Stars: ',
+          postImage:
+            'https://img.shields.io/github/stars/officialrajdeepsingh/awesome-nextjs.svg?style=popout',
+        },
+      ],
+    },
+    {
       title: 'eziwiki',
       descriptions: [
         {
