@@ -15,8 +15,8 @@ const profile: IProfile.Payload = {
   tagline: 'Software Engineer',
   contact: [
     {
-      title: 'j3ong.joonmo@gmail.com',
-      link: 'mailto:j3ong.joonmo@gmail.com',
+      title: 'jm.j3ong@gmail.com',
+      link: 'mailto:jm.j3ong@gmail.com',
       icon: faEnvelope,
     },
     // 번호를 공개하지 않는 동안은 빈 행이 미완성처럼 보여 감춰둔다.
