@@ -56,7 +56,7 @@ const presentation: IAward.Payload = {
     },
     {
       title: 'Chungnam National University Generative AI Challenge',
-      subTitle: 'Encouragement Prize',
+      subTitle: "Encouragement Prize (CNU Director of Information Technology Headquarters' Award)",
       at: '2025-09',
       descriptions: [
         {

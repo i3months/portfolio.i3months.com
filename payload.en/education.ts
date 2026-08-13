@@ -7,7 +7,7 @@ const education: IEducation.Payload = {
     {
       title: 'Chungnam National University',
       subTitle:
-        'Senior, Department of Computer Science and Engineering (145 credits earned, GPA: 3.96 / 4.5)',
+        'Department of Computer Science and Engineering, currently in the 8th semester (145 credits earned, GPA: 3.96 / 4.5)',
       startedAt: '2021-03',
       endedAt: '2027-02',
     },

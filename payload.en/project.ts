@@ -104,7 +104,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                'Ran review-only agents across four angles - concurrency, security, schema, and i18n - with source-write permission removed to separate review from implementation.',
+                'Ran review-only agents across four angles - concurrency, security, schema, and i18n - separating review authority from implementation.',
             },
           ],
         },
@@ -287,7 +287,8 @@ const project: IProject.Payload = {
             'Served as Tech Lead - designed the software architecture and led the overall development process.',
         },
         {
-          content: 'Kakao Tech Campus Final Presentation - UniScope Platform',
+          content:
+            'Kakao Tech Campus Final Presentation - UniScope, an integrated platform for nationwide university information',
           href: 'https://13months.tistory.com/768',
         },
         {
@@ -333,7 +334,8 @@ const project: IProject.Payload = {
       skillKeywords: ['TypeScript', 'React', 'Playwright', 'FSD', 'Storybook'],
     },
     {
-      title: 'Developed features for the Chemical Information Platform Service',
+      title:
+        'Developed features for the Chemical Information Platform Service at the Korea Research Institute of Chemical Technology (KRICT)',
       startedAt: '2025-01',
       endedAt: '2025-03',
       where: 'IWAZ (South Korea)',
@@ -392,7 +394,7 @@ const project: IProject.Payload = {
         {
           content:
             'Managed encrypted view schemas and handled encryption/decryption of sensitive information.',
-          href: 'https://13months.tistory.com/780',
+          href: 'https://13months.tistory.com/689',
         },
         {
           content:
@@ -410,7 +412,7 @@ const project: IProject.Payload = {
       ],
     },
     {
-      title: 'Developed DBpia Content Maker (DCM)',
+      title: 'Developed DBpia Content Maker (DCM), a research paper metadata production platform',
       startedAt: '2024-02',
       endedAt: '2024-12',
       where: 'IWAZ (South Korea)',

@@ -52,7 +52,7 @@ const openSource: IOpenSource.Payload = {
       descriptions: [
         {
           content:
-            'A modern, lightweight wiki and documentation site generator built with Next.js (November 2025 - present)',
+            'A lightweight wiki and documentation site generator built with Next.js (November 2025 - present)',
           href: 'https://13months.tistory.com/778',
         },
         {

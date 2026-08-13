@@ -352,7 +352,7 @@ const project: IProject.Payload = {
       skillKeywords: ['Java', 'Spring', 'MariaDB', 'Tibero', 'jQuery', 'ApexChart'],
     },
     {
-      title: 'DBpia 서비스 기능 개선 ',
+      title: 'DBpia 서비스 기능 개선',
       startedAt: '2024-04',
       endedAt: '2024-12',
       where: '아이와즈 (IWAZ)',

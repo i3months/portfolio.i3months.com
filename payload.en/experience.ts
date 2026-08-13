@@ -14,8 +14,8 @@ const experience: IExperience.Payload = {
           descriptions: [
             'Collaborated with a 10-member team of designers, developers, and planners to develop and operate DBpia and its related services.',
             'Developed features for the Chemical Information Platform Service at the Korea Research Institute of Chemical Technology (KRICT) – Query tuning, data migration, and visualization.',
-            'Enhanced functionalities of the DBpia service – Maintenance, back-office management.',
-            'Developed and maintained DBpia Content Maker (DCM), a research paper metadata creation platform.',
+            'Enhanced functionalities of the DBpia service – Maintenance and additional development of the back office and the DBpia system.',
+            'Developed and maintained DBpia Content Maker (DCM), a research paper metadata creation platform – New service development and operation.',
           ],
           skillKeywords: [
             'Java',
@@ -32,6 +32,7 @@ const experience: IExperience.Payload = {
             'SQL Server',
             'jQuery',
             'JavaScript',
+            'ApexChart',
             'Tomcat',
           ],
         },
@@ -46,10 +47,10 @@ const experience: IExperience.Payload = {
           endedAt: '2024-02',
           descriptions: [
             'Collaborated with a 5-member team of designers and developers to develop research institute and public service projects.',
-            'Developed the ASD Screening AI Integrated Platform System',
-            'Enhanced functionalities of the ETRI School website – Maintenance, back-office management.',
+            'Developed the ASD Screening AI Integrated Platform System – New service development.',
+            'Enhanced functionalities of the ETRI School website – Unified student and faculty data and developed the back office.',
             'Developed the Drone Mission Data Management System – Built a scheduler for drone data storage.',
-            'Enhanced functionalities of the National Supercomputing Center (KSC) website – Maintenance, back-office management.',
+            'Enhanced functionalities of the National Supercomputing Center (KSC) website – Maintenance and additional development of the KSC website.',
           ],
           skillKeywords: [
             'Java',
@@ -60,6 +61,8 @@ const experience: IExperience.Payload = {
             'Spring Data JPA',
             'jQuery',
             'JavaScript',
+            'ApexChart',
+            'd3.js',
             'Vue',
             'Quasar',
             'React',
