@@ -3,7 +3,7 @@ import { IGlobal } from '../component/common/IGlobal';
 
 const title = 'All About i3months (Joonmo Jeong)';
 const description =
-  'Resume of Joonmo Jeong, a software engineer who enjoys defining and solving problems — from backend and embedded to AI servers, with Agentic AI in the workflow.';
+  'Resume of Joonmo Jeong, a software engineer who enjoys defining and solving problems, from backend and embedded to AI servers, with Agentic AI in the workflow.';
 
 /** 배포 도메인. canonical / OpenGraph 절대 URL 에 쓰인다. */
 const siteUrl = 'https://portfolio.i3months.com';
