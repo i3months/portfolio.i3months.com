@@ -7,7 +7,7 @@ const education: IEducation.Payload = {
   list: [
     {
       title: '충남대학교',
-      subTitle: '컴퓨터융합학부 8학기 재학중 (145학점 이수, GPA 3.96 / 4.5)',
+      subTitle: '컴퓨터융합학부 8학기 재학중',
       startedAt: '2021-03',
       endedAt: '2027-02',
     },
