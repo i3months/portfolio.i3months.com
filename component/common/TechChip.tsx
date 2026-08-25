@@ -1,4 +1,4 @@
-import { CSSProperties, PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 
 import { BrandLogo, BrandLogos } from './techLogos';
@@ -104,6 +104,7 @@ export function findBrandLogo(name: string): BrandLogo | undefined {
  * ### 칩 색상
  *
  * @description 실제 값은 `styles/global.css` 의 `--chip-*` 변수가 갖는다.
+ *              배경은 페이지 배경과 거의 같은 명도라 로고 색이 칩을 구분하는 유일한 색이다.
  *              다크 테마에서 변수만 바뀌므로 이 컴포넌트는 손댈 필요가 없고,
  *              인쇄 시에도 화면과 같은 색으로 나온다.
  */
@@ -111,7 +112,7 @@ const Chip = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  padding: 0.1em 0.58em 0.1em 0.48em;
+  padding: 0.1em 0.62em 0.1em 0.5em;
   border-radius: 5px;
   border: 1px solid var(--chip-border);
   background: var(--chip-bg);
@@ -129,8 +130,8 @@ const Chip = styled.span`
 
   &[data-size='sm'] {
     gap: 0.34em;
-    padding: 0.06em 0.5em 0.06em 0.42em;
-    font-size: 0.665rem;
+    padding: 0.06em 0.55em 0.06em 0.45em;
+    font-size: 0.7rem;
   }
 
   /* 모바일에서는 칩이 여러 줄을 차지하므로 한 톤 더 조인다. */
@@ -139,8 +140,8 @@ const Chip = styled.span`
 
     &[data-size='sm'] {
       gap: 0.3em;
-      padding: 0.04em 0.44em 0.04em 0.36em;
-      font-size: 0.64rem;
+      padding: 0.04em 0.48em 0.04em 0.4em;
+      font-size: 0.66rem;
     }
   }
 
@@ -172,7 +173,6 @@ const Logo = styled.svg`
   width: 0.98em;
   height: 0.98em;
   flex: 0 0 auto;
-  color: var(--tech-chip-logo);
 `;
 
 const Marker = styled.span`
@@ -211,15 +211,30 @@ export function TechChip({
   name,
   level,
   size = 'md',
-}: PropsWithChildren<{ name: string; level?: number; size?: 'md' | 'sm' }>) {
+  className,
+}: PropsWithChildren<{ name: string; level?: number; size?: 'md' | 'sm'; className?: string }>) {
   const logo = findBrandLogo(name);
-  // 칩 배경이 어두우므로 로고는 어두운 배경용 보정색을 쓴다.
-  const logoStyle = logo ? ({ '--tech-chip-logo': logo.colorOnDark } as CSSProperties) : undefined;
+  /**
+   * 밝은/어두운 배경용 색을 둘 다 넘기고, 어느 쪽을 쓸지는 CSS(`.resume-chip-logo`)가
+   * 현재 테마를 보고 고른다. 인쇄에서는 항상 밝은 배경용이 선택된다.
+   */
+  const logoStyle = logo
+    ? ({
+        '--tech-chip-logo-light': logo.colorOnLight,
+        '--tech-chip-logo-dark': logo.colorOnDark,
+      } as CSSProperties)
+    : undefined;
 
   return (
-    <Chip data-size={size}>
+    <Chip data-size={size} className={className}>
       {logo ? (
-        <Logo viewBox="0 0 24 24" style={logoStyle} aria-hidden="true" focusable="false">
+        <Logo
+          className="resume-chip-logo"
+          viewBox="0 0 24 24"
+          style={logoStyle}
+          aria-hidden="true"
+          focusable="false"
+        >
           <path d={logo.path} fill="currentColor" />
         </Logo>
       ) : (
@@ -231,16 +246,46 @@ export function TechChip({
   );
 }
 
+/**
+ * ### 칩 목록
+ *
+ * @param limit 처음부터 보여줄 개수. 넘치는 칩은 "+N" 버튼으로 펼친다.
+ *              접어서 감추는 것이 2개 미만이면 버튼이 칩보다 거추장스러우므로 그냥 다 보여준다.
+ *              접힌 칩은 DOM 에 남아 있고 CSS 로만 감춘다. 덕분에 인쇄에서는 클릭 없이 모두 나온다.
+ */
 export function TechChipList({
   names,
   size = 'md',
   className,
-}: PropsWithChildren<{ names: string[]; size?: 'md' | 'sm'; className?: string }>) {
+  limit,
+}: PropsWithChildren<{ names: string[]; size?: 'md' | 'sm'; className?: string; limit?: number }>) {
+  const [expanded, setExpanded] = useState(false);
+
+  const overflow = limit ? names.length - limit : 0;
+  const hiddenCount = overflow >= 2 ? overflow : 0;
+  const collapsed = hiddenCount > 0 && !expanded;
+
   return (
     <List className={className}>
       {names.map((name, index) => (
-        <TechChip key={index.toString()} name={name} size={size} />
+        <TechChip
+          key={index.toString()}
+          name={name}
+          size={size}
+          className={collapsed && limit && index >= limit ? 'resume-chip-hidden' : undefined}
+        />
       ))}
+      {hiddenCount > 0 && (
+        <button
+          type="button"
+          className="resume-chip-more resume-screen-only"
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-label={expanded ? 'Show fewer' : `Show ${hiddenCount} more`}
+        >
+          {expanded ? `−${hiddenCount}` : `+${hiddenCount}`}
+        </button>
+      )}
     </List>
   );
 }

@@ -1,12 +1,11 @@
-import { Badge, Col, Row } from 'reactstrap';
+import { Badge } from 'reactstrap';
 import { DateTime, Duration } from 'luxon';
 
 import { PropsWithChildren } from 'react';
-import { EmptyRowCol } from '../common';
 import ExperienceRow from './row';
 import { IExperience } from './IExperience';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
-import { Style } from '../common/Style';
+import { CommonSection } from '../common/CommonSection';
 import Util from '../common/Util';
 
 type Payload = IExperience.Payload;
@@ -21,37 +20,23 @@ export const Experience = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
-  const totalPeriod = () => {
-    if (payload.disableTotalPeriod) {
-      return '';
-    }
-    return (
-      <span style={{ fontSize: '50%' }}>
-        <Badge>{getFormattingExperienceTotalDuration(payload)}</Badge>
-      </span>
-    );
-  };
+  const totalPeriod = payload.disableTotalPeriod ? (
+    undefined
+  ) : (
+    <Badge>{getFormattingExperienceTotalDuration(payload)}</Badge>
+  );
 
   return (
-    <div className="mt-5">
-      <EmptyRowCol>
-        <Row className="pb-3">
-          <Col>
-            <h2 style={Style.blue}>
-              {payload.title || 'EXPERIENCE'} {totalPeriod()}
-            </h2>
-          </Col>
-        </Row>
-        {payload.list.map((item, index) => (
-          <ExperienceRow
-            key={index.toString()}
-            item={item}
-            index={index}
-            durationLocale={payload.durationLocale}
-          />
-        ))}
-      </EmptyRowCol>
-    </div>
+    <CommonSection title={payload.title || 'EXPERIENCE'} aside={totalPeriod}>
+      {payload.list.map((item, index) => (
+        <ExperienceRow
+          key={index.toString()}
+          item={item}
+          index={index}
+          durationLocale={payload.durationLocale}
+        />
+      ))}
+    </CommonSection>
   );
 }
 

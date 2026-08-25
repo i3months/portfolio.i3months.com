@@ -1,9 +1,7 @@
-import { Row, Col } from 'reactstrap';
 import { PropsWithChildren } from 'react';
-import { Style } from '../common/Style';
 import { ISkill } from './ISkill';
 import SkillRow from './row';
-import { EmptyRowCol } from '../common';
+import { CommonSection } from '../common/CommonSection';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
 
 type Payload = ISkill.Payload;
@@ -19,45 +17,13 @@ export const Skill = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <div className="mt-5">
-      <EmptyRowCol>
-        <Row className="pb-3">
-          <Col>
-            <h2>
-              <span style={Style.blue}>{payload.title || 'SKILL'}</span>
-              {/* {createTooltip(payload.tooltip)} */}
-            </h2>
-          </Col>
-        </Row>
+    <CommonSection title={payload.title || 'SKILL'}>
+      {/* 분류 라벨 | 칩 — 분류마다 큰 여백과 구분선을 두지 않고 표처럼 촘촘히 */}
+      <div className="resume-skill-grid">
         {payload.skills.map((skill, index) => (
-          <SkillRow key={index.toString()} skill={skill} index={index} />
+          <SkillRow key={index.toString()} skill={skill} />
         ))}
-      </EmptyRowCol>
-    </div>
+      </div>
+    </CommonSection>
   );
 }
-
-// function createTooltip(content?: string) {
-//   if (!content) {
-//     return '';
-//   }
-
-//   const [tooltipOpen, setTooltipOpen] = useState(false);
-//   const toggle = () => setTooltipOpen(!tooltipOpen);
-
-//   return (
-//     <small>
-//       {' '}
-//       <FontAwesomeIcon icon={faQuestionCircle} id="skill-tooltip" />
-//       <Tooltip
-//         style={{ whiteSpace: 'pre-wrap' }}
-//         placement="right"
-//         target="skill-tooltip"
-//         isOpen={tooltipOpen}
-//         toggle={toggle}
-//       >
-//         {content}
-//       </Tooltip>
-//     </small>
-//   );
-// }

@@ -3,20 +3,16 @@ import { Container } from 'reactstrap';
 
 import Head from 'next/head';
 import { NextSeo, SocialProfileJsonLd } from 'next-seo';
-import { Education } from '../../component/education';
-import { License } from '../../component/license';
-import { Etc } from '../../component/etc';
 import { Experience } from '../../component/experience';
 import { Introduce } from '../../component/introduce';
-import { Award } from '../../component/award';
 import { Profile } from '../../component/profile';
 import { Project } from '../../component/project';
 import { Skill } from '../../component/skill';
+import { Activities, AwardList } from '../../component/activities';
+import { Presentation } from '../../component/presentation';
 import { OpenSource } from '../../component/openSource';
 import { Style } from '../../component/common/Style';
 import Payload from '../../payload.en';
-import { Article } from '../../component/article';
-import { Presentation } from '../../component/presentation';
 import { LocaleToggle } from '../../component/common/LocaleToggle';
 import { SectionNav } from '../../component/common/SectionNav';
 import { ViewControls } from '../../component/common/ViewControls';
@@ -24,7 +20,12 @@ import { ViewControls } from '../../component/common/ViewControls';
 function ResumeEN() {
   return (
     <>
-      <NextSeo {...Payload._global.seo} />
+      {/* 미리보기 빌드(/new)는 같은 내용의 복사본이라 색인에서 뺀다. canonical 은 본 배포를 가리킨다. */}
+      <NextSeo
+        {...Payload._global.seo}
+        noindex={!!process.env.NEXT_PUBLIC_RESUME_PREVIEW}
+        nofollow={!!process.env.NEXT_PUBLIC_RESUME_PREVIEW}
+      />
       {/* 검색엔진이 사람(Person)으로 인식하도록 구조화 데이터를 제공한다 */}
       <SocialProfileJsonLd
         type="Person"
@@ -49,12 +50,15 @@ function ResumeEN() {
         <Project.Component payload={Payload.project} />
         <OpenSource.Component payload={Payload.openSource} />
         <Skill.Component payload={Payload.skill} />
-        <Award.Component payload={Payload.award} />
         <Presentation.Component payload={Payload.presentation} />
-        <Education.Component payload={Payload.education} />
-        <Etc.Component payload={Payload.etc} />
-        <License.Component payload={Payload.license} />
-        <Article.Component payload={Payload.article} />
+        <AwardList payload={Payload.award} />
+        <Activities
+          locale="en"
+          license={Payload.license}
+          education={Payload.education}
+          etc={Payload.etc}
+          article={Payload.article}
+        />
 
         {/* <Footer.Component payload={Payload.footer} /> */}
       </Container>

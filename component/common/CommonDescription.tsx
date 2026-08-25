@@ -30,11 +30,18 @@ const iconMap: Record<string, IconDefinition> = {
 export function CommonDescription({
   descriptions,
   option,
-}: PropsWithChildren<{ descriptions: IRow.Description[]; option?: { padding?: boolean } }>) {
+}: PropsWithChildren<{
+  descriptions: IRow.Description[];
+  option?: { padding?: boolean; className?: string };
+}>) {
+  const className = [option?.padding ? 'pt-2' : '', option?.className || '']
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <>
       {descriptions ? (
-        <ul className={option?.padding ? 'pt-2' : ''}>
+        <ul className={className || undefined}>
           {descriptions.map((description, descIndex) => {
             return (
               <Fragment key={descIndex.toString()}>

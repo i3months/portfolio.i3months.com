@@ -14,6 +14,9 @@
     "export": "cross-env NODE_ENV=production next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
     "postexport": "node shellwork.js",
+    "export:preview": "cross-env NODE_ENV=production RESUME_BASE_PATH=/new NEXT_PUBLIC_RESUME_PREVIEW=1 next export --outdir docs/new",
+    "preexport:preview": "npx rimraf .next docs/new && cross-env RESUME_BASE_PATH=/new NEXT_PUBLIC_RESUME_PREVIEW=1 NODE_OPTIONS=--openssl-legacy-provider next build",
+    "postexport:preview": "npx rimraf .next",
     "clean": "npx rimraf docs .next",
     "lint": "eslint \"component/**/*\" \"pages/**/*\" \"payload/**/*\" \"*.ts\" --fix",
     "typedoc": "typedoc --excludeExternals"

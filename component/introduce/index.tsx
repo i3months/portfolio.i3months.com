@@ -1,4 +1,3 @@
-import { Row, Col, Badge } from 'reactstrap';
 import { PropsWithChildren } from 'react';
 import { DateTime } from 'luxon';
 import { Style } from '../common/Style';
@@ -23,37 +22,32 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
     payload.latestUpdated,
     Util.LUXON_DATE_FORMAT.YYYY_LL_DD,
   );
-  const latestUpdatedByNow = Math.floor(
-    DateTime.local().diff(latestUpdated).milliseconds / 1000 / 60 / 60 / 24,
+
+  /**
+   * 갱신일은 제목 오른쪽에 작게 둔다.
+   * 예전의 `(D+N)` 은 영문판에서 뜻이 통하지 않고 본문 끝에서 시선만 끌어 뺐다.
+   */
+  const latestUpdatedLabel = (
+    <span>
+      {payload.latestUpdatedLocale === 'ko' ? '최근 업데이트' : 'Last updated'}{' '}
+      {latestUpdated.toFormat(Util.LUXON_DATE_FORMAT.YYYY_DOT_LL_DOT_DD)}
+    </span>
   );
 
   return (
-    <CommonSection title={payload.title || 'INTRODUCE'}>
-      {/* 본문은 다른 섹션의 내용 컬럼과 같은 위치에서 시작하도록 좌측을 비운다. */}
-      <Row>
-        <Col sm={12} md={{ size: 9, offset: 3 }}>
-          {payload.contents.map((content, index) => (
-            <p key={index.toString()}>{content}</p>
-          ))}
-          <p className="text-right">
-            <small>
-              {payload.latestUpdatedLocale === 'ko' ? '최근 업데이트' : 'Latest Updated'}
-            </small>{' '}
-            <Badge color="secondary">
-              {/**
-               * 갱신 당일에는 `(D+0)` 이 붙어 자리표시자처럼 보이므로 날짜만 보여준다.
-               * 시계 차이로 음수가 나오는 경우도 같이 걸러진다.
-               */}
-              {`${latestUpdated.toFormat(Util.LUXON_DATE_FORMAT.YYYY_DOT_LL_DOT_DD)}${
-                latestUpdatedByNow > 0 ? ` (D+${latestUpdatedByNow})` : ''
-              }`}
-            </Badge>
-          </p>
+    <CommonSection title={payload.title || 'INTRODUCE'} aside={latestUpdatedLabel}>
+      <div className="resume-introduce">
+        {payload.contents.map((content, index) => (
+          <p key={index.toString()}>{content}</p>
+        ))}
+        {payload.sign ? (
           <p className="text-right" style={Style.sign}>
             {payload.sign}
           </p>
-        </Col>
-      </Row>
+        ) : (
+          ''
+        )}
+      </div>
     </CommonSection>
   );
 }

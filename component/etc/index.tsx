@@ -1,18 +1,23 @@
 import { DateTime } from 'luxon';
 import { PropsWithChildren } from 'react';
-import { Row, Col } from 'reactstrap';
 import { CommonSection } from '../common/CommonSection';
-import { EmptyRowCol, HrefTargetBlank } from '../common';
+import { HrefTargetBlank } from '../common';
 import { CommonRows } from '../common/CommonRow';
 import { IRow } from '../common/IRow';
-import { Style } from '../common/Style';
 import Util from '../common/Util';
 import { IEtc } from './IEtc';
+import { EtcSubTitle } from './subtitle';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
 
 type Payload = IEtc.Payload;
 type Item = IEtc.Item;
 
+/**
+ * ### 기타 경험 (독립 섹션)
+ *
+ * @description 페이지에서는 `Activities` 가 이 payload 를 압축 목록으로 묶어 보여준다.
+ *              독립 섹션으로 다시 쓸 수 있도록 남겨둔다.
+ */
 export const Etc = {
   Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
     return PreProcessingComponent<IEtc.Payload>({
@@ -25,17 +30,9 @@ export const Etc = {
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
     <CommonSection title={payload.title || 'EXTRAS'}>
-      <EducationRow payload={payload} />
-    </CommonSection>
-  );
-}
-
-function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
-  return (
-    <EmptyRowCol>
-      {payload.list.map((item, index) => {
-        return <CommonRows key={index.toString()} payload={serialize(item)} index={index} />;
-      })}
+      {payload.list.map((item, index) => (
+        <CommonRows key={index.toString()} payload={serialize(item)} index={index} />
+      ))}
       {payload.extraLinks && payload.extraLinks.length > 0 && (
         <ExtraLinksRow
           extraLinks={payload.extraLinks}
@@ -43,7 +40,7 @@ function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
           index={payload.list.length}
         />
       )}
-    </EmptyRowCol>
+    </CommonSection>
   );
 }
 
@@ -59,20 +56,20 @@ function ExtraLinksRow({
   return (
     <div>
       {index > 0 ? <hr /> : ''}
-      <Row>
-        <Col sm={12} md={3} className="text-md-right">
-          <h3 style={Style.gray}>{extraLinksTitle || 'Extra Links'}</h3>
-        </Col>
-        <Col sm={12} md={9}>
-          <ul style={{ paddingLeft: '1.5rem', marginTop: 0 }}>
-            {extraLinks.map((link, linkIndex) => (
-              <li key={linkIndex.toString()} style={{ marginBottom: '0.5rem' }}>
-                <HrefTargetBlank url={link.url} text={link.title} />
-              </li>
-            ))}
-          </ul>
-        </Col>
-      </Row>
+      <div className="resume-row">
+        <div className="resume-row-head">
+          <div className="resume-row-heading">
+            <h3>{extraLinksTitle || 'Extra Links'}</h3>
+          </div>
+        </div>
+        <ul className="resume-descriptions">
+          {extraLinks.map((link, linkIndex) => (
+            <li key={linkIndex.toString()}>
+              <HrefTargetBlank url={link.url} text={link.title} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -92,56 +89,14 @@ function serialize(item: Item): IRow.Payload {
     return startedAt;
   })();
 
-  const subTitleElement = (() => {
-    if (item.subTitleInlineLink) {
-      const { text, href, position = 'before' } = item.subTitleInlineLink;
-      const link = <HrefTargetBlank url={href} text={text} />;
-
-      if (position === 'before') {
-        return (
-          <span>
-            {link} {item.subTitle}
-          </span>
-        );
-      }
-      return (
-        <span>
-          {item.subTitle} {link}
-        </span>
-      );
-    }
-
-    if (item.subTitleLinks) {
-      return (
-        <div>
-          {item.subTitle && <div>{item.subTitle}</div>}
-          <div>
-            {item.subTitleLinksPrefix && <span>{item.subTitleLinksPrefix} · </span>}
-            {item.subTitleLinks.map((link, index) => (
-              <span key={index}>
-                {index > 0 && ' · '}
-                {link.href ? (
-                  <HrefTargetBlank url={link.href} text={link.text} />
-                ) : (
-                  <span>{link.text}</span>
-                )}
-              </span>
-            ))}
-          </div>
-        </div>
-      );
-    }
-
-    return undefined;
-  })();
-
   return {
     left: {
       title,
     },
     right: {
       title: item.title,
-      subTitle: subTitleElement ? (subTitleElement as any) : item.subTitle,
+      // IRow.Right.subTitle 은 string 타입이지만 렌더링은 ReactNode 로 처리된다.
+      subTitle: (<EtcSubTitle item={item} />) as any,
       descriptions: item.descriptions,
     },
   };

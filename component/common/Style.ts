@@ -1,17 +1,18 @@
 import { CSSProperties } from 'react';
 
 /** Style 추론을 위하여.. */
-type TStyleKey = 'blue' | 'gray' | 'global' | 'sign' | 'footerCover' | 'footer';
+type TStyleKey = 'heading' | 'gray' | 'global' | 'sign' | 'footerCover' | 'footer';
 
 export const Style: Record<TStyleKey, CSSProperties> = {
   /**
-   * 섹션 제목 / 이름에 쓰는 강조색.
+   * 제목(이름 / 섹션 제목) 색.
    *
-   * @description 실제 값은 `styles/global.css` 의 `--resume-accent` 가 갖는다. (다크 테마에서 함께 바뀐다)
-   *              라이트 기준값 #1f7fe0 은 흰 배경에서 4.4:1 로 WCAG AA 를 만족한다.
+   * @description 제목은 본문색을 쓴다. 강조색(`--resume-accent`)은 링크·활성 내비처럼
+   *              상호작용하는 곳에만 남겨야 페이지에서 눌러야 할 것이 구분된다.
+   *              실제 값은 `styles/global.css` 의 `--resume-text` 가 갖는다. (다크 테마에서 함께 바뀐다)
    */
-  blue: {
-    color: 'var(--resume-accent, #1f7fe0)',
+  heading: {
+    color: 'var(--resume-text, #1f2328)',
   },
 
   /**
