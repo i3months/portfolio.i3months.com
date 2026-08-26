@@ -1050,9 +1050,19 @@ html[data-theme='dark'] .resume-skill-grid {
     margin-top: 0;
   }
 
+  /**
+   * 종이에서는 다단을 쓰지 않는다.
+   * Chrome 은 페이지 경계에서 다단을 제대로 나누지 못한다 — 왼쪽 단만 채우고 오른쪽을 비운 채
+   * 다음 장으로 넘기고, 끝에 빈 장을 하나 붙인다 (column-fill 을 바꿔도 같다. 실제 PDF 로 확인).
+   * 1단으로 흘리면 항목이 한 줄씩 들어가 밀도 손해도 거의 없다. 블록 단위 끊김 방지는 풀고 항목(li) 단위만 남긴다.
+   */
   .resume-activities {
-    column-count: 2;
-    column-gap: 40px;
+    column-count: 1;
+  }
+
+  .resume-activity-block {
+    break-inside: auto;
+    page-break-inside: auto;
   }
 
   .container ul {

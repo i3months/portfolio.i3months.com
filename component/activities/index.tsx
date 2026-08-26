@@ -160,7 +160,7 @@ export function Activities({
   }
 
   return (
-    <CommonSection title={locale === 'ko' ? '활동 & 자격' : 'Activities & Qualifications'}>
+    <CommonSection title={locale === 'ko' ? '활동 & 자격' : 'ACTIVITIES & QUALIFICATIONS'}>
       <div className="resume-activities">{blocks}</div>
     </CommonSection>
   );
