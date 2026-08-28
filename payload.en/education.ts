@@ -6,8 +6,7 @@ const education: IEducation.Payload = {
   list: [
     {
       title: 'Chungnam National University',
-      subTitle:
-        'Department of Computer Science and Engineering, currently in the 8th semester',
+      subTitle: 'Department of Computer Science and Engineering, currently in the 8th semester',
       startedAt: '2021-03',
       endedAt: '2027-02',
     },

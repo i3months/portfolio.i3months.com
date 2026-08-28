@@ -6,6 +6,12 @@ const license: ILicense.Payload = {
 
   list: [
     {
+      title: 'Google Cloud Certified – Professional Cloud Architect',
+      subTitle: 'Google Cloud (PCA)',
+      startedAt: '2026-08',
+      endedAt: '2028-08',
+    },
+    {
       title: 'AWS Certified Solutions Architect – Associate',
       subTitle: 'Amazon Web Services (SAA-C03)',
       startedAt: '2026-08',
