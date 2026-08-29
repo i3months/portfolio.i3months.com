@@ -5,6 +5,11 @@ const license: ILicense.Payload = {
 
   list: [
     {
+      title: 'Certified Kubernetes Administrator (CKA)',
+      subTitle: 'Cloud Native Computing Foundation',
+      startedAt: '2026-08',
+    },
+    {
       title: 'Google Cloud Certified – Professional Cloud Architect',
       subTitle: 'Google Cloud (PCA)',
       startedAt: '2026-08',
