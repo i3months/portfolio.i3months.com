@@ -6,6 +6,16 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'TOPCIT 성적 우수상',
+      subTitle: '충남대학교 총장상 (2026.09 시상 예정)',
+      at: '2026-09',
+      descriptions: [
+        {
+          content: '소프트웨어 역량 검정시험(TOPCIT) 교내 1위',
+        },
+      ],
+    },
+    {
       title: '제53회 한국컴퓨터종합학술대회(KCC 2026) 논문경진대회',
       subTitle: '학부생부문 장려상 수상',
       at: '2026-08',

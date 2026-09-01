@@ -5,6 +5,17 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'TOPCIT Academic Excellence Award',
+      subTitle:
+        'President\u2019s Award, Chungnam National University (awards ceremony in September 2026)',
+      at: '2026-09',
+      descriptions: [
+        {
+          content: 'Ranked 1st in the university on the TOPCIT software competency assessment.',
+        },
+      ],
+    },
+    {
       title: '53rd Korea Computer Congress (KCC 2026) Paper Competition',
       subTitle: 'Encouragement Prize, Undergraduate Division',
       at: '2026-08',
