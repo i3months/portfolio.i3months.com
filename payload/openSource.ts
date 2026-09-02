@@ -49,6 +49,28 @@ const openSource: IOpenSource.Payload = {
       ],
     },
     {
+      title: 'awesome-docs',
+      descriptions: [
+        {
+          content: 'Awesome Docs 목록의 Site Generators 항목에 eziwiki 등록',
+        },
+        {
+          content: 'Contributor',
+        },
+        {
+          content: 'https://github.com/testthedocs/awesome-docs/pull/114',
+          href: 'https://github.com/testthedocs/awesome-docs/pull/114',
+          weight: 'SEMI_BOLD',
+          preIcon: 'github',
+        },
+        {
+          content: 'Github Stars: ',
+          postImage:
+            'https://img.shields.io/github/stars/testthedocs/awesome-docs.svg?style=popout',
+        },
+      ],
+    },
+    {
       title: 'eziwiki',
       descriptions: [
         {
