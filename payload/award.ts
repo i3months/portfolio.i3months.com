@@ -7,7 +7,7 @@ const presentation: IAward.Payload = {
   list: [
     {
       title: 'TOPCIT 성적 우수상',
-      subTitle: '충남대학교 총장상 (2026.09 시상 예정)',
+      subTitle: '충남대학교 총장상 (2026.09.15 시상 예정)',
       at: '2026-09',
       descriptions: [
         {

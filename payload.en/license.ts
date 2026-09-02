@@ -8,6 +8,7 @@ const license: ILicense.Payload = {
       title: 'Certified Kubernetes Administrator (CKA)',
       subTitle: 'Cloud Native Computing Foundation',
       startedAt: '2026-08',
+      endedAt: '2028-08',
     },
     {
       title: 'Google Cloud Certified – Professional Cloud Architect',
