@@ -319,6 +319,15 @@ h3 {
 }
 
 /**
+ * 레일에 날짜가 아닌 라벨(오픈소스의 역할)이 올 때.
+ * 숫자 폭 고정이 필요 없고, 길면 두 줄로 접혀야 한다.
+ */
+.resume-row-label {
+  font-variant-numeric: normal;
+  white-space: normal;
+}
+
+/**
  * "현재" 는 다른 날짜와 같은 색으로 둔다.
  * 강조색을 칠하면 링크처럼 보이는데 눌러도 아무 일이 없다. 진행 중임은 낱말과 배지가 이미 말한다.
  */
@@ -650,15 +659,29 @@ html[data-theme='dark'] .resume-skill-grid {
 /**
  * 1단 압축 목록 (수상)
  *
- * 다른 섹션과 같은 축에서 시작하도록 레일 폭만큼 들여쓰고, 2단보다 한 항목이 넓으니 간격은 조금 더 준다.
+ * 다른 섹션과 같은 "레일 | 본문" 두 칸을 쓴다. 날짜가 왼쪽 레일에 앉아야
+ * 바로 위 논문 섹션과 시선의 흐름이 끊기지 않는다.
+ * (2단 압축 목록은 열이 좁아 레일을 만들 수 없으므로 날짜가 오른쪽 끝에 남는다)
  */
-.container ul.resume-compact-wide {
-  margin-left: calc(var(--resume-rail) + var(--resume-rail-gap));
-}
-
 .container ul.resume-compact-wide > li {
+  display: grid;
+  grid-template-columns: var(--resume-rail) minmax(0, 1fr);
+  column-gap: var(--resume-rail-gap);
+  align-items: start;
   margin-bottom: 14px;
   font-size: 0.97rem;
+}
+
+/* 바로 위 논문 섹션의 레일 날짜와 같은 크기여야 두 섹션이 한 흐름으로 읽힌다 */
+.container ul.resume-compact-wide .resume-compact-time {
+  text-align: right;
+  padding-top: 0.2em;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.resume-compact-body {
+  min-width: 0;
 }
 
 .container ul.resume-compact-wide > li:last-child {
@@ -794,9 +817,20 @@ html[data-theme='dark'] .resume-skill-grid {
     white-space: normal;
   }
 
-  .resume-introduce,
-  .container ul.resume-compact-wide {
+  .resume-introduce {
     margin-left: 0;
+  }
+
+  /* 레일을 접고 날짜를 제목 위 캡션으로 */
+  .container ul.resume-compact-wide > li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .container ul.resume-compact-wide .resume-compact-time {
+    text-align: left;
+    padding-top: 0;
   }
 
   /* 사진 | 이름 / 연락처는 아래 전체 폭 */
@@ -1015,6 +1049,17 @@ html[data-theme='dark'] .resume-skill-grid {
 
   .resume-introduce {
     margin-left: calc(var(--resume-rail) + var(--resume-rail-gap));
+  }
+
+  .container ul.resume-compact-wide > li {
+    display: grid;
+    grid-template-columns: var(--resume-rail) minmax(0, 1fr);
+    column-gap: var(--resume-rail-gap);
+  }
+
+  .container ul.resume-compact-wide .resume-compact-time {
+    text-align: right;
+    padding-top: 0.2em;
   }
 
   .resume-hero {

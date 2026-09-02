@@ -184,6 +184,7 @@ export function AwardList({ payload }: PropsWithChildren<{ payload?: IAward.Payl
         {payload.list.map((item, index) => (
           <CompactItem
             key={index.toString()}
+            rail
             title={item.title}
             subTitle={item.subTitle}
             time={formatMonth(item.at)}
@@ -209,29 +210,53 @@ function Block({ label, children }: PropsWithChildren<{ label: string }>) {
   );
 }
 
+/**
+ * @param rail 날짜를 좌측 레일에 두는 변형. 전체 폭을 쓰는 1단 목록(수상 내역)에서 쓴다.
+ *             2단 압축 목록은 열이 좁아 레일을 만들 수 없으므로 날짜를 오른쪽 끝에 둔다.
+ */
 function CompactItem({
   title,
   subTitle,
   time,
   descriptions,
+  rail,
 }: PropsWithChildren<{
   title: string;
   subTitle?: ReactNode;
   time: string;
   descriptions?: IRow.Description[];
+  rail?: boolean;
 }>) {
-  return (
-    <li>
-      <div className="resume-compact-head">
-        <span className="resume-compact-title">{title}</span>
-        <span className="resume-compact-time">{time}</span>
-      </div>
+  const body = (
+    <>
       {subTitle ? <div className="resume-compact-sub">{subTitle}</div> : ''}
       {descriptions && descriptions.length > 0 ? (
         <CommonDescription descriptions={descriptions} />
       ) : (
         ''
       )}
+    </>
+  );
+
+  if (rail) {
+    return (
+      <li>
+        <span className="resume-compact-time">{time}</span>
+        <div className="resume-compact-body">
+          <span className="resume-compact-title">{title}</span>
+          {body}
+        </div>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <div className="resume-compact-head">
+        <span className="resume-compact-title">{title}</span>
+        <span className="resume-compact-time">{time}</span>
+      </div>
+      {body}
     </li>
   );
 }
