@@ -18,7 +18,7 @@ const presentation: IAward.Payload = {
     {
       title: '53rd Korea Computer Congress (KCC 2026) Paper Competition',
       subTitle: 'Encouragement Prize, Undergraduate Division',
-      at: '2026-08',
+      at: '2026-07',
       descriptions: [
         {
           content:

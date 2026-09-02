@@ -70,7 +70,7 @@ const presentation: IPresentation.Payload = {
           content: 'Presented · 학술대회 발표 (2026.06.24)',
         },
         {
-          content: 'Awarded · 논문경진대회 장려상 (2026.08)',
+          content: 'Awarded · 논문경진대회 장려상 (2026.07.31)',
         },
       ],
     },

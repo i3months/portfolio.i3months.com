@@ -18,7 +18,7 @@ const presentation: IAward.Payload = {
     {
       title: '제53회 한국컴퓨터종합학술대회(KCC 2026) 논문경진대회',
       subTitle: '학부생부문 장려상 수상',
-      at: '2026-08',
+      at: '2026-07',
       descriptions: [
         {
           content:
