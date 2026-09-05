@@ -47,7 +47,7 @@ function ResumeEN() {
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
         <Experience.Component payload={Payload.experience} />
-        <Project.Component payload={Payload.project} />
+        <Project.Component payload={Payload.project} locale="en" />
         <OpenSource.Component payload={Payload.openSource} />
         <Skill.Component payload={Payload.skill} />
         <Presentation.Component payload={Payload.presentation} />

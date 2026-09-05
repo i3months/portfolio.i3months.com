@@ -757,6 +757,63 @@ html[data-theme='dark'] .resume-skill-grid {
   margin-top: 0.15rem;
 }
 
+/* ===== 접기 ===== */
+
+/**
+ * 접힌 내용은 DOM 에 그대로 두고 화면에서만 감춘다.
+ * 인쇄와 검색엔진에는 전부 나온다. (인쇄 분기에서 다시 펼치고 버튼을 숨긴다)
+ */
+.resume-collapsed {
+  display: none;
+}
+
+/**
+ * 목록 더보기
+ *
+ * 섹션 하나를 여닫는 버튼이므로 항목이 아니라 섹션 폭 전체를 쓰고 가운데 정렬한다.
+ * 채움 없이 테두리만 둬서 페이지에서 가장 눈에 띄는 요소가 되지 않게 한다.
+ */
+.resume-more {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 10px 16px;
+  border: 1px solid var(--resume-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--resume-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.resume-more:hover {
+  border-color: var(--resume-accent);
+  color: var(--resume-accent-strong);
+}
+
+.resume-more:focus-visible {
+  outline: 2px solid var(--resume-accent);
+  outline-offset: 2px;
+  border-color: var(--resume-accent);
+}
+
+.resume-more-icon {
+  transition: transform 0.15s ease;
+}
+
+.resume-more-icon.is-open {
+  transform: rotate(180deg);
+}
+
 /* ===== 구분선 ===== */
 
 .container hr {
@@ -962,9 +1019,13 @@ html[data-theme='dark'] .resume-skill-grid {
     text-decoration: none !important;
   }
 
-  /* 접힌 칩은 모두 펼치고, 누를 수 없는 버튼은 뺀다 */
+  /* 접힌 칩·상세는 모두 펼치고, 누를 수 없는 버튼은 뺀다 */
   .resume-chip-hidden {
     display: inline-flex !important;
+  }
+
+  .resume-collapsed {
+    display: block !important;
   }
 
   .resume-chip-more {
