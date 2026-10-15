@@ -6,6 +6,20 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: '제5회 ETRI 휴먼이해 인공지능 논문경진대회',
+      subTitle: '최우수상 (한국전자통신연구원장상) 수상',
+      at: '2026-10',
+      descriptions: [
+        {
+          content:
+            '라이프로그 데이터 기반 수면 및 컨디션 지표 예측 모델 개발 (DACON Private 리더보드 5위)',
+        },
+        {
+          content: '"Structure over Scale" 논문 제1저자로 ICTC 2026 Oral Session 발표',
+        },
+      ],
+    },
+    {
       title: 'TOPCIT 성적우수상',
       subTitle: '충남대학교 총장상 (2026.09.15 시상 예정)',
       at: '2026-09',
@@ -23,19 +37,6 @@ const presentation: IAward.Payload = {
         {
           content:
             '"Environment-Conditioned Hammering-Precursor Monitoring for Reliable Embedded Systems" 논문 발표',
-        },
-      ],
-    },
-    {
-      title: '제5회 ETRI 휴먼이해 인공지능 논문경진대회',
-      subTitle: 'Private 리더보드 5위 (2026.10 시상 예정)',
-      at: '2026-06',
-      descriptions: [
-        {
-          content: '라이프로그 데이터 기반 수면 및 컨디션 지표 예측 모델 개발',
-        },
-        {
-          content: 'ICTC 2026 논문 게재 확정',
         },
       ],
     },

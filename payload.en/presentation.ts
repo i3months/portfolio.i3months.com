@@ -45,7 +45,11 @@ const presentation: IPresentation.Payload = {
           ],
         },
         {
-          content: 'Accepted · Poster presentation anticipated (2026.10.15)',
+          content: 'Presented · Oral session presentation (2026.10.15)',
+        },
+        {
+          content:
+            'Awarded · Top Excellence Award, ETRI Human-Understanding AI Paper Competition (2026.10.15)',
         },
       ],
     },

@@ -5,6 +5,21 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: '5th ETRI Human-Understanding AI Paper Competition',
+      subTitle: "Top Excellence Award (ETRI President's Award)",
+      at: '2026-10',
+      descriptions: [
+        {
+          content:
+            'Developed a model predicting sleep and well-being indicators from lifelog data (5th place on the DACON private leaderboard).',
+        },
+        {
+          content:
+            'Presented the paper "Structure over Scale" as first author in an oral session at ICTC 2026.',
+        },
+      ],
+    },
+    {
       title: 'TOPCIT Academic Excellence Award',
       subTitle:
         'President\u2019s Award, Chungnam National University (awards ceremony on 15 September 2026)',
@@ -23,20 +38,6 @@ const presentation: IAward.Payload = {
         {
           content:
             'Presented the paper "Environment-Conditioned Hammering-Precursor Monitoring for Reliable Embedded Systems".',
-        },
-      ],
-    },
-    {
-      title: '5th ETRI Human-Understanding AI Paper Competition',
-      subTitle: '5th place on the private leaderboard (awards ceremony in October 2026)',
-      at: '2026-06',
-      descriptions: [
-        {
-          content:
-            'Developed a model predicting sleep and well-being indicators from lifelog data.',
-        },
-        {
-          content: 'Paper accepted to ICTC 2026.',
         },
       ],
     },

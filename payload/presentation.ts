@@ -45,7 +45,10 @@ const presentation: IPresentation.Payload = {
           ],
         },
         {
-          content: 'Accepted · 포스터 발표 예정 (2026.10.15)',
+          content: 'Presented · Oral Session 발표 (2026.10.15)',
+        },
+        {
+          content: 'Awarded · ETRI 휴먼이해 인공지능 논문경진대회 최우수상 (2026.10.15)',
         },
       ],
     },
