@@ -21,8 +21,7 @@ const presentation: IAward.Payload = {
     },
     {
       title: 'TOPCIT Academic Excellence Award',
-      subTitle:
-        'President\u2019s Award, Chungnam National University (awards ceremony on 15 September 2026)',
+      subTitle: 'President\u2019s Award, Chungnam National University',
       at: '2026-09',
       descriptions: [
         {
