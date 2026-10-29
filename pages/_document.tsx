@@ -42,9 +42,15 @@ export default class ResumeDocument extends Document<DocumentProps> {
           <meta charSet="utf-8" />
           {/* iOS 가 본문 숫자를 전화번호 링크로 바꾸는 것을 막는다 (본문 안에 두면 HTML 유효성 위반) */}
           <meta name="format-detection" content="telephone=no" />
-          {/* 파비콘: 브라우저 탭용 32x32 PNG, iOS 홈 화면용 180x180 */}
+          {/* 파비콘: 브라우저 탭용 32x32 PNG, 검색결과용 192x192, iOS 홈 화면용 180x180 */}
           {/* public/ 에서 정적 파일로 제공한다. asset import 는 base64 인라인되어 HTML 을 키운다 */}
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          {/**
+           * 구글 검색은 48px 배수 크기의 파비콘을 요구한다. 이 링크가 없으면
+           * apple-touch-icon(180px)을 대신 집어 가는데, iOS 용이라 배경이 불투명해
+           * 검색결과 원형 아이콘에 배경색이 그대로 드러난다.
+           */}
+          <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           {/* 웹폰트 CDN 연결을 미리 열어 첫 렌더의 폰트 대기 시간을 줄인다 */}
           <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
