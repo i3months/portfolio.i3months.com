@@ -5,6 +5,21 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'K-Digital Challenge: Net Challenge Camp Season 13',
+      subTitle: "Silver Prize (ETRI President's Award)",
+      at: '2026-11',
+      descriptions: [
+        {
+          content:
+            'Developed a real-time 3D situational awareness system for disaster sites using multiple drones (4-person team).',
+        },
+        {
+          content:
+            'Designed the video transmission architecture based on direct bandwidth measurements of the KOREN research network.',
+        },
+      ],
+    },
+    {
       title: '5th ETRI Human-Understanding AI Paper Competition',
       subTitle: "Top Excellence Award (ETRI President's Award)",
       at: '2026-10',

@@ -5,6 +5,18 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: 'K-Digital Challenge: Net Challenge Camp Season 13',
+      subTitle: "Hosted by NIA - Silver Prize (ETRI President's Award)",
+      startedAt: '2026-06',
+      endedAt: '2026-11',
+      subTitleLinks: [
+        {
+          text:
+            'Developed a real-time 3D situational awareness system for disaster sites using multiple drones - network architecture designed from measured KOREN research network bandwidth',
+        },
+      ],
+    },
+    {
       title: 'Chungnam National University Deep Learning SC Lab - Undergraduate Researcher',
       subTitle: 'Selected as a CNU Summer Session Student Success Scholar',
       startedAt: '2026-03',

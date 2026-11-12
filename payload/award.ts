@@ -6,6 +6,19 @@ const presentation: IAward.Payload = {
 
   list: [
     {
+      title: 'K-디지털 챌린지: 넷 챌린지 캠프 시즌13',
+      subTitle: '은상 (한국전자통신연구원장상) 수상',
+      at: '2026-11',
+      descriptions: [
+        {
+          content: '멀티드론 기반 재난 현장 실시간 3D 상황인식 시스템 개발 (4인 팀)',
+        },
+        {
+          content: 'KOREN 연구망 대역폭을 직접 측정해 영상 전송 구조 설계',
+        },
+      ],
+    },
+    {
       title: '제5회 ETRI 휴먼이해 인공지능 논문경진대회',
       subTitle: '최우수상 (한국전자통신연구원장상) 수상',
       at: '2026-10',

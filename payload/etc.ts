@@ -6,6 +6,18 @@ const etc: IEtc.Payload = {
 
   list: [
     {
+      title: 'K-디지털 챌린지: 넷 챌린지 캠프 시즌13',
+      subTitle: '한국지능정보사회진흥원 주관 - 은상 (한국전자통신연구원장상) 수상',
+      startedAt: '2026-06',
+      endedAt: '2026-11',
+      subTitleLinks: [
+        {
+          text:
+            '멀티드론 기반 재난 현장 실시간 3D 상황인식 시스템 개발 - KOREN 연구망 대역폭 실측 기반 네트워크 구조 설계',
+        },
+      ],
+    },
+    {
       title: '충남대학교 Deep Learning SC Lab - 학부연구생',
       subTitle: '충남대학교 하계방학 학생성공장학생 선정',
       startedAt: '2026-03',
