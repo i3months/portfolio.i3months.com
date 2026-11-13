@@ -6,7 +6,7 @@ const etc: IEtc.Payload = {
   list: [
     {
       title: 'K-Digital Challenge: Net Challenge Camp Season 13',
-      subTitle: "Hosted by NIA - Silver Prize (ETRI President's Award)",
+      subTitle: 'Hosted by NIA · 4-person team',
       startedAt: '2026-06',
       endedAt: '2026-11',
       subTitleLinks: [
