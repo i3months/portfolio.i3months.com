@@ -7,7 +7,7 @@ const etc: IEtc.Payload = {
   list: [
     {
       title: 'K-디지털 챌린지: 넷 챌린지 캠프 시즌13',
-      subTitle: '한국지능정보사회진흥원 주관 · 4인 팀',
+      subTitle: '한국지능정보사회진흥원 주관 (4인 팀)',
       startedAt: '2026-06',
       endedAt: '2026-11',
       subTitleLinks: [
